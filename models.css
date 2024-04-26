@@ -1,0 +1,9 @@
+.model_background {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right right;
+    background-attachment:fixed;
+    width: 100%;
+    display: flex;
+}
