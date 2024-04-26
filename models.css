@@ -17,3 +17,8 @@ body, html {
     background-position: center center;
     background-size: cover;
 }
+
+.img1{
+    position: absolute;
+    left: -100px;
+}
