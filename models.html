@@ -3,46 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="models.css"> 
-    <!-- <script src="models.js"></script> -->
+    <script src="models.js"></script>
+    <link rel="stylesheet" href="models.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <title>Document</title>
 </head>
 <body>
-   
-   <!-- <div class="swiper-models">
-     <div class="swiper">
-        <div class="swiper_eachmodel">
-           <img src="imgs/vantage.png"/> 
-        </div>
-        <div class="swiper_eachmodel">
-            <img src="imgs/DBS.png"/>
-        </div>
-     </div>
-     <div class="swiper-next"></div>
-     <div class="swiper-prev"></div>
-   </div> 
-</div>-->
-  <div class="slide-container">
-    <span class="slider-span" id="slider-s1"></span>
-    <span class="slider-span" id="slider-s2"></span>
-    <span class="slider-span" id="slider-s3"></span>
-
-    <div class="models-slider">
-      <div class="model-div" id="model1">
-        <img src="imgs/vantage.png" alt="vantage" class="img" id="vantage">
-        <a href="#slider-s1" class="button" id="bt1"></a>
-      </div>
-      <div class="model-div" id="model2">
-        <img src="imgs/DBS.png" alt="dbs" class="img" id="dbs">
-        <a href="#slider-s2" class="button" id="bt2"></a>
-      </div>
-      <div class="model-div" id="model3">
-        <img src="imgs/dbx707.png" alt="dbx707" class="img" id="dbx707">
-        <a href="#slider-s3" class="button" id="bt3"></a>
-        </div>
+  <div #swiperRef="" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="imgs/DBS.png"></div>
+      <div class="swiper-slide"><img src="imgs/DBS.png"></div>
+      <div class="swiper-slide"><img src="imgs/DBS.png"></div>
+      <div class="swiper-slide"><img src="imgs/DBS.png"></div>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    
   </div>
 
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      centeredSlides: true,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    var appendNumber = 4;
+    var prependNumber = 1;
+    document
+      .querySelector(".prepend-2-slides")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        swiper.prependSlide([
+          '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+          '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+        ]);
+      });
+    document
+      .querySelector(".prepend-slide")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        swiper.prependSlide(
+          '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
+        );
+      });
+    document
+      .querySelector(".append-slide")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        swiper.appendSlide(
+          '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
+        );
+      });
+    document
+      .querySelector(".append-2-slides")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        swiper.appendSlide([
+          '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+          '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+        ]);
+      });
+  </script>
 </body>
+
 </html>
+
 
