@@ -16,11 +16,16 @@ body, html {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    
 }
 
 #model1{
    transform: scale(0.5);
    width: 100%;
-   height: 1000px;
-   position: fixed;
+   height: 1100px;
+   min-height: 100%;
+   position: flex;
+   display: grid;
+   align-items: center;
+   
 }
