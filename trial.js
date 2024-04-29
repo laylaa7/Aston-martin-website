@@ -1,17 +1,15 @@
-var swiper = new Swiper('.swiper mySwiper', {
-    // Other options...
-    on: {
-      slideChange: function () {
-        var activeSlideIndex = this.realIndex; // Get the index of the active slide
-        var carInfoElements = document.querySelectorAll('.swiper-slide .model-info');
-  
-        // Hide car info for all slides
-        carInfoElements.forEach(function (element) {
-          element.style.display = 'none';
-        });
-  
-        // Show car info for the active slide
-        carInfoElements[activeSlideIndex].style.display = 'none';
-      }
-    }
-  });
+let valueDisplays = document.querySelectorAll(".num");
+let interval= 5000;
+
+valueDisplays.forEach(valueDisplay => {
+    let startValue = 0;
+    let endValue= parseInt(valueDisplay.getAttribute("data-val"));
+    let duration = Math.floor(interval/endValue);
+    let counter = setInterval(function() {
+        startValue += 1 ;
+        valueDisplay.textContent = startValue;
+        if(startValue == endValue){
+            clearInterval(counter);
+        }
+    }, duration);
+})

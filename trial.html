@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="models.js"></script>
     <link rel="stylesheet" href="trial.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
@@ -21,6 +20,8 @@
 
   <div #swiperRef="" class="swiper mySwiper">
     
+        
+    
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <img src="imgs/DBS.png">
@@ -28,17 +29,16 @@
         <div class="model-info">
         <table style="width:100%" class="table">
         <tr ><th>power</th> <th> top speed</th> <th> 0-62 </th> <th>torque</th></tr>
-        <tr><td>707</td> <td>707</td>  <td>707</td>  <td>707</td> </tr>
+        <tr><td class="num" data-val="707">000</td> <td class="num" data-val="707">000</td>  <td class="num" data-val="707">0</td>  <td class="num" data-val="707">0</td> </tr>
         </table></div> 
        </div>
       <div class="swiper-slide">
-       
-        <img src="imgs\vantage.png"> 
-        <div class="model-name"> <h2>VANTAGE</h2></div>
+       <img src="imgs\vantage.png"> 
+       <div class="model-name"> <h2>VANTAGE</h2></div>
         <div class="model-info">
             <table style="width:100%" class="table">
-            <tr ><th>power</th> <th> top speed</th> <th> 0-62 </th> <th>torque</th></tr>
-            <tr><td>707</td> <td>707</td>  <td>707</td>  <td>707</td> </tr>
+            <tr><th>power</th> <th> top speed</th> <th> 0-62 </th> <th>torque</th></tr>
+            <tr><td class="num" data-val="707">000</td> <td class="num" data-val="707">000</td>  <td class="num" data-val="707">0</td>  <td class="num" data-val="707">0</td> </tr>
             </table></div>
        </div>
       <div class="swiper-slide"><img src="imgs\dbx707.png"> 
@@ -46,21 +46,21 @@
         <div class="model-info">
         <table style="width:100%" class="table">
         <tr ><th>power</th> <th> top speed</th> <th> 0-62 </th> <th>torque</th></tr>
-        <tr><td>707</td> <td>707</td>  <td>707</td>  <td>707</td> </tr>
+        <tr><td class="num" data-val="707">000</td> <td class="num" data-val="707">000</td>  <td class="num" data-val="707">0</td>  <td class="num" data-val="707">0</td> </tr>
         </table></div></div>
       <div class="swiper-slide"><img src="imgs\valour.png">  
         <div class="model-name"> <h2>VALOUR</h2></div>
         <div class="model-info">
         <table style="width:100%" class="table">
         <tr ><th>power</th> <th> top speed</th> <th> 0-62 </th> <th>torque</th></tr>
-        <tr><td>707</td> <td>707</td>  <td>707</td>  <td>707</td> </tr>
+        <tr><td class="num" data-val="707">000</td> <td class="num" data-val="707">000</td>  <td class="num" data-val="707">0</td>  <td class="num" data-val="707">0</td> </tr>
         </table></div></div>
       <div class="swiper-slide"><img src="imgs\db12.png"> 
         <div class="model-name"> <h2>DB12</h2></div>
         <div class="model-info">
         <table style="width:100%" class="table">
         <tr ><th>power</th> <th> top speed</th> <th> 0-62 </th> <th>torque</th></tr>
-        <tr><td>707</td> <td>707</td>  <td>707</td>  <td>707</td> </tr>
+        <tr><td class="num" data-val="707">000</td> <td class="num" data-val="707">000</td>  <td class="num" data-val="707">0</td>  <td class="num" data-val="707">0</td> </tr>
         </table></div></div>
     </div>
     
@@ -70,7 +70,7 @@
     
   </div>
 
-  
+  <script src="trial.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Initialize Swiper -->
@@ -89,9 +89,6 @@
         prevEl: ".swiper-button-prev",
       },
     });
-
-   
-    
   </script>
 </body>
 
