@@ -1,0 +1,53 @@
+html,
+body {
+  height: 100%;
+  overflow-x: hidden
+}
+
+body {
+  background-image: url('imgs/Screenshot 2024-04-26 at 7.47.07 PM.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    max-height: 100vh;
+}
+
+.slider{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.slider-container{
+  display: flex;
+  flex-direction: row;
+  overflow-x:hidden;
+  transform: translateY(20%)
+}
+
+.slider-item{
+  flex: 0 0 50%;
+  min-width: 50%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.slider-item img{
+  width: 90%;
+}
+
+.slider-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.slider-buttons button {
+  margin: 0 10px;
+}
