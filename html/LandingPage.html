@@ -17,16 +17,28 @@
 </head>
 <body>
      <!--Navigation Bar-->
-     <header>
+     <header>     
+        <div class="open-menu">
+            <div  class="menu-btn" onclick="toggleNav()" id="menuBtn">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+        </div> 
+        <div class="logo">
+               <a href="#home"><img src="/Images/logo.png" alt="logo" width="160" height="35px" style="padding: 0px; margin: 0px;"></a> 
+                <p> POWER. DRIVEN</p>
+        </div>
+     </header>
+
+     <div id="mySidenav" class="sidenav">
         <a class="a" href="#home">Home</a>
         <a class="a" href="#models">Models</a> 
-            <div class="logo">
-               <a href="#home"><img src="/Images/logo.png" alt="logo" width="160" height="35px" style="padding: 0px; margin: 0px;"></a> 
-                <p> POWER. DRIVEN</p></div>
         <a class="a" href="#enquire">Enquire</a>
-        <a class="a" href="#aboutus">About us</a>
-    </header>
-      
+        <a class="a" href="#aboutus">About us</a> 
+    </div>
+   
+
     <!--Main Home-->
     <section class="home" id="home">
       
@@ -101,8 +113,8 @@
     <section class="aboutus" id="aboutus">
             <div class="split left">
                 <div class="centered img-zoom">
-                <img src="/Images/aboutus11n.jpg" alt="">
                 <h4 class="img-txt">landmark showroom, luxury hotel, The Peninsula Tokyo</h4>
+                <img src="/Images/aboutus11n.jpg" alt="">
                 </div>
             </div>
         
@@ -128,7 +140,8 @@
     </div>
    
 
-    <footer>
+    <footer class="contactUs">
+        
     </footer>
 
 
@@ -160,6 +173,32 @@
 
         ScrollReveal().reveal('.left', { delay: 300, origin: 'left'});
         ScrollReveal().reveal('.right', { delay: 400, origin: 'right'});
+    </script>
+
+
+    <script>
+        // function openNav() {
+        //     document.getElementById("mySidenav").style.width = "250px";
+        // }
+
+        // function closeNav() {
+        //     document.getElementById("mySidenav").style.width = "0";
+        // }
+        // function myFunction(x) {
+        //     x.classList.toggle("change");
+        // }
+        function toggleNav() {
+        var sideNav = document.getElementById("mySidenav");
+        var menuBtn = document.getElementById("menuBtn");
+
+        if (sideNav.style.width === "250px") {
+            sideNav.style.width = "0";
+            menuBtn.classList.remove("change");
+        } else {
+            sideNav.style.width = "250px";
+            menuBtn.classList.add("change");
+        }
+    }
     </script>
 
 </body>

@@ -18,18 +18,49 @@ header{
     width: 100%;
     position: fixed ;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     flex-direction: row;
     z-index: 999;
-    padding: 5px 40px;
+    padding: 0px;
     background-color:rgba(0, 0, 0, 0.435);
 }
-.logo{
+.open-menu {
+    display: flex;
+    align-items: center; /* Updated from 'left' to 'center' */
+    justify-content: flex-start; /* Updated from 'left' to 'flex-start' */
+}
+
+.menu-btn {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {opacity: 0;}
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+.logo {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center; /* Updated to center the logo horizontally */
     flex-direction: column;
+    flex-grow: 1; /* Added to make the logo take up remaining space */
 }
 .logo p{
     color: #fff;
@@ -37,16 +68,48 @@ header{
     margin: 0px;
     font-size: 13px;
 }
-header a{
-    text-decoration: none;
-    color: aliceblue;
-    font-size: 1.05em;
-    padding-left: 10px;
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: color;
+
+/* The side navigation menu */
+
+.sidenav {
+    height: 100%; 
+    width: 0; 
+    position: fixed;
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
 }
-.a:focus,
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.05em;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+/* .a:focus,
 .a:hover {
   color: #fff;
 }
@@ -67,7 +130,7 @@ header a{
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: width, left;
-}
+}  */
 
 
 /*Main Home----------*/
@@ -92,7 +155,7 @@ header a{
     transform: translateX(-50%); 
 }
 
-/*models-----------------*/
+/*Models-----------------*/
 
 .models{
     width: 100%;
@@ -302,9 +365,15 @@ header a{
 .centered img {
     width: 100%;
     height: 100%;
+    z-index: -1;
 }
 .img-txt{
-    /* z-index: 1; */
+    z-index: 1;
+    color: #fff;
+    top: 50%;
+    left: 5%;
+    transform: translate(5%, 90%);
+
 }
 
 .img-zoom img {
@@ -317,3 +386,16 @@ header a{
 .img-zoom {
   overflow: hidden; 
 }
+
+
+/*Contact US-----------------*/
+.contactUs{
+    width: 100%;
+    height: 300vh;
+    position: relative;
+    display: flex;
+    /* align-items: center;
+    justify-content:center; */
+    margin: 0px;
+}
+
