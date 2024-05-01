@@ -10,115 +10,6 @@ const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 
-function printError(elemId, hintMsg) {
-    document.getElementById(elemId).innerHTML = hintMsg;
-}
-
-function validateForm(form) {
-    var carModel = form.carModel.value;
-    var city = form.cityInput.value;
-    var time = form.time.value;
-    var title = form.title.value;
-    var firstName = form.firstName.value;
-    var lastName = form.lastName.value;
-    var telephone = form.telephone.value;
-    var email = form.email.value;
-    var emailOptIn = form.emailOptIn.checked;
-    var smsOptIn = form.smsOptIn.checked;
-    var phoneOptIn = form.phoneOptIn.checked;
-
-    var carModelErr = cityErr = timeErr = titleErr = firstNameErr = lastNameErr = telephoneErr = emailErr = true;
-
-
-    if(firstName == "") {
-        printError("firstNameErr", "Please enter your first name");
-    } else {
-        var regex = /^[a-zA-Z\s]+$/;                
-        if(regex.test(firstName) === false) {
-            printError("firstNameErr", "Please enter a valid first name");
-        } else {
-            printError("firstNameErr", "");
-            firstNameErr = false;
-        }
-    }
-
-  
-    if(lastName == "") {
-        printError("lastNameErr", "Please enter your last name");
-    } else {
-        var regex = /^[a-zA-Z\s]+$/;                
-        if(regex.test(lastName) === false) {
-            printError("lastNameErr", "Please enter a valid last name");
-        } else {
-            printError("lastNameErr", "");
-            lastNameErr = false;
-        }
-    }
-
-
-    if(telephone == "") {
-        printError("telephoneErr", "Please enter your mobile number");
-    } else {
-        var regex = /^[1-9]\d{9}$/;
-        if(regex.test(telephone) === false) {
-            printError("telephoneErr", "Please enter a valid 10 digit mobile number");
-        } else {
-            printError("telephoneErr", "");
-            telephoneErr = false;
-        }
-    }
-
-   
-    if(email == "") {
-        printError("emailErr", "Please enter your email address");
-    } else {
-        var regex = /^\S+@\S+\.\S+$/;
-        if(regex.test(email) === false) {
-            printError("emailErr", "Please enter a valid email address");
-        } else {
-            printError("emailErr", "");
-            emailErr = false;
-        }
-    }
-
-
-    if(carModel == "Select") {
-        printError("carModelErr", "Please select your car model");
-    } else {
-        printError("carModelErr", "");
-        carModelErr = false;
-    }
-
-    if(city == "") {
-        alert("Please select a city from the list");
-        return false;
-    }
-
-
-    if(time == "") {
-        printError("timeErr", "Please select your preferred time");
-    } else {
-        printError("timeErr", "");
-        timeErr = false;
-    }
-
-    
-    if(title == "Select") {
-        printError("titleErr", "Please select your title");
-    } else {
-        printError("titleErr", "");
-        titleErr = false;
-    }
-
-   
-    if(!emailOptIn && !smsOptIn && !phoneOptIn) {
-        alert("Please select at least one preferred contact method");
-        return false;
-    }
-
-    return true;
-}
-
 document.getElementById('firstNext').onclick = function() {
     var cityInput = document.getElementById('cityInput').value.toLowerCase();
     var cityOptions = document.getElementById('brow').getElementsByTagName('option');
@@ -185,24 +76,6 @@ else{
 
 return true;
 }
-
-/*      nextBtnFirst.addEventListener("click", function(event){
-    event.preventDefault();
-        slidePage.style.marginLeft = "-25%";
-        bullet[current - 1].classList.add("active");
-        progressCheck[current - 1].classList.add("active");
-        progressText[current - 1].classList.add("active");
-        current += 1;
-});    */
-
-/* nextBtnSec.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "-50%";
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
-}); */
 
 document.getElementById('submitBtn').onclick = function() { 
     
@@ -287,21 +160,4 @@ prevBtnThird.addEventListener("click", function(event){
     progressText[current - 2].classList.remove("active");
     current -= 1;
 });
-
-
-
-
-
-/*function validateCityInput() {
-    const input = document.getElementById('cityInput');
-    const inputValue = input.value.trim().toLowerCase();
-    const datalistOptions = Array.from(document.getElementById('brow').options).map(option => option.value.toLowerCase());
-
-    if (!datalistOptions.includes(inputValue)) {
-        alert('Please select a city from the list');
-        return false;
-    }
-
-    return true;
-}*/
 

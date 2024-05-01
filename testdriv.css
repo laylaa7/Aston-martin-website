@@ -228,8 +228,9 @@ form .page .btns button{
     box-shadow: 0px 15px 20px rgba(59, 42, 249, 0.4);
     color: #fff;
   }
+ 
   .Prev .arrow {
-    transform: rotate(180deg); /* Rotate the arrow to point left by default */
+    transform: rotate(180deg); 
 }
 
 .Prev:hover .arrow {
@@ -239,11 +240,73 @@ form .page .btns button{
 
 @keyframes slide-in-left {
     0% {
-        transform: translateX(10px) rotate(180deg); /* Start position: move right and maintain left orientation */
+        transform: translateX(10px) rotate(180deg); 
         opacity: 0;
     }
     100% {
-        transform: translateX(0px) rotate(180deg); /* End position: move back to original position */
+        transform: translateX(0px) rotate(180deg);
         opacity: 1;
-    }
-}
+    }}
+  
+  
+  .Prev,
+  .Next {
+      padding: 0.8em 2em; 
+      font-size: 13px; 
+      letter-spacing: 1px;
+      font-weight: 500;
+      color: #fff;
+      background-color: #0e0e0e;
+      border: none;
+      border-radius: 25px; 
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      outline: none;
+  }
+  
+  .Prev:hover,
+  .Next:hover {
+      background-color: #2d5ee5;
+      box-shadow: 0px 15px 20px rgba(59, 42, 249, 0.4);
+      color: #fff;
+  }
+  
+  .Prev .arrow {
+      transform: rotate(180deg);
+  }
+  
+  .Next .arrow {
+      transform: rotate(0deg);
+  }
+  
+  .Prev:hover .arrow {
+      animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  .Next:hover .arrow {
+      animation: slide-in-right 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes slide-in-left {
+      0% {
+          transform: translateX(10px) rotate(180deg);
+          opacity: 0;
+      }
+      100% {
+          transform: translateX(0px) rotate(180deg);
+          opacity: 1;
+      }
+  }
+  
+  @keyframes slide-in-right {
+      0% {
+          transform: translateX(-10px) rotate(0deg);
+          opacity: 0;
+      }
+      100% {
+          transform: translateX(0px) rotate(0deg);
+          opacity: 1;
+      }
+  }
+  
