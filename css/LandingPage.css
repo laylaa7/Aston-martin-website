@@ -141,7 +141,7 @@ header a{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 .content .image2{
     position: relative;
@@ -161,7 +161,7 @@ header a{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 
     margin-bottom: 10px;
 }
@@ -305,4 +305,15 @@ header a{
 }
 .img-txt{
     /* z-index: 1; */
+}
+
+.img-zoom img {
+  transform-origin: 50% 65%;
+  transition: transform 5s, filter 3s ease-in-out;
+}
+.img-zoom:hover img {
+  transform: scale(1.2);
+}
+.img-zoom {
+  overflow: hidden; 
 }
