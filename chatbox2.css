@@ -74,5 +74,12 @@ body{
 button{
     color: rgb(56, 152, 225);
     border-color: rgb(56, 152, 225);
-    margin: ;
+
+}
+#right-part {
+    color: #ffffff; 
+    background-color: #0f0f20; 
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
 }
