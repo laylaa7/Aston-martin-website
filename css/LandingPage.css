@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://configurator.astonmartin.com/AstonMartinFlare_W_Rg.9ee57a5762846d75.woff2');
 *{
-    font-family:'Poppins',sans-serif;
+    /* font-family:'Poppins',sans-serif; */
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+@font-face {
+    font-family: AstonMartinFlare;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url(AstonMartinFlare_W_Rg.9ee57a5762846d75.woff2) format("woff2"),url(AstonMartinFlare_W_Rg.a81f89e159e0486f.woff) format("woff")
 }
 body{
     background: #080808;
@@ -14,7 +21,7 @@ body{
 /*Navigation Bar------*/
 
 header{
-    height: 10vh;
+    height: 12vh;
     width: 100%;
     position: fixed ;
     display: flex;
@@ -25,42 +32,37 @@ header{
 }
 .open-menu {
     display: flex;
-    align-items: center; /* Updated from 'left' to 'center' */
-    justify-content: flex-start; /* Updated from 'left' to 'flex-start' */
+    align-items: center; 
+    justify-content: flex-start; 
 }
-
 .menu-btn {
     display: inline-block;
     cursor: pointer;
-  }
-  
-  .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
+    margin-left: 40px;
+}
+.bar1, .bar2{
+    width: 25px;
+    height: 3px;
+    background-color: #9b9b9b;
+    margin: 5px 0;
     transition: 0.4s;
   }
-  
-  /* Rotate first bar */
-  .change .bar1 {
-    transform: translate(0, 11px) rotate(-45deg);
-  }
-  
-  /* Fade out the second bar */
-  .change .bar2 {opacity: 0;}
-  
-  /* Rotate last bar */
-  .change .bar3 {
-    transform: translate(0, -11px) rotate(45deg);
-  }
+  /* .bar1:hover, .bar2:hover, .bar3:hover {
+    background-color: #fff;
+  } */
+.change .bar1 {
+    transform: translate(0, 9px) rotate(-45deg);
+}
+.change .bar2 {
+    transform: translate(0, 1px) rotate(45deg);
+}
 
 .logo {
     display: flex;
     align-items: center;
-    justify-content: center; /* Updated to center the logo horizontally */
+    justify-content: center;
     flex-direction: column;
-    flex-grow: 1; /* Added to make the logo take up remaining space */
+    flex-grow: 1; 
 }
 .logo p{
     color: #fff;
@@ -68,6 +70,30 @@ header{
     margin: 0px;
     font-size: 13px;
 }
+.signup-btn{
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    padding: 0 1.5em;
+    margin-top:15px;
+    margin-right: 20px;
+    height: 3.4em;
+    background-color: #81818184;
+}
+.signup-btn a{ 
+    font-size: 18px; 
+    color: #ffffffc4;
+    text-decoration: none;
+    text-align: center;
+}
+.signup-btn a:hover {
+   color: #fff;
+}
+.signup-btn:active {
+    box-shadow: inset 0px 0.1em 0.6em #fafafa;
+}
+
 
 /* The side navigation menu */
 
@@ -80,16 +106,17 @@ header{
     left: 0;
     background-color: #111; 
     overflow-x: hidden; 
-    padding-top: 60px; 
+    padding-top: 90px; 
     transition: 0.5s; 
 }
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 1.05em;
+    font-size: 1.3em;
     color: #818181;
     display: block;
     transition: 0.3s;
+    margin: 10px;
 }
 .sidenav a:hover {
     color: #f1f1f1;
@@ -151,7 +178,7 @@ header{
 .arrow{ 
     position: absolute; 
     bottom: 0;
-    left: 50%;
+    left: 48.5%;
     transform: translateX(-50%); 
 }
 
@@ -234,7 +261,7 @@ header{
     display: flex;
     align-items: left;
     justify-content: left;
-    transform: translate(260px,120px);
+    transform: translate(305px,120px);
 }
 
 /* .discover-btn {
@@ -391,11 +418,30 @@ header{
 /*Contact US-----------------*/
 .contactUs{
     width: 100%;
-    height: 300vh;
-    position: relative;
-    display: flex;
-    /* align-items: center;
-    justify-content:center; */
+    height: 100vh;
     margin: 0px;
+    z-index: 1; 
+    top: 0; 
+    left: 0; 
+    overflow-x: hidden;  
+    transition: 0.5s; 
+    display: flex;
+    align-items: left;
+    justify-content:left;
+    position: relative ;
 }
+.sidenav2{
+    display: flex;
+    align-items: left;
+    justify-content:center;
+    flex-direction: column;
+    margin-left: 100px;
+}
+.sidenav2 a{
+    text-decoration: none;
+    font-size: 2em; 
+    color: #ffffffc4;
+    margin: 2px;
+}
+    
 

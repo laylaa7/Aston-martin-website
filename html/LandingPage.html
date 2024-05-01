@@ -29,14 +29,19 @@
                <a href="#home"><img src="/Images/logo.png" alt="logo" width="160" height="35px" style="padding: 0px; margin: 0px;"></a> 
                 <p> POWER. DRIVEN</p>
         </div>
+        <div class="signup">
+            <button class="signup-btn"><a href="">Sign up</a></button>
+        </div>
      </header>
 
      <div id="mySidenav" class="sidenav">
         <a class="a" href="#home">Home</a>
         <a class="a" href="#models">Models</a> 
         <a class="a" href="#enquire">Enquire</a>
-        <a class="a" href="#aboutus">About us</a> 
-    </div>
+        <a class="a" href="#testdrive">Test Drive</a>
+        <a class="a" href="#aboutus">About Us</a> 
+        <a class="a" href="#contactUs">Contact Us</a> 
+     </div>
    
 
     <!--Main Home-->
@@ -51,7 +56,7 @@
     <section class="models" id="models">
         <div class="container">
             <p class="main-title">Popular Models</p>
-            <div class="model-name"><p>DBS700</p></div>
+            <div class="model-name"><p>DBS770 VOLANTE</p></div>
                     <button class="discover-btn disc1">
                         <a href="">Discover More</a>
                         <svg
@@ -77,7 +82,7 @@
                 </div>
             </div>
 
-            <div class="model-name"><p>DBX707</p></div>
+            <div class="model-name"><p>VANTAGE</p></div>
              <button class="discover-btn disc2">
                 <a href="">Discover More</a>
                 <svg
@@ -114,7 +119,7 @@
             <div class="split left">
                 <div class="centered img-zoom">
                 <h4 class="img-txt">landmark showroom, luxury hotel, The Peninsula Tokyo</h4>
-                <img src="/Images/aboutus11n.jpg" alt="">
+                <img src="/Images/aboutus11nn.jpg" alt="">
                 </div>
             </div>
         
@@ -141,7 +146,11 @@
    
 
     <footer class="contactUs">
-        
+        <div  class="sidenav2">
+            <a class="a1" href="#models">Customer Support</a> 
+            <a class="a2" href="#enquire">Enquire Online</a>
+            <a class="a3" href="#contactUs">Contact Us</a>
+        </div>
     </footer>
 
 
@@ -200,6 +209,21 @@
         }
     }
     </script>
+
+       <!--Contact Us script-->
+       <script>
+        ScrollReveal({
+           reset: true,
+           distance: '60px',
+           duration:2500,
+           delay: 500,
+           });
+
+          ScrollReveal().reveal('.a1', { delay: 300, origin: 'bottom'});
+          ScrollReveal().reveal('.a2', { delay: 400, origin: 'bottom'});
+          ScrollReveal().reveal('.a3', { delay: 500, origin: 'bottom'});
+
+        </script>
 
 </body>
 
