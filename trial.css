@@ -16,8 +16,8 @@ header{
     justify-content:center;
     flex-direction: column;
     transform: scale(0.8);
+    flex-grow: 1;
 }
-
 
 html,
 body {
@@ -165,7 +165,7 @@ table{
   }
 }
 
-@keyframes glitch {
+/* @keyframes glitch {
   0%, 5% {
     transform: translate(0, 0);
   }
@@ -181,7 +181,7 @@ table{
   4% {
     transform: translate(2%, -23%);
   }
-}
+} */
 
 
 .progress-bar{
@@ -251,4 +251,78 @@ table{
   position: fixed;
   top: 10%;
   left: 10%;
+}
+
+.discover-btn  {
+    --primary-color: #fff;
+    --hovered-color: #fff;
+    position: relative;
+    display: flex;
+    font-weight: 300;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
+}
+.discover-btn a{
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+} 
+.discover-btn::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--hovered-color);
+    height: 2px;
+    transition: 0.3s ease-out;
+}
+.discover-btn a::before {
+    position: absolute;
+   
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+}
+.discover-btn:hover::after {
+    width: 100%;
+}
+.discover-btn:hover a::before {
+     width: 100%;
+} 
+.discover-btn:hover svg {
+    transform: translateX(4px);
+    color: var(--hovered-color);
+}
+.discover-btn svg {
+    color: var(--primary-color);
+    transition: 0.2s;
+    position: relative;
+    width: 15px;
+    transition-delay: 0.2s;
+}
+
+
+.disc1{
+    position: absolute;
+    /* top: 50%;
+    left: 18%;
+    transform: translate(-90%, -50%); */
+    z-index: 1; 
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.discover-btn{
+   
+        display: flex;
+        align-items: center; 
+        justify-content: flex-start; 
 }

@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DBSconfig.css">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div id="sidebar">
+        <a href="#" class="menu-item" onclick="openExteriorMenu()">Exterior</a>
+        <a href="#" class="menu-item" onclick="openInteriorMenu()">Interior</a>
+      </div>
+      
+      <div id="exterior-menu" class="submenu">
+        <a href="#" class="back-button">Back</a>
+        <a href="#" class="submenu-item" onclick="changeBackgroundImage('red')">Red</a>
+        <a href="#" class="submenu-item" onclick="changeBackgroundImage('blue')">Blue</a>
+        <a href="#" class="submenu-item" onclick="changeBackgroundImage('silver')">Silver</a>
+        <a href="#" class="submenu-item" onclick="changeBackgroundImage('black')">Black</a>
+      </div>
+      <div id="interior-menu" class="submenu">
+        <a href="#" class="back-button">Back</a>
+        <div id="color-options">
+            <label for="color-red">
+                <input onclick="changeBackgroundImage('red')" type="image" id="color-red" name="color" value="red" src="DBSimg/Red.jpeg" >
+            </label>
+              
+            <label for="color-blue">
+                <input type="image" onclick="changeBackgroundImage('blue')" src="DBSimg/blue.jpeg">
+              </label>
+              
+            <label for="color-silver">
+                <input type="image" onclick="changeBackgroundImage('silver')" src="DBSimg/silver.jpeg">
+            </label>
+              
+              <label for="color-black">
+                <input type="image" onclick="changeBackgroundImage('black')" src="DBSimg/black.jpeg">
+              </label>
+        </div>
+      </div>
+      <div id="background-image" style="background-image: url('DBSimg/DBS-black.jpeg');"></div>
+  
+      <script src="DBSconfig.js"></script>
+</body>
+</html> 
+
+
+
+
+<!-- <div id="car-preview">
+        <img id="car-image" src="DBSimg/DBS-black.jpeg" alt="Car Base">
+    </div>
+    <div id="color-options">
+        <label for="color-red">
+            <input type="image" id="color-red" name="color" value="red" src="DBSimg/Red.jpeg">
+        </label>
+          
+        <label for="color-blue">
+            <input type="image" id="color-blue" name="color" value="blue" src="DBSimg/blue.jpeg">
+          </label>
+          
+        <label for="color-silver">
+            <input type="image" id="color-silver" name="color" value="silver" src="DBSimg/silver.jpeg">
+        </label>
+          
+          <label for="color-black">
+            <input type="image" id="color-black" name="color" value="black" src="DBSimg/black.jpeg">
+          </label>
+    </div> -->
