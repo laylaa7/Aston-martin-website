@@ -25,6 +25,8 @@ function openExteriorMenu() {
   }
   
   function openInteriorMenu() {
+    const backgroundImage = document.getElementById("background-image");
+    backgroundImage.style.backgroundImage = `url('DBSimg/DBS-int-black.jpeg')`;
     document.getElementById("interior-menu").style.display = "block";
     document.getElementById("exterior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
@@ -34,7 +36,12 @@ function openExteriorMenu() {
     const backgroundImage = document.getElementById("background-image");
     backgroundImage.style.backgroundImage = `url('DBSimg/DBS-${color}.jpeg')`;
   }
+  function changeBackgroundImage1(color) {
+    const backgroundImage = document.getElementById("background-image");
+    backgroundImage.style.backgroundImage = `url('DBSimg/DBS-int-${color}.jpeg')`;
+  }
 
+  
 
 const backButton = document.querySelector('.back-button');
 backButton.addEventListener('click', () => {
