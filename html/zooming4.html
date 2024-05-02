@@ -14,7 +14,10 @@
     box-sizing: border-box;
 }
 .container{
-   width: 100%;
+  
+}
+.home{
+     width: 100%;
    height: 100vh;
    position: relative;
 }
@@ -27,13 +30,13 @@
     top: 0;
     left: 0;
     background: #000;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 90px;
+    font-size: 40px;
     font-weight: 500;
     mix-blend-mode: multiply;
 
@@ -47,42 +50,145 @@
           width: 100%;
           height: 100vh;
           object-fit: cover;
-          position: relative;
+          position: fixed;
+          /* opacity: 0; */
+          z-index: 0;
 }
+.ndSec{
+    background: url("/Images/Background\ image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right right;  
+    background-attachment:fixed;
+    width: 100%;
+    height: 100vh;
+    /* visibility: hidden; */
+ }  
+.content {
+            position: relative;
+            z-index: 1;
+            /* padding: 20px; */
+        }
 
 </style>
 </head>
 <body>
+    <section class="home">
     <div class="container">
         <video autoplay loop muted class="video" id="vid">
             <source src="/videos/project car video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="text-box">
+        <div class="text-box" id="text-box">
             <h1>ASTON MARTIN</h1>
         </div>
     </div>
+</section>
+
+<div class="content">
+      
+    <section class="ndSec">
+       
+    </section>
+    </div>
+
 </body>
 
 <script>
-    document.addEventListener('scroll', function() {
-        var scrollPosition = window.pageYOffset;
-        var zoomLevel = Math.min(170, 1 + scrollPosition / 13);
+    //   var videoPlayed = false; 
 
-        var textBox = document.querySelector('.text-box');
-        textBox.style.transform = 'scale(' + zoomLevel + ')';
+    // document.addEventListener('scroll', function() {
+    //     var scrollPosition = window.pageYOffset;
+    //     var zoomLevel = Math.min(170, 1 + scrollPosition / 6);
 
-        
-    });
+    //     var textBox = document.querySelector('.text-box');
+    //     textBox.style.transform = 'scale(' + zoomLevel + ')';
+
+    //     if (scrollPosition >= 4 && !videoPlayed) {
+    //           // Start playing the video
+    //           var video = document.getElementById('vid');
+    //           video.style.opacity = 1;
+    //           video.play();
+    //           videoPlayed = true; 
+    //       }
+    // });
 
 
-//   // Check if scroll position is greater than or equal to 4
-//   if (scrollPosition >= 4 && !videoPlayed) {
-//             // Start playing the video
-//             var video = document.getElementById('vid');
-//             video.style.opacity = 1;
-//             video.play();
-//         }
+    var videoPlayed = false; 
+    var maxZoomLevel = 130;
+ var ndSec = document.getElementById('ndSec');
+
+
+   document.addEventListener('scroll', function() {
+    var scrollPosition = window.pageYOffset;
+    var zoomLevel = Math.min(130, 1 + scrollPosition / 5);
+  
+    var textBox = document.querySelector('.text-box');
+    textBox.style.transform = 'scale(' + zoomLevel + ')';
+
+
+    // Check if scroll position is greater than or equal to 4
+    if (scrollPosition >= 4 && !videoPlayed) {
+              // Start playing the video
+              var video = document.getElementById('vid');
+            //   video.style.opacity = 1;
+              video.play();
+              videoPlayed = true; 
+          }
+
+          if (zoomLevel >= maxZoomLevel) {
+                var text = document.getElementById('text-box');
+                text.style.display = 'none';
+            }
+
+           if (zoomLevel== (Math.min(130, 1 + scrollPosition / 5) )) {
+                ndSec.style.display = 'block';
+            }
+    
+    //  
+    //             var ndSec = document.getElementById('vid');
+    //             var text= document.getElementById('text-box');
+
+    //             text.style.display= 'none';
+    //             video.style.position = 'relative';
+    //            } 
+    //            var ndSec = document.getElementById('ndSec');
+
+
+// var home= document.getElementsByClassName('home');
+// if(home.style.height == '100vh'){
+//                 
+// }
+
+
+
+        //   if ( HTMLLIElement==70) {
+        //         var ndSec = document.getElementById('vid');
+        //         video.style.position = 'relative';
+        //     } 
+            // else {
+            //     var ndSec = document.getElementById('ndSec');
+            //     ndSec.style.display = 'none';
+            //     video.style.position = 'fixed';
+            // }
+           
+            //  else {
+            //     var ndSec = document.getElementById('ndSec');
+            //     ndSec.style.display = 'none';
+            //     video.style.position = 'fixed';
+            //     text.style.display= 'block';
+
+            // }
+
+        //     if (video.clientHeight == ('70vh' )) {
+        //     var video = document.getElementById('vid');
+        //     var text= document.getElementById('text-box')
+        //     video.style.position = 'relative';
+        //     text.style.display= 'none';
+        // } 
+
+          
+  });
 
 
 
