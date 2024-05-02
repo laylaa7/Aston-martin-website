@@ -3,85 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="models.js"></script>
     <link rel="stylesheet" href="models.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <title>Document</title>
 </head>
+<header>
+    
+    
+        <div class="logo">
+           <a href="#home"><img src="/imgs/logo.png" alt="logo" width="200"  style="padding: 0px; margin: 0px;"></a> 
+            </div>
+    
+</header>
 <body>
+  <div class="overlay-container">
+    <div class="video-container">
+      <div class="close-button">
+          <button onclick="toggleOverlay()">X</button>
+      </div>
+      <video id="overlayVideo" muted loop preload="auto">
+          <source id="videoSource"  type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+  </div>
+  <div class="progress-bar">
+    <div class="progress__name">Top Speed</div>
+    <div id="top-speed" class="progress"></div>
+    <br>
+    <div class="progress__name">0-100 KM/h</div>
+    <div id="zeroToHundred" class="progress"></div>
+    <br>  
+    <div class="progress__name">Accelaration</div>
+    <div id="accelaration" class="progress" style="--p:70"></div>
+  </div>
+
+  <div class="carInfoContainer" id="car-header">
+    
+  </div>
+  
   <div #swiperRef="" class="swiper mySwiper">
+    
+    
+    
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="imgs/DBS.png"></div>
-      <div class="swiper-slide"><img src="imgs\vantage.png"></div>
-      <div class="swiper-slide"><img src="imgs\dbx707.png"></div>
-      <div class="swiper-slide"><img src="imgs\valour.png"></div>
-      <div class="swiper-slide"><img src="imgs\db12.png"></div>
+      <div class="swiper-slide">
+        <img src="imgs/DBS.png" id="dbs">
+        <div class="model-name"> <h2>DBS</h2></div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="imgs\vantage.png" id="vantage"> 
+        <div class="model-name"> <h2>VANTAGE</h2></div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="imgs\dbx707.png"> 
+        <div class="model-name"> <h2>DBX707</h2></div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="imgs\valour.png" id="valour">  
+        <div class="model-name"> <h2>VALOUR</h2></div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="imgs\db12.png" id="db12"> 
+        <div class="model-name"> <h2>DB12</h2></div>
+        </div>
     </div>
+    
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-    
   </div>
 
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      width: screen.width/1.75,
-      centeredSlides: true,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "fraction",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-
-    var appendNumber = 4;
-    var prependNumber = 0;
-    document
-      .querySelector(".prepend-2-slides")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        swiper.prependSlide([
-          '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
-          '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
-        ]);
-      });
-    document
-      .querySelector(".prepend-slide")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        swiper.prependSlide(
-          '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
-        );
-      });
-    document
-      .querySelector(".append-slide")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        swiper.appendSlide(
-          '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
-        );
-      });
-    document
-      .querySelector(".append-2-slides")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        swiper.appendSlide([
-          '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
-          '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
-        ]);
-      });
-  </script>
+  <script src="models.js"></script>
 </body>
 
 </html>
-
-
