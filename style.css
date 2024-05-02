@@ -7,7 +7,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
+/* dodo */
 .first-header {
   height: 7vh;
   width: 100%;
@@ -188,7 +188,6 @@ video {
   padding: 0;
   color: rgba(69, 67, 67, 0.846);
   position: relative;
-
   overflow: hidden;
   transition: 1.99s ease;
   text-align: center;
@@ -584,4 +583,26 @@ span {
 
 .social-iconsss a:not(:last-child) {
   margin-right: 20px; /* Adjust the space between each social icon */
+}
+.page6 .intTextDbs {
+  position: absolute;
+  bottom: 500px;
+  left: 150px;
+
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Arial", sans-serif;
+  width: 20%;
+}
+.inttittleDbs {
+  /* position: absolute; */
+  top: 660px;
+  left: 200px;
+
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Arial", sans-serif;
+  width: 20%;
 }
