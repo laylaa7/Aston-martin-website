@@ -18,6 +18,8 @@
 //     carImage.src = imagePath;
 //   });
 // });
+
+var selectedColor = "black"
 function openExteriorMenu() {
     document.getElementById("exterior-menu").style.display = "block";
     document.getElementById("interior-menu").style.display = "none";
@@ -35,6 +37,7 @@ function openExteriorMenu() {
   function changeBackgroundImage(color) {
     const backgroundImage = document.getElementById("background-image");
     backgroundImage.style.backgroundImage = `url('DBSimg/DBS-${color}.jpeg')`;
+    selectedColor = color
   }
   function changeBackgroundImage1(color) {
     const backgroundImage = document.getElementById("background-image");
@@ -48,4 +51,13 @@ backButton.addEventListener('click', () => {
   document.getElementById("interior-menu").style.display = "none";
   document.getElementById("exterior-menu").style.display = "none";
   document.getElementById("sidebar").style.display = "block";
+});
+
+
+const intbackButton = document.querySelector('.int-button');
+intbackButton.addEventListener('click', () => {
+  document.getElementById("interior-menu").style.display = "none";
+  document.getElementById("exterior-menu").style.display = "none";
+  document.getElementById("sidebar").style.display = "block";
+  changeBackgroundImage(selectedColor)
 });
