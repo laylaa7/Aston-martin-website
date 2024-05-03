@@ -14,6 +14,14 @@ function openExteriorMenu() {
     document.getElementById("exterior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
   }
+  function preview() {
+    const prevBtn = document.getElementById('prev-btn');
+    document.getElementById("exterior-menu").style.display = "none";
+    document.getElementById("interior-menu").style.display = "none";
+    document.getElementById("sidebar").style.display="none";
+
+    prevBtn.style.left = '10px';
+  }
   
   function changeBackgroundImage(color) {
     const backgroundImage = document.getElementById("background-image");

@@ -6,21 +6,19 @@
     <title>DBS configuration</title>
 </head>
 <header>
-    <div class="logo">
-        <a href="#home"><img src="/imgs/logo.png" alt="logo" width="200"  style="padding: 0px; margin: 0px;"></a> 
-         </div>
-</header>
+    <img src="/imgs/logo.png" alt="Logo" class="logo">
+  </header>
 <body>
-    <div class="logo">
-        <a href="#home"><img src="/imgs/logo.png" alt="logo" width="200"  style="padding: 0px; margin: 0px;"></a> 
-         </div>
+    
     <div id="sidebar">
         <h2>DBS 770 Ultimate coupe</h2>
         <hr>
         <a  href="#"  class="menu-item" onclick="openExteriorMenu()">Exterior</a>
         <a href="#" class="menu-item" onclick="openInteriorMenu()">Interior</a>
+        <a class="menu-item" onclick="preview()">Preview</a>
       </div>
       
+
       <div id="exterior-menu" class="submenu">
         <a href="#" class="back-button" >Back</a>
         <!-- <a href="#" class="submenu-item" onclick="changeBackgroundImage('red')">Red</a>
@@ -70,11 +68,15 @@
           <img src="imgs/prev-arrow.png">
         </label>
       </div>
+      
       <div>
         <label id="next-btn" onclick="nextimg()">
           <img src="imgs/next-arrow.png">
         </label>
       </div>
+
+      
+
       <div id="background-image" style="background-image: url('DBSimg/black/DBS-1-black.jpeg');"></div>
   
       <script src="DBSconfig.js"></script>

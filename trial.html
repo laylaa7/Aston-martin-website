@@ -80,7 +80,7 @@
        <div class="model-name"> <h2>VANTAGE</h2></div>
         
        </div>
-      <div class="swiper-slide"><img src="imgs\dbx707.png"> 
+      <div class="swiper-slide"><img src="imgs\dbx707.png" id="dbx707"> 
         <div class="model-name"> <h2>DBX707</h2></div>
       </div>
       <div class="swiper-slide"><img src="imgs\valour.png" id="valour">  
@@ -109,6 +109,7 @@
     const vantage = document.getElementById('vantage')
     const valour = document.getElementById('valour')
     const db12 = document.getElementById('db12')
+    const dbx707 = document.getElementById('dbx707')
 
     dbs.onclick = () => {
       document.getElementById('videoSource').src ="vids/dbs_vid.mp4"
@@ -146,7 +147,38 @@
             video.play();
         }, 500);
     }
+    db12.onclick = () => {
+      document.getElementById('videoSource').src ="vids/db12_vid.mp4"
+      document.querySelector(".overlay-container").classList.toggle('active')
+      setTimeout(function() {
+            var video = document.getElementById('overlayVideo');
+            video.load()
+            video.play();
+        }, 500);
+    }
+    dbx707.onclick = () => {
+  document.getElementById('videoSource').src ="vids/dbx707_vid.mp4"
+  document.querySelector(".overlay-container").classList.toggle('active')
+  setTimeout(function() {
+    var video = document.getElementById('overlayVideo');
+    video.load()
+    video.muted = false;
 
+    // add event listeners for space bar keydown and keyup events
+    document.addEventListener('keydown', (event) => {
+      if (event.key === ' ') {
+        video.play();
+      }
+    });
+
+    document.addEventListener('keyup', (event) => {
+      if (event.key === ' ') {
+        video.pause();
+        video.currentTime = 0; // restart the video from the beginning
+      }
+    });
+  }, 500);
+}
     function toggleOverlay() {
       document.querySelector(".overlay-container").classList.toggle('active')
       var video = document.getElementById('overlayVideo');
