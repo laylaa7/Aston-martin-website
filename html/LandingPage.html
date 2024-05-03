@@ -46,17 +46,27 @@
 
     <!--Main Home-->
     <section class="home" id="home">
-      
-        
+      <div class="vid-container">
+        <video autoplay loop muted class="video" id="vid">
+            <source src="/videos/project car video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="text-box" id="text-box">
+            <h1>ASTON MARTIN</h1>
+        </div>
+    </div>
         <a href="#models"><img class="arrow" src="/Images/arrows.png" alt="arrow" width="40"></a>
     </section>
-  
+   
+    <section class="home2" id="home2">
+
+    </section>
 
     <!--Models-->
+    <div class="main-title"> <p>Popular Models</p></div>
     <section class="models" id="models">
         <div class="container">
-            <p class="main-title">Popular Models</p>
-            <div class="model-name"><p>DBS770 VOLANTE</p></div>
+            <div class="model-name"><p>&nbsp; DBS770 VOLANTE</p></div>
                     <button class="discover-btn disc1">
                         <a href="">Discover More</a>
                         <svg
@@ -118,8 +128,8 @@
     <section class="aboutus" id="aboutus">
             <div class="split left">
                 <div class="centered img-zoom">
-                <h4 class="img-txt">landmark showroom, luxury hotel, The Peninsula Tokyo</h4>
-                <img src="/Images/aboutus11nn.jpg" alt="">
+                <!-- <h4 class="img-txt">landmark showroom, luxury hotel, The Peninsula Tokyo</h4> -->
+                <img src="/Images/aboutus11n.jpg" alt="">
                 </div>
             </div>
         
@@ -222,6 +232,53 @@
           ScrollReveal().reveal('.a1', { delay: 300, origin: 'bottom'});
           ScrollReveal().reveal('.a2', { delay: 400, origin: 'bottom'});
           ScrollReveal().reveal('.a3', { delay: 500, origin: 'bottom'});
+
+        </script>
+
+
+       <!--StartUp home script-->
+        <script>
+        var videoPlayed = false; 
+        var maxZoomLevel = 130;
+        var ndSec = document.getElementById('ndSec');
+
+
+        document.addEventListener('scroll', function() {
+        var scrollPosition = window.pageYOffset;
+        var zoomLevel = Math.min(130, 1 + scrollPosition / 5);
+    
+        var textBox = document.querySelector('.text-box');
+        textBox.style.transform = 'scale(' + zoomLevel + ')';
+
+
+        if (scrollPosition >= 4 && !videoPlayed) {
+            var video = document.getElementById('vid');
+            //   video.style.opacity = 1;
+            video.play();
+            videoPlayed = true; 
+        }
+
+        if (zoomLevel >= maxZoomLevel) {
+            var text = document.getElementById('text-box');
+            text.style.display = 'none';
+        }
+        // if (document.documentElement.clientHeight == window.innerHeight) {
+        //      video.style.position='relative';
+
+        // }
+         
+        var homeSection = document.getElementById('home');
+        var nextSection = document.getElementById('home2');
+
+        if (homeSection.getBoundingClientRect().bottom <= window.innerHeight * 2 ) {
+            video.style.position = 'relative';
+
+        } else {
+            video.style.position = 'absolute';
+        }
+
+        
+        });
 
         </script>
 

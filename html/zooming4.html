@@ -21,7 +21,7 @@
    height: 100vh;
    position: relative;
 }
-.container video{
+.vid-container video{
     width: 100%;
    height: 100vh;
 }
@@ -65,16 +65,16 @@
     /* visibility: hidden; */
  }  
 .content {
-            position: relative;
-            z-index: 1;
+            /* position: absolute; */
+            /* z-index: 1; */
             /* padding: 20px; */
-        }
+ }
 
 </style>
 </head>
 <body>
     <section class="home">
-    <div class="container">
+    <div class="vid-container">
         <video autoplay loop muted class="video" id="vid">
             <source src="/videos/project car video.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -141,9 +141,9 @@
                 text.style.display = 'none';
             }
 
-           if (zoomLevel== (Math.min(130, 1 + scrollPosition / 5) )) {
-                ndSec.style.display = 'block';
-            }
+        //    if (zoomLevel== (Math.min(130, 1 + scrollPosition / 5) )) {
+        //         ndSec.style.display = 'block';
+        //     }
     
     //  
     //             var ndSec = document.getElementById('vid');
