@@ -410,6 +410,21 @@ header{
     background: none;
     cursor: pointer;
 }
+.disc3{
+    position: absolute;
+    top: 92%;
+    left: 25%;
+    transform: translate(-90%, -50%);
+    z-index: 1; 
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.disc3 a{
+    font-size: 23px;
+}
 
 /*About US-----------------*/
 .aboutus{
@@ -478,19 +493,25 @@ header{
     height: 100vh;
     margin: 0px;
     z-index: 1; 
-    top: 0; 
+    top: 30%; 
     left: 0; 
     overflow-x: hidden;  
     transition: 0.5s; 
     display: flex;
     align-items: left;
     justify-content:left;
-
+    background-color: #4e4d4d7c;
 }
-.sidenav2{
+.contact-contaier{
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    flex-direction: row;
+}
+.sidenav2, .contact-info{
     display: flex;
     align-items: left;
-    justify-content:center;
+    justify-content:left;
     flex-direction: column;
     margin-left: 100px;
 }
@@ -505,6 +526,32 @@ header{
     color: #fff;
     transition: ease-in-out 1s;
 }
+.contact-info p{
+    text-decoration: none;
+    font-size: 1.8em; 
+    color: #fff;
+    margin-left: 100px;
+    line-height: 29px;
+}
 
-    
+.global-footer-social ul {
+    list-style-type: none; 
+    display: flex; 
+    align-items: left;
+    justify-content: left;
+}
 
+.global-footer-social {
+    /* width: 3px; */
+    display: flex; 
+    align-items: left;
+    justify-content: left;
+    margin: 15px 20px 0px 0px;
+}
+
+.global-footer-social img {
+    width: 40px; 
+    height: auto; 
+    margin: 10px;
+    fill: #fff;
+}
