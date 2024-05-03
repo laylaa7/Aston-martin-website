@@ -23,19 +23,19 @@
         <a href="#" class="submenu-item" onclick="changeBackgroundImage('black')">Black</a> -->
         <div id="color-options">
             <label for="color-red">
-                <input onclick="changeBackgroundImage('red')" type="image" id="color-red" name="color" value="red" src="DBSimg/Red.jpeg" >
+                <input onclick="selectColor('red')" type="image" src="DBSimg/red/Red.jpeg" >
             </label>
               
             <label for="color-blue">
-                <input type="image" onclick="changeBackgroundImage('blue')" src="DBSimg/blue.jpeg">
+                <input type="image" onclick="selectColor('blue')" src="DBSimg/blue/blue.jpeg">
               </label>
               
             <label for="color-silver">
-                <input type="image" onclick="changeBackgroundImage('silver')" src="DBSimg/silver.jpeg">
+                <input type="image" onclick="selectColor('silver')" src="DBSimg/silver/silver.jpeg">
             </label>
               
               <label for="color-black">
-                <input type="image" onclick="changeBackgroundImage('black')" src="DBSimg/black.jpeg">
+                <input type="image" onclick="selectColor('black')"  src="DBSimg/black/black.jpeg">
               </label>
         </div>
       </div>
@@ -43,33 +43,33 @@
         <a href="#" class="int-button back-button">Back</a>
         <div id="color-options">
             <label for="color-red">
-                <input onclick="changeBackgroundImage1('red')" type="image" id="color-red" name="color" value="red" src="DBSimg/Red.jpeg" >
+                <input onclick="changeBackgroundImage1('red')" type="image" id="color-red" name="color" value="red" src="DBSimg/red/Red.jpeg" >
             </label>
               
             <label for="color-blue">
-                <input type="image" onclick="changeBackgroundImage1('blue')" src="DBSimg/blue.jpeg">
+                <input type="image" onclick="changeBackgroundImage1('blue')" src="DBSimg/blue/blue.jpeg">
               </label>
               
             <label for="color-silver">
-                <input type="image" onclick="changeBackgroundImage1('silver')" src="DBSimg/silver.jpeg">
+                <input type="image" onclick="changeBackgroundImage1('silver')" src="DBSimg/silver/silver.jpeg">
             </label>
               
               <label for="color-black">
-                <input type="image" onclick="changeBackgroundImage1('black')" src="DBSimg/black.jpeg">
+                <input type="image" onclick="changeBackgroundImage1('black')" src="DBSimg/black/black.jpeg">
               </label>
         </div>
       </div>
       <div>
-        <label id="prev-btn">
+        <label id="prev-btn" onclick="previmg()">
           <img src="imgs/prev-arrow.png">
         </label>
       </div>
       <div>
-        <label id="next-btn">
+        <label id="next-btn" onclick="nextimg()">
           <img src="imgs/next-arrow.png">
         </label>
       </div>
-      <div id="background-image" style="background-image: url('DBSimg/DBS-black.jpeg');"></div>
+      <div id="background-image" style="background-image: url('DBSimg/black/DBS-1-black.jpeg');"></div>
   
       <script src="DBSconfig.js"></script>
 </body>

@@ -28,7 +28,7 @@ function openExteriorMenu() {
   
   function openInteriorMenu() {
     const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('DBSimg/DBS-int-black.jpeg')`;
+    backgroundImage.style.backgroundImage = `url('DBSimg/black/DBS-int-black.jpeg')`;
     document.getElementById("interior-menu").style.display = "block";
     document.getElementById("exterior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
@@ -36,15 +36,62 @@ function openExteriorMenu() {
   
   function changeBackgroundImage(color) {
     const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('DBSimg/DBS-${color}.jpeg')`;
+    backgroundImage.style.backgroundImage = `url('DBSimg/${color}/DBS-1-${color}.jpeg')`;
     selectedColor = color
   }
   function changeBackgroundImage1(color) {
     const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('DBSimg/DBS-int-${color}.jpeg')`;
+    backgroundImage.style.backgroundImage = `url('DBSimg/${color}/DBS-int-${color}.jpeg')`;
   }
+ 
+ 
+   carImages = [
+    "DBSimg/black/DBS-1-black.jpeg",
+    "DBSimg/black/DBS-2-black.jpeg",
+    "DBSimg/black/DBS-3-black.jpeg",
+    "DBSimg/black/DBS-4-black.jpeg",
+    "DBSimg/black/DBS-5-black.jpeg",
+    "DBSimg/black/DBS-6-black.jpeg",
+    "DBSimg/black/DBS-7-black.jpeg",
+    "DBSimg/black/DBS-8-black.jpeg"
+];
 
-  
+function selectColor(color) {
+    currentColor = color;
+    currentImageIndex = 0;
+    const backgroundImage = document.getElementById("background-image");
+    backgroundImage.style.backgroundImage = `url('DBSimg/${currentColor}/DBS-1-${currentColor}.jpeg')`;
+    carImages = [
+        `DBSimg/${currentColor}/DBS-1-${currentColor}.jpeg`,
+        `DBSimg/${currentColor}/DBS-2-${currentColor}.jpeg`,
+        `DBSimg/${currentColor}/DBS-3-${currentColor}.jpeg`,
+        `DBSimg/${currentColor}/DBS-4-${currentColor}.jpeg`,
+        `DBSimg/${currentColor}/DBS-5-${currentColor}.jpeg`,
+        `DBSimg/${currentColor}/DBS-6-${currentColor}.jpeg`,
+        `DBSimg/${currentColor}/DBS-7-${currentColor}.jpeg`,
+        `DBSimg/${currentColor}/DBS-8-${currentColor}.jpeg`
+    ];
+}
+let currentImageIndex = 0;
+let currentColor = "black";
+function nextimg() {
+    const backgroundImage = document.getElementById("background-image");
+    currentImageIndex = (currentImageIndex + 1) % carImages.length;
+    backgroundImage.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
+}
+function previmg() {
+    const backgroundImage = document.getElementById("background-image");
+    currentImageIndex = (currentImageIndex - 1 + carImages.length) % carImages.length;
+    backgroundImage.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
+}
+//   function nextimg() {
+//     const backgroundImage = document.getElementById("background-image");
+//     backgroundImage.style.backgroundImage = `url('DBSimg/DBS-front-black.jpeg')`;
+//   }
+//   function previmg() {
+//     const backgroundImage = document.getElementById("background-image");
+//     backgroundImage.style.backgroundImage = `url('DBSimg/DBS-black.jpeg')`;
+//   }
 
 const backButton = document.querySelector('.back-button');
 backButton.addEventListener('click', () => {
@@ -59,5 +106,5 @@ intbackButton.addEventListener('click', () => {
   document.getElementById("interior-menu").style.display = "none";
   document.getElementById("exterior-menu").style.display = "none";
   document.getElementById("sidebar").style.display = "block";
-  changeBackgroundImage(selectedColor)
+  changeBackgroundImage(currentColor)
 });
