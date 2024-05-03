@@ -6,10 +6,12 @@ function openExteriorMenu() {
     document.getElementById("interior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
   }
-  
+
+
+  var selectedcolorint = "black";
   function openInteriorMenu() {
-    // const backgroundImage = document.getElementById("background-image");
-    // backgroundImage.style.backgroundImage = `url('DBSimg/black/DBS-int-black.jpeg')`;
+    const backgroundImage = document.getElementById("background-image");
+    backgroundImage.style.backgroundImage = `url('DBSimg/${selectedcolorint}/DBS-int-1-${selectedcolorint}.jpeg')`;
     document.getElementById("interior-menu").style.display = "block";
     document.getElementById("exterior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
@@ -19,7 +21,6 @@ function openExteriorMenu() {
     document.getElementById("exterior-menu").style.display = "none";
     document.getElementById("interior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
-
     prevBtn.style.left = '10px';
   }
   
@@ -30,7 +31,8 @@ function openExteriorMenu() {
   }
   function changeBackgroundImage1(color) {
     const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('DBSimg/${color}/DBS-int-${color}.jpeg')`;
+    backgroundImage.style.backgroundImage = `url('DBSimg/${color}/DBS-int-1-${color}.jpeg')`;
+    selectedcolorint=color;
   }
  
  
@@ -43,6 +45,17 @@ function openExteriorMenu() {
     "DBSimg/black/DBS-6-black.jpeg",
     "DBSimg/black/DBS-7-black.jpeg",
     "DBSimg/black/DBS-8-black.jpeg"
+];
+
+carintimages = [
+    "DBSimg/black/DBS-int-1-black.jpeg",
+    "DBSimg/black/DBS-int-2-black.jpeg",
+    "DBSimg/black/DBS-int-3-black.jpeg",
+    "DBSimg/black/DBS-int-4-black.jpeg",
+    "DBSimg/black/DBS-int-5-black.jpeg",
+    "DBSimg/black/DBS-int-6-black.jpeg",
+    "DBSimg/black/DBS-int-7-black.jpeg",
+    "DBSimg/black/DBS-int-8-black.jpeg"
 ];
 
 function selectColor(color) {

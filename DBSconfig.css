@@ -85,6 +85,18 @@
       left: 250px;
     }
   }
+  #prev-btn:hover{
+    transform: scale(0.9);
+    transform-origin: center center; /* Keep the transformation centered */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  #next-btn:hover{
+    transform: scale(0.9);
+    transform-origin: center center; /* Keep the transformation centered */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
 
   h2{
     font-family: AstonMartinFlare;
