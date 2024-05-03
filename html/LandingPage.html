@@ -63,7 +63,7 @@
     </section>
 
     <!--Models-->
-    <div class="main-title"> <p>Popular Models</p></div>
+    <div class="main-title" style="background-color: black;"> <p >Popular Models</p></div>
     <section class="models" id="models">
         <div class="container">
             <div class="model-name"><p>&nbsp; DBS770 VOLANTE</p></div>
@@ -157,8 +157,8 @@
 
     <footer class="contactUs">
         <div  class="sidenav2">
-            <a class="a1" href="#models">Customer Support</a> 
-            <a class="a2" href="#enquire">Enquire Online</a>
+            <a class="a1" href="#customerSupport">Customer Support</a> 
+            <a class="a2" href="#enquireOnline">Enquire Online</a>
             <a class="a3" href="#contactUs">Contact Us</a>
         </div>
     </footer>
@@ -173,7 +173,7 @@
              delay: 500,
              });
 
-            ScrollReveal().reveal('.main-title', { delay: 300, origin: 'left'});
+            //ScrollReveal().reveal('.main-title', { delay: 300, origin: 'left'});
             ScrollReveal().reveal('.image', { delay: 400, origin: 'bottom'});
             ScrollReveal().reveal('.image2', { delay: 500, origin: 'right'});
             ScrollReveal().reveal('.model-name', { delay: 200, origin: 'top'});
@@ -240,8 +240,8 @@
         <script>
         var videoPlayed = false; 
         var maxZoomLevel = 130;
-        var ndSec = document.getElementById('ndSec');
-
+        var videoContainer = document.querySelector('.vid-container');
+        var video = document.getElementById('vid');
 
         document.addEventListener('scroll', function() {
         var scrollPosition = window.pageYOffset;
@@ -262,22 +262,19 @@
             var text = document.getElementById('text-box');
             text.style.display = 'none';
         }
-        // if (document.documentElement.clientHeight == window.innerHeight) {
-        //      video.style.position='relative';
 
-        // }
-         
         var homeSection = document.getElementById('home');
         var nextSection = document.getElementById('home2');
 
         if (homeSection.getBoundingClientRect().bottom <= window.innerHeight * 2 ) {
             video.style.position = 'relative';
+            // videoContainer.style.display = 'none'; 
+        } 
+       
+        //else {
+        //     videoContainer.style.position = 'absolute';
+        // }
 
-        } else {
-            video.style.position = 'absolute';
-        }
-
-        
         });
 
         </script>
