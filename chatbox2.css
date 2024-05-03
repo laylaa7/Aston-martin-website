@@ -6,8 +6,8 @@
     color: white;
     box-sizing: border-box;
 }
-body{
-    background-color: #0f0f20;
+ body{
+    background-color: #000000;
 
 }
 .main-div{
@@ -16,27 +16,78 @@ body{
     align-items: center;
     min-height: 100vh;
 }
-.container{
-    height:550px;
-    width:390px;
-    border:3px solid rgba(255,255,255,.5);
+.container {
+    height: 30px;
+    width: 30px;
+    border: 3px solid rgba(220, 219, 219, 0.5);
     border-radius: 20px;
-    background:#fff;
-    overflow: hidden;
-}
-.top-part .agent-details{
+    background: #fff;
+    overflow-y: scroll;
+    position:absolute;
+    z-index: -1;
+    transition: .5s,height .5s , width .5s;
+    transition-timing-function: cubic-bezier(0.075,.82,.165,1);
+    bottom:30px;
+    transition-delay: 0s,0.5s,0.5s;
+    
+  }
+  .container ::before{
+    content:"";
+    position: absolute;
+    background:transparent;
+    height:100px;
+    width:100px;
+    left:50%;
+    top:50%;
+    transform: translate(-20%,-20%);
+    border-radius: 50%;
+    transition: .5s;
+    
+  }
+  .menuToggle.active ~ .container ::before{
+    transition-delay: .5s;
+
+  }
+  .menuToggle.active ~ .container{
+    height: 550px;
+    width: 390px;
+    z-index: 1;
+    transform: translateY(-100px);
+    transition-delay: 0s,0.5s,0.5s;
+  }
+  .menuToggle i{
+    font-size: 50px;
+    color: #19191b;
+  }
+  .menuToggle{
+    position: absolute;
+    bottom: 30px;
+    height:70px;
+    width:70px;
+    background:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px black ;
+    border-radius: 58%;
+    cursor: pointer;
+  }
+  
+  .top-part {
+    height: 100px;
+    background-color: #19191b;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    cursor: pointer;
+    padding: 0 20px;
+  }
+  
+  .agent-details {
     display: flex;
     align-items: center;
-}
-.container .top-part{
-    height: 100px;
-    background-color:#0f0f20 ;
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    cursor:pointer;
-    
-}
+  }
+
 .chart-section{
     position:relative;
 }
@@ -46,10 +97,9 @@ body{
 }
 .left-part img{
    height: 40px;
-   backcground:#0f0f20;
    border-radius:50%;
-}
-
+} 
+ 
 .agent-chart{
     display:flex;
     align-items: center;
@@ -60,6 +110,17 @@ body{
     font-size: 15px;
     background: rgba(0,0,0,.1);
 }
+.bot-message{
+    margin-bottom: 10px;
+    background: #d7d7d7;
+    color: #000 !important;
+    border-radius: 20px 20px 20px 3px;
+    display: block;
+    max-width: 75%;
+    padding: 7px 13px 7px 13px;
+    left: 0;
+    
+}
 .msg1{
     display: flex;
     justify-content: center;
@@ -68,18 +129,71 @@ body{
 }
 .common1{
     display: flex;
-    flex-direction:column;
-    
-}
+    flex-direction:column; 
+} 
 button{
     color: rgb(56, 152, 225);
     border-color: rgb(56, 152, 225);
 
 }
-#right-part {
-    color: #ffffff; 
-    background-color: #0f0f20; 
-    padding: 20px;
-    height: 100%;
-    overflow-y: auto;
+ .right-part{
+    margin: -50px 0;
+    text-align: right;
+    max-width: 260px 0;
+} 
+ #right-part p{
+    color:#fff;
+    float: right;
+    background-color: #19191b;
+    padding: 8px 24px;
+    border: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+
+} 
+ .chart-section .right-part span{
+    color:#fcf8f8;
+    font-size: 8px;
+    font-weight: 500;
+} 
+.user-message{
+    background: #19191b;
+    color: #fff !important;
+    border-radius: 20px 20px 3px 20px;
+    display:block;
+    max-width: 75%;
+    padding: 7px 13px 7px 13px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
+button {
+    background-color: #ffffff00;
+    color: rgba(25,126,236,255);
+    width: 10em;
+    height: 2.9em;
+    border:#2d5ee5 0.2em solid;
+    border-radius: 11px;
+    text-align: center;
+    transition: all 0.6s ease;
+  }
+  
+  button:hover {
+    background-color: #2d5ee5;
+    color:#fff;
+    cursor: pointer;
+  }
+  
+  button svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+  }
+  
+  button:hover svg {
+    transform: translateX(5px);
+  }
+  
+  
+

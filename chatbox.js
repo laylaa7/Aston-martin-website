@@ -1,7 +1,17 @@
-document.getElementById('ch1-1').onclick = function() {
-    var chatContainer = document.getElementById('right-part');
-    chatContainer.innerHTML = "We Have DBS, DB12, VALOUR, VANTAGE, DBX707";
-}
-ch1.addEventListener('click', function() {
-    document.getElementById('right-part').innerHTML = "bananas"
-})
+
+    document.getElementById('ch').onclick = function() {
+       
+        document.getElementById('chat').innerHTML += "<p class=\"user-message\">Models Available</p>";
+       
+        setTimeout(function() {
+        document.getElementById('chat').innerHTML +="<p class=\"bot-message\">We Have DBS, DB12, VALOUR, VANTAGE, DBX707</p>";
+        }, 800);
+    }
+    document.getElementById('ch2').onclick = function() {
+       
+        document.getElementById('chat').innerHTML += "<p class=\"user-message\">Models Available</p>";
+       
+
+        document.getElementById('chat').innerHTML +="<p class=\"bot-message\">We Have DBS, DB12, VALOUR, VANTAGE, DBX707</p>";
+        
+    }
