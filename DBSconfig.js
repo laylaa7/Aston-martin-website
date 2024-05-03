@@ -1,8 +1,8 @@
 
-
+let isInterior = false;
 var selectedColor = "black"
 function openExteriorMenu() {
-    
+    isInterior=false;
     document.getElementById("exterior-menu").style.display = "block";
     document.getElementById("interior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
@@ -11,10 +11,11 @@ function openExteriorMenu() {
 var selectedcolorint = "black";
   function openInteriorMenu() {
     const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('DBSimg/${selectedcolorint}/DBS-int-1-${selectedcolorint}.jpeg')`;
+    backgroundImage.style.backgroundImage = `url('DBSimg/${currentColorint}/int/DBS-1-${currentColorint}.jpeg')`;
     document.getElementById("interior-menu").style.display = "block";
     document.getElementById("exterior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
+    isInterior = true;
   }
   function preview() {
     const prevBtn = document.getElementById('prev-btn');
@@ -26,25 +27,20 @@ var selectedcolorint = "black";
   
   function changeBackgroundImage(color) {
     const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('DBSimg/${color}/DBS-1-${color}.jpeg')`;
+    backgroundImage.style.backgroundImage = `url('DBSimg/${color}/ext/DBS-1-${color}.jpeg')`;
     selectedColor = color
   }
   function changeBackgroundImage1(color) {
     const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('DBSimg/${color}/DBS-int-1-${color}.jpeg')`;
+    backgroundImage.style.backgroundImage = `url('DBSimg/${color}/int/DBS-1-${color}.jpeg')`;
     selectedcolorint=color;
   }
  
  
 
-const carintimages = [
-    "DBSimg/black/DBS-int-1-black.jpeg",
-    "DBSimg/black/DBS-int-2-black.jpeg",
-    "DBSimg/black/DBS-int-3-black.jpeg",
-    "DBSimg/black/DBS-int-4-black.jpeg",
-];
 
-const carImages = [
+
+carImages = [
     "DBSimg/black/ext/DBS-1-black.jpeg",
     "DBSimg/black/ext/DBS-2-black.jpeg",
     "DBSimg/black/ext/DBS-3-black.jpeg",
@@ -54,15 +50,15 @@ const carImages = [
     "DBSimg/black/ext/DBS-7-black.jpeg",
     "DBSimg/black/ext/DBS-8-black.jpeg"
 ];
+
+let currentImageIndex = 0;
+let currentColor = "black";
 function selectColor(color) {
     currentColor = color;
     currentImageIndex = 0;
     const backgroundImage = document.getElementById("background-image");
-    
-    // Update the background image based on whether it's interior or exterior
     backgroundImage.style.backgroundImage = `url('DBSimg/${currentColor}/ext/DBS-1-${currentColor}.jpeg')`;
 
-    // Update the arrays based on whether it's interior or exterior
     carImages = [
         `DBSimg/${currentColor}/ext/DBS-1-${currentColor}.jpeg`,
         `DBSimg/${currentColor}/ext/DBS-2-${currentColor}.jpeg`,
@@ -73,29 +69,51 @@ function selectColor(color) {
         `DBSimg/${currentColor}/ext/DBS-7-${currentColor}.jpeg`,
         `DBSimg/${currentColor}/ext/DBS-8-${currentColor}.jpeg`
     ];
+}
+carintimages = [
+    "DBSimg/black/int/DBS-1-black.jpeg",
+    "DBSimg/black/int/DBS-2-black.jpeg",
+    "DBSimg/black/int/DBS-3-black.jpeg",
+    "DBSimg/red/int/DBS-4-red.jpeg",
+];
+let currentColorint="black";
+function selectColorInt(color) {
+    currentColorint = color;
+    currentImageIndex = 0;
+    const backgroundImage = document.getElementById("background-image");
+    backgroundImage.style.backgroundImage = `url('DBSimg/${currentColorint}/int/DBS-1-${currentColorint}.jpeg')`;
 
     carintimages = [
-        `DBSimg/${currentColor}/DBS-int-1-${currentColor}.jpeg`,
-        `DBSimg/${currentColor}/DBS-int-2-${currentColor}.jpeg`,
-        `DBSimg/${currentColor}/DBS-int-3-${currentColor}.jpeg`,
-        `DBSimg/${currentColor}/DBS-int-4-${currentColor}.jpeg`
-    ];
+        `DBSimg/${currentColorint}/int/DBS-1-${currentColorint}.jpeg`,
+        `DBSimg/${currentColorint}/int/DBS-2-${currentColorint}.jpeg`,
+        `DBSimg/${currentColorint}/int/DBS-3-${currentColorint}.jpeg`,
+        `DBSimg/${currentColorint}/int/DBS-4-${currentColorint}.jpeg`
+      ];
 }
 
-
-let isInterior = true; // Flag to determine if it's interior or exterior
-let currentImageIndex = 0;
-let currentColor = "black";
 function nextimg() {
     const backgroundImage = document.getElementById("background-image");
+  if (!isInterior) {
     currentImageIndex = (currentImageIndex + 1) % carImages.length;
     backgroundImage.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
+  } else {
+    currentImageIndex = (currentImageIndex + 1) % carintimages.length;
+    backgroundImage.style.backgroundImage = `url('${carintimages[currentImageIndex]}')`;
+  }
 }
 function previmg() {
     const backgroundImage = document.getElementById("background-image");
-    currentImageIndex = (currentImageIndex - 1 + carImages.length) % carImages.length;
-    backgroundImage.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
-}
+    if (!isInterior) {
+        currentImageIndex = (currentImageIndex - 1 + carImages.length) % carImages.length;
+        backgroundImage.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
+      } 
+      else {
+        currentImageIndex = (currentImageIndex - 1 + carImages.length) % carintimages.length;
+      backgroundImage.style.backgroundImage = `url('${carintimages[currentImageIndex]}')`;
+      }
+} 
+
+
 
 
 
@@ -114,5 +132,5 @@ intbackButton.addEventListener('click', () => {
   document.getElementById("exterior-menu").style.display = "none";
   document.getElementById("sidebar").style.display = "block";
   changeBackgroundImage(currentColor)
-  
+  isInterior=false;
 });
