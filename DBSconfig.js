@@ -1,23 +1,4 @@
-// // const carImage = document.getElementById('car-image');
-// // const colorOptions = document.querySelectorAll('#color-options input[type="radio"]');
 
-// // colorOptions.forEach(option => {
-// //   option.addEventListener('change', () => {
-// //     const color = option.value;
-// //     const imagePath = `DBSimg/DBS-${color}.jpeg`;
-// //     carImage.src = imagePath;
-// //   });
-// // });
-// const carImage = document.getElementById('background-image');
-// const colorOptions = document.querySelectorAll('#color-options input[type="image"]');
-
-// colorOptions.forEach(option => {
-//   option.addEventListener('click', () => {
-//     const color = option.value;
-//     const imagePath = `DBSimg/DBS-${color}.jpeg`;
-//     carImage.src = imagePath;
-//   });
-// });
 
 var selectedColor = "black"
 function openExteriorMenu() {
@@ -27,8 +8,8 @@ function openExteriorMenu() {
   }
   
   function openInteriorMenu() {
-    const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('DBSimg/black/DBS-int-black.jpeg')`;
+    // const backgroundImage = document.getElementById("background-image");
+    // backgroundImage.style.backgroundImage = `url('DBSimg/black/DBS-int-black.jpeg')`;
     document.getElementById("interior-menu").style.display = "block";
     document.getElementById("exterior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
@@ -84,14 +65,7 @@ function previmg() {
     currentImageIndex = (currentImageIndex - 1 + carImages.length) % carImages.length;
     backgroundImage.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
 }
-//   function nextimg() {
-//     const backgroundImage = document.getElementById("background-image");
-//     backgroundImage.style.backgroundImage = `url('DBSimg/DBS-front-black.jpeg')`;
-//   }
-//   function previmg() {
-//     const backgroundImage = document.getElementById("background-image");
-//     backgroundImage.style.backgroundImage = `url('DBSimg/DBS-black.jpeg')`;
-//   }
+
 
 const backButton = document.querySelector('.back-button');
 backButton.addEventListener('click', () => {
@@ -107,4 +81,5 @@ intbackButton.addEventListener('click', () => {
   document.getElementById("exterior-menu").style.display = "none";
   document.getElementById("sidebar").style.display = "block";
   changeBackgroundImage(currentColor)
+  
 });

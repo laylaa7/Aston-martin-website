@@ -17,6 +17,29 @@
     font-display: swap;
     src: url(AstonMartinFlare_W_Rg.9ee57a5762846d75.woff2) format("woff2"),url(AstonMartinFlare_W_Rg.a81f89e159e0486f.woff) format("woff")
  }
+ header{
+    height: 10vh;
+    width: 100%;
+    position: fixed ;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    z-index: 9;
+    padding: 5px ;
+    
+  }
+  .logo {
+    position: fixed;
+    right: 0.4%; /* Adjust as needed */
+    bottom: 83%; /* Adjust as needed */
+    z-index: 1;
+}
+ @media screen and (max-width: 768px) {
+    .logo {
+        bottom: 20%; /* Adjust as needed for smaller screens */
+    }
+}
  h2{
     font-family: AstonMartinFlare;
     display: block;
