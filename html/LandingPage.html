@@ -35,14 +35,18 @@
      </header>
 
      <div id="mySidenav" class="sidenav">
-        <a class="a" href="#home">Home</a>
+        <a class="a" href="" id="Home">Home</a>
         <a class="a" href="#models">Models</a> 
         <a class="a" href="#enquire">Enquire</a>
         <a class="a" href="#testdrive">Test Drive</a>
         <a class="a" href="#aboutus">About Us</a> 
         <a class="a" href="#contactUs">Contact Us</a> 
      </div>
-   
+    <script>
+     document.getElementById('Home').onclick = function() {
+        location.reload();
+    };
+    </script>
 
     <!--Main Home-->
     <section class="home" id="home">
@@ -121,41 +125,40 @@
     </section>
 
     <!--About US-->
-    <div class="container">
+    <div class="container2">
         <p class="main-title2">About Aston Martin</p>
     
 
     <section class="aboutus" id="aboutus">
             <div class="split left">
                 <div class="centered img-zoom">
-                <!-- <h4 class="img-txt">landmark showroom, luxury hotel, The Peninsula Tokyo</h4> -->
-                <img src="/Images/aboutus11n.jpg" alt="">
+                <img src="/Images/Frame 6 (1).png" alt="">
                 </div>
             </div>
         
             <div class="split right">
                 <div class="centered img-zoom">
-                <img src="/Images/aboutus3n.jpg" alt="">
+                <img src="/Images/Frame 7.png" alt="">
                 </div>
             </div>
     </section>
     <section class="aboutus" id="aboutus">
         <div class="split left">
             <div class="centered img-zoom">
-            <img src="/Images/aboutus7.jpg" alt="">
+            <img src="/Images/Frame 8.png" alt="">
             </div>
         </div>
         
         <div class="split right">
             <div class="centered img-zoom">
-            <img src="/Images/aboutus10.jpg" alt="">
+            <img src="/Images/Frame 9.png" alt="">
             </div>
         </div>
     </section>
     </div>
    
 
-    <footer class="contactUs">
+    <footer class="contactUs" id="contactUs">
         <div class="contact-contaier">
             <div class="sidenav2">
                 <a class="a1" href="#customerSupport">Customer Support</a> 
@@ -248,6 +251,9 @@
     </script>
 
 
+
+
+    <!--Contact Us (footer) script-->
     <script>
        
         function toggleNav() {
@@ -262,20 +268,10 @@
             menuBtn.classList.add("change");
         }
         }
-        // function openNav() {
-        //     document.getElementById("mySidenav").style.width = "250px";
-        // }
-
-        // function closeNav() {
-        //     document.getElementById("mySidenav").style.width = "0";
-        // }
-        // function myFunction(x) {
-        //     x.classList.toggle("change");
-        // }
+       
     </script>
 
-       <!--Contact Us script-->
-       <script>
+    <script>
         ScrollReveal({
            reset: true,
            distance: '60px',
@@ -450,3 +446,15 @@
  <!--Swiper cards JS -->
 <!--<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/javascript/slidingcards.js"></script> -->
+
+
+ <!-- // function openNav() {
+        //     document.getElementById("mySidenav").style.width = "250px";
+        // }
+
+        // function closeNav() {
+        //     document.getElementById("mySidenav").style.width = "0";
+        // }
+        // function myFunction(x) {
+        //     x.classList.toggle("change");
+        // } -->

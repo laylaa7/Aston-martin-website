@@ -254,6 +254,7 @@ header{
     justify-content:center;
     flex-direction: column;
 }
+
 .main-title{
     position: relative;
     font-size: 2em;
@@ -427,19 +428,30 @@ header{
 }
 
 /*About US-----------------*/
+.container2{
+    background-color: #000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    height: 199vh;
+
+}
 .aboutus{
     background-color: #000;
     width: 100%;
-    height: 67vh;
     display: flex;
     /* align-items: center;
     justify-content:center; */
     padding: 0;
     margin: 0;
+    
 }
 .main-title2{
     font-size: 2em;
     margin-top:150px;
+    margin-bottom: 60px;
     color: #fff;
     text-align: center;
 }
@@ -448,13 +460,15 @@ header{
     width: 50%;
     z-index: 1;
     top: 0;
-    padding-top: 40px;
+    /* padding-top: 40px; */
 }
 .left {
     left: 0;
+
 }
 .right {
     right: 0;
+
 }
 .centered {
     /* top: 50%; */
@@ -468,7 +482,7 @@ header{
 .img-txt{
     z-index: 1;
     color: #fff;
-    top: 50%;
+    top: 90%;
     left: 5%;
     transform: translate(5%, 90%);
 
@@ -479,7 +493,7 @@ header{
   transition: transform 5s, filter 3s ease-in-out;
 }
 .img-zoom:hover img {
-  transform: scale(1.2);
+  transform: scale(1.08);
 }
 .img-zoom {
   overflow: hidden; 
@@ -500,7 +514,7 @@ header{
     display: flex;
     align-items: left;
     justify-content:left;
-    background-color: #4e4d4d7c;
+    background-color: #5b5b5b64;
 }
 .contact-contaier{
     display: flex;
