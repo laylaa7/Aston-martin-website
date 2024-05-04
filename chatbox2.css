@@ -8,7 +8,6 @@
 }
  body{
     background-color: #000000;
-
 }
 .main-div{
     display:flex;
@@ -29,7 +28,6 @@
     transition-timing-function: cubic-bezier(0.075,.82,.165,1);
     bottom:30px;
     transition-delay: 0s,0.5s,0.5s;
-    
   }
   .container ::before{
     content:"";
