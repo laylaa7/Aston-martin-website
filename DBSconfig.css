@@ -11,7 +11,7 @@
     cursor: pointer;
   }*/
  
-  
+
   @font-face {
     font-family: AstonMartinFlare;
     font-weight: 400;
@@ -203,4 +203,133 @@
     background-color: #444;
   }
 
+  button {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: black;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    z-index: 1;
+    top:625;
+    left:87%;
+  }
+  
+  button:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: rgb(82, 81, 81);
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+  }
+  
+  button:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+  
+  button span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 18px 25px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover span {
+    color: white;
+    animation: scaleUp 0.3s ease-in-out;
+  }
+  
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(0.95);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  #changemodel {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: black;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    z-index: 1;
+    top:625;
+    left:70%;
+  }
+  
+#changemodela{
+    text-decoration: none;
+    color:white;
+}
+#changemodela:visited{
+    text-decoration: none;
+    color:white;
+}
+#backtomenu{
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: black;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    z-index: 1;
+    top:2%;
+    left:1%;
+}
+#backtomenu span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 10px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+  }
+ #exterior-preview{
+    display: none;
+    z-index: 1;
+    top:625;
+    left:1%;
+ }
+ #interior-preview{
+    display: none;
+    z-index: 1;
+    top:625;
+    left:14%;
+ }
   

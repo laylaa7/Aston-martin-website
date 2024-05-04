@@ -6,6 +6,7 @@ function openExteriorMenu() {
     document.getElementById("exterior-menu").style.display = "block";
     document.getElementById("interior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
+    changeBackgroundImage(currentColor);
   }
 
 var selectedcolorint = "black";
@@ -19,12 +20,36 @@ var selectedcolorint = "black";
   }
   function preview() {
     const prevBtn = document.getElementById('prev-btn');
-    document.getElementById("exterior-menu").style.display = "none";
-    document.getElementById("interior-menu").style.display = "none";
-    document.getElementById("sidebar").style.display="none";
+    const BacktomenuBtn = document.getElementById('backtomenu');
+    const extmenu = document.getElementById("exterior-menu");
+    const intmenu = document.getElementById("interior-menu");
+    const sidebar = document.getElementById("sidebar");
+    const extpreview =document.getElementById("exterior-preview");
+    const intpreview =document.getElementById("interior-preview");
+    extmenu.style.display = "none";
+    intmenu.style.display = "none";
+    sidebar.style.display = "none";
+    prevBtn.style.transition = "left 0.3s";
     prevBtn.style.left = '10px';
+    BacktomenuBtn.style.transition = "display 0.8s"; 
+    BacktomenuBtn.style.display = 'flex';
+    extpreview.style.display='flex';
+    intpreview.style.display='flex';
   }
   
+  function backtomenu(){
+    const prevBtn = document.getElementById('prev-btn');
+    const BacktomenuBtn = document.getElementById('backtomenu');
+    const extpreview =document.getElementById("exterior-preview");
+    const intpreview =document.getElementById("interior-preview");
+    document.getElementById("sidebar").style.display = "block";
+    BacktomenuBtn.style.transition = "display 0.3s"; 
+    BacktomenuBtn.style.display = 'none';
+    prevBtn.style.transition = "left 0.2s"; 
+    prevBtn.style.left = '250px';
+    extpreview.style.display='none';
+    intpreview.style.display='none';
+  }
   function changeBackgroundImage(color) {
     const backgroundImage = document.getElementById("background-image");
     backgroundImage.style.backgroundImage = `url('DBSimg/${color}/ext/DBS-1-${color}.jpeg')`;
@@ -36,8 +61,15 @@ var selectedcolorint = "black";
     selectedcolorint=color;
   }
  
- 
-
+ function previewinterior(){
+    isInterior = true;
+    changeBackgroundImage1(currentColorint);
+ }
+ function previewexterior(){
+    isInterior = false;
+    changeBackgroundImage(currentColor);
+    
+ }
 
 
 carImages = [
