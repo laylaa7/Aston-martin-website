@@ -36,6 +36,7 @@ header{
     display: flex;
     align-items: center; 
     justify-content: flex-start; 
+    z-index: 1;
 }
 .menu-btn {
     display: inline-block;
@@ -436,7 +437,6 @@ header{
     justify-content:center;
     flex-direction: column;
     height: 199vh;
-
 }
 .aboutus{
     background-color: #000;
@@ -479,25 +479,26 @@ header{
     height: 100%;
     z-index: -1;
 }
-.img-txt{
-    z-index: 1;
+/* .img-txt{
+     z-index: 1;
     color: #fff;
     top: 90%;
     left: 5%;
     transform: translate(5%, 90%);
 
-}
+} */ 
 
 .img-zoom img {
   transform-origin: 50% 65%;
   transition: transform 5s, filter 3s ease-in-out;
+  z-index: -1;
 }
 .img-zoom:hover img {
   transform: scale(1.08);
 }
 .img-zoom {
   overflow: hidden; 
-}
+} 
 
 
 /*Contact US-----------------*/
@@ -506,7 +507,7 @@ header{
     width: 100%;
     height: 100vh;
     margin: 0px;
-    z-index: 1; 
+    /* z-index: -1;  */
     top: 30%; 
     left: 0; 
     overflow-x: hidden;  
@@ -548,14 +549,14 @@ header{
     line-height: 29px;
 }
 
-.global-footer-social ul {
+.footer-social ul {
     list-style-type: none; 
     display: flex; 
     align-items: left;
     justify-content: left;
 }
 
-.global-footer-social {
+.footer-social {
     /* width: 3px; */
     display: flex; 
     align-items: left;
@@ -563,7 +564,7 @@ header{
     margin: 15px 20px 0px 0px;
 }
 
-.global-footer-social img {
+.footer-social img {
     width: 40px; 
     height: auto; 
     margin: 10px;
