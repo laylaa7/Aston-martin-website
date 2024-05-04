@@ -11,9 +11,78 @@ function showAlert(message,className){
     setTimeout(()=> document.querySelector(".alert").remove(), 3000);
 } 
 
+
+//delete data
 document.addEventListener("click", function(e) {
     if(e.target.classList.contains("delete")) {
         e.target.parentElement.parentElement.remove();
         showAlert("User Data Deleted", "danger");
+    }
+});
+
+
+//clear all fields
+function clearfields(){
+    document.querySelector("#firstName").value ="";
+    document.querySelector("#lastName").value ="";
+    document.querySelector("#email").value ="";
+    document.querySelector("#number").value ="";
+}
+
+//Add Data
+document.querySelector("#user-form").addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+//Get form values
+    const firstName= document.querySelector("#firstName").value;
+    const lastName= document.querySelector("#lastName").value;
+    const email= document.querySelector("#email").value;
+    const number= document.querySelector("#number").value;
+
+//validate
+    if(firstName =="" || lastName=="" || email==""||number==""){
+        showAlert("Please fill in all fields", "danger");
+    }
+    else{
+        if(selectedRow==null){
+            const list=document.querySelector("#user-list");
+            const row =document.createElement("tr");
+
+            row.innerHTML = `
+            <td>${firstName}</td>
+            <td>${lastName}</td>
+            <td>${email}</td>
+            <td>${number}</td>
+            <td>
+            <a href="#" class="btn btn-warning btn-sm edit">Edit</a>
+            <a href="#" class="btn btn-danger btn-sm delete">Delete</a></td>
+            `;
+            list.appendChild(row);
+            selectedRow=null;
+            showAlert("User Added successfully", "success");
+        }
+        else{
+            selectedRow.children[0].textContent= firstName;
+            selectedRow.children[1].textContent= lastName;
+            selectedRow.children[2].textContent= email;
+            selectedRow.children[3].textContent= number;
+            selectedRow=null;
+            showAlert("User Information Edited", "info");
+        }
+        clearfields();
+    }
+});
+
+
+//edit data
+document.querySelector("#user-list").addEventListener("click" ,(e)=>{
+    target=e.target;
+    if(e.target.classList.contains("edit")) {
+        selectedRow = target.parentElement.parentElement;
+        document.querySelector("#firstName").value=selectedRow.children[0].textContent;
+        document.querySelector("#lastName").value=selectedRow.children[1].textContent;
+        document.querySelector("#email").value=selectedRow.children[2].textContent;
+        document.querySelector("#number").value=selectedRow.children[3].textContent;
+
     }
 });
