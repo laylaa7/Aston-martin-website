@@ -10,7 +10,9 @@
     border: none;
     cursor: pointer;
   }*/
- 
+ #background-image{
+   position:  fixed !important;
+ }
 
   @font-face {
     font-family: AstonMartinFlare;

@@ -103,4 +103,29 @@ const dbs = document.getElementById("dbs")
         <h2>${carHeaders[swiper.realIndex].subHeader}</h2>
         <p>${carHeaders[swiper.realIndex].text}</p>`
     })
-
+    swiper.on('slideChange', () => {
+      configureBtn=document.getElementById('configure-link');
+      console.log('swiper.realIndex:', swiper.realIndex);
+      const carModelIndex = swiper.realIndex;
+      console.log('carModelIndex:', carModelIndex);
+      let configHtml = '';
+      switch (carModelIndex) {
+        case 0:
+          configHtml = 'DBSconfig.html';
+          break;
+        case 1:
+          configHtml = 'VANTAGEconfig.html';
+          break;
+        case 2:
+          configHtml = 'DBX707config.html';
+          break;
+        case 3:
+          configHtml = 'VALOURconfig.html';
+          break;
+        case 4:
+          configHtml = 'DB12config.html';
+          break;
+      }
+      console.log('configHtml:', configHtml);
+      configureBtn.href = configHtml;
+    });
