@@ -52,7 +52,7 @@
 .second-header a {
   font-size: 1.1em;
   font-weight: 450;
-  color: #8f8e8ed7;
+  color: #242222d7;
   text-decoration: none;
   transition: color 0.3s ease;
   justify-content: flex-end;
@@ -178,27 +178,29 @@ video {
   background-color: #161616;
   height: 100vh; /* Change to 100vh for full viewport height */
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
-.page2 .content {
+.page2 .content p {
   font-size: 2.5rem;
   font-family: "Times New Roman", Times, serif;
-  padding: 0;
+  /* padding: 0; */
   color: rgba(69, 67, 67, 0.846);
   position: relative;
   overflow: hidden;
   transition: 1.99s ease;
-  text-align: center;
+  text-align: left;
+  line-height: 60px;
   max-width: 90%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 60px;
+  justify-content: left;
+  align-items: left;
+  column-gap: 80px;
+  padding-left: 60px;
 }
 
-.page2 .content:hover {
+.page2 .content p:hover {
   color: #fffafa;
   transform: scale(1);
 }
@@ -208,7 +210,7 @@ video {
 
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
-  margin: 0;
+  /* margin: 0; */
   background-color: black; /* Set background color to black */
   color: white; /* Set text color to white */
 }
@@ -317,6 +319,7 @@ section:last-of-type {
 span {
   border-right: 0.05em solid;
   animation: caret 1s steps(1) infinite;
+  font-size: 30px;
 }
 
 @keyframes caret {
@@ -484,9 +487,9 @@ span {
 .page6 {
   position: relative;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .page6 img {
@@ -497,9 +500,9 @@ span {
   height: 100%;
   object-fit: cover;
 }
-.page6 h3 {
+.page6 .inttittle {
   position: absolute;
-  top: 500px; /* Adjust bottom position */
+  top: 500px;
   right: 410px;
   /* Adjust left position */
   color: white;
@@ -595,14 +598,20 @@ span {
   font-family: "Arial", sans-serif;
   width: 20%;
 }
-.inttittleDbs {
-  /* position: absolute; */
-  top: 660px;
-  left: 200px;
+.inttittleDbs h3 {
+  position: absolute;
+  bottom: 100px;
+  right: 150px;
 
   color: white;
   font-size: 20px;
   font-weight: 500;
   font-family: "Arial", sans-serif;
   width: 20%;
+}
+.page6 .inttittleDbs {
+  /* display: flex;
+  align-items: top;
+  justify-content: top;
+  bottom: 80%; */
 }
