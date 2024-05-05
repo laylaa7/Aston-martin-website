@@ -11,8 +11,8 @@ function openExteriorMenu() {
 
 var selectedcolorint = "black";
   function openInteriorMenu() {
-    const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('Vantageimg/${currentColorint}/int/Vantage-1-${currentColorint}.jpeg')`;
+    const backgroundImage = document.getElementById("background-image");  
+    backgroundImage.style.backgroundImage = `url('DBXimg/${currentColorint}/int/DBX707-1-${currentColorint}.jpeg')`;
     document.getElementById("interior-menu").style.display = "block";
     document.getElementById("exterior-menu").style.display = "none";
     document.getElementById("sidebar").style.display="none";
@@ -52,12 +52,12 @@ var selectedcolorint = "black";
   }
   function changeBackgroundImage(color) {
     const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('Vantageimg/${color}/ext/Vantage-1-${color}.jpeg')`;
+    backgroundImage.style.backgroundImage = `url('DBXimg/${color}/ext/DBX707-1-${color}.jpeg')`;
     selectedColor = color
   }
   function changeBackgroundImage1(color) {
     const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('Vantageimg/${color}/int/Vantage-1-${color}.jpeg')`;
+    backgroundImage.style.backgroundImage = `url('DBXimg/${color}/int/DBX707-1-${color}.jpeg')`;
     selectedcolorint=color;
   }
  
@@ -73,56 +73,60 @@ var selectedcolorint = "black";
 
 
 carImages = [
-    "Vantageimg/black/ext/Vantage-1-black.jpeg",
-    "Vantageimg/black/ext/Vantage-2-black.jpeg",
-    "Vantageimg/black/ext/Vantage-3-black.jpeg",
-    "Vantageimg/black/ext/Vantage-4-black.jpeg",
-    "Vantageimg/black/ext/Vantage-5-black.jpeg",
-    "Vantageimg/black/ext/Vantage-6-black.jpeg",
-    "Vantageimg/black/ext/Vantage-7-black.jpeg",
-    "Vantageimg/black/ext/Vantage-8-black.jpeg",
-    "Vantageimg/black/ext/Vantage-9-black.jpeg"
+    "DBXimg/orange/ext/DBX707-1-orange.jpeg",
+    "DBXimg/orange/ext/DBX707-2-orange.jpeg",
+    "DBXimg/orange/ext/DBX707-3-orange.jpeg",
+    "DBXimg/orange/ext/DBX707-4-orange.jpeg",
+    "DBXimg/orange/ext/DBX707-5-orange.jpeg",
+    "DBXimg/orange/ext/DBX707-6-orange.jpeg",
+    "DBXimg/orange/ext/DBX707-7-orange.jpeg",
+    "DBXimg/orange/ext/DBX707-8-orange.jpeg"
 ];
 
 let currentImageIndex = 0;
-let currentColor = "black";
+let currentColor = "orange";
 function selectColor(color) {
     currentColor = color;
     currentImageIndex = 0;
-    const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('Vantageimg/${color}/ext/Vantage-1-${color}.jpeg')`;
+    const backgroundImage = document.getElementById("background-image");  
+    backgroundImage.style.backgroundImage = `url('DBXimg/${color}/ext/DBX707-1-${color}.jpeg')`;
 
     carImages = [
-        `Vantageimg/${currentColor}/ext/Vantage-1-${currentColor}.jpeg`,
-        `Vantageimg/${currentColor}/ext/Vantage-2-${currentColor}.jpeg`,
-        `Vantageimg/${currentColor}/ext/Vantage-3-${currentColor}.jpeg`,
-        `Vantageimg/${currentColor}/ext/Vantage-4-${currentColor}.jpeg`,
-        `Vantageimg/${currentColor}/ext/Vantage-5-${currentColor}.jpeg`,
-        `Vantageimg/${currentColor}/ext/Vantage-6-${currentColor}.jpeg`,
-        `Vantageimg/${currentColor}/ext/Vantage-7-${currentColor}.jpeg`,
-        `Vantageimg/${currentColor}/ext/Vantage-8-${currentColor}.jpeg`,
-        `Vantageimg/${currentColor}/ext/Vantage-9-${currentColor}.jpeg`
+        `DBXimg/${currentColor}/ext/DBX707-1-${currentColor}.jpeg`,
+        `DBXimg/${currentColor}/ext/DBX707-2-${currentColor}.jpeg`,
+        `DBXimg/${currentColor}/ext/DBX707-3-${currentColor}.jpeg`,
+        `DBXimg/${currentColor}/ext/DBX707-4-${currentColor}.jpeg`,
+        `DBXimg/${currentColor}/ext/DBX707-5-${currentColor}.jpeg`,
+        `DBXimg/${currentColor}/ext/DBX707-6-${currentColor}.jpeg`,
+        `DBXimg/${currentColor}/ext/DBX707-7-${currentColor}.jpeg`,
+        `DBXimg/${currentColor}/ext/DBX707-8-${currentColor}.jpeg`
     ];
+
+    console.log(`Selected color: ${currentColor}`);
+     console.log(`Car images: ${carImages}`);
 }
 carintimages = [
-    "Vantageimg/black/int/Vantage-1-black.jpeg",
-    "Vantageimg/black/int/Vantage-2-black.jpeg",
-    "Vantageimg/black/int/Vantage-3-black.jpeg",
-    "Vantageimg/black/int/Vantage-4-black.jpeg",
+    "DBXimg/orange/int/DBX707-1-orange.jpeg",
+    "DBXimg/orange/int/DBX707-2-orange.jpeg",
+    "DBXimg/orange/int/DBX707-3-orange.jpeg",
+    "DBXimg/orange/int/DBX707-4-orange.jpeg"
 ];
-let currentColorint="black";
+let currentColorint="orange";
 function selectColorInt(color) {
     currentColorint = color;
     currentImageIndex = 0;
-    const backgroundImage = document.getElementById("background-image");
-    backgroundImage.style.backgroundImage = `url('Vantageimg/${currentColorint}/int/Vantage-1-${currentColorint}.jpeg')`;
+    const backgroundImage = document.getElementById("background-image"); 
+    backgroundImage.style.backgroundImage = `url('DBXimg/${currentColorint}/int/DBX707-1-${currentColorint}.jpeg')`;
 
     carintimages = [
-        `Vantageimg/${currentColorint}/int/Vantage-1-${currentColorint}.jpeg`,
-        `Vantageimg/${currentColorint}/int/Vantage-2-${currentColorint}.jpeg`,
-        `Vantageimg/${currentColorint}/int/Vantage-3-${currentColorint}.jpeg`,
-        `Vantageimg/${currentColorint}/int/Vantage-4-${currentColorint}.jpeg`
+        `DBXimg/${currentColorint}/int/DBX707-1-${currentColorint}.jpeg`,
+        `DBXimg/${currentColorint}/int/DBX707-2-${currentColorint}.jpeg`,
+        `DBXimg/${currentColorint}/int/DBX707-3-${currentColorint}.jpeg`,
+        `DBXimg/${currentColorint}/int/DBX707-4-${currentColorint}.jpeg`
       ];
+
+      console.log(`Selected color: ${currentColorint}`);
+     console.log(`Car images: ${carintimages}`);
 }
 
 function nextimg() {
@@ -138,15 +142,14 @@ function nextimg() {
 function previmg() {
     const backgroundImage = document.getElementById("background-image");
     if (!isInterior) {
-      currentImageIndex = (currentImageIndex - 1 + carImages.length) % carImages.length;
-      if (currentImageIndex === carImages.length) currentImageIndex = 0; 
-      backgroundImage.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
-    } else {
-      currentImageIndex = (currentImageIndex - 1 + carintimages.length) % carintimages.length;
-      if (currentImageIndex === carintimages.length) currentImageIndex = 0;
+        currentImageIndex = (currentImageIndex - 1 + carImages.length) % carImages.length;
+        backgroundImage.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
+      } 
+      else {
+        currentImageIndex = (currentImageIndex - 1 + carImages.length) % carintimages.length;
       backgroundImage.style.backgroundImage = `url('${carintimages[currentImageIndex]}')`;
-    }
-  }
+      }
+} 
 
 
 
