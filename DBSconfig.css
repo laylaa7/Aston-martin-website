@@ -100,7 +100,7 @@
     cursor: pointer;
   }
 
-  h2{
+  h2,h4{
     font-family: AstonMartinFlare;
     display: block;
     padding: 10px;
@@ -108,6 +108,7 @@
     text-decoration: none;
     cursor:not-allowed;
  }
+ 
   #color-options input[type="image"]:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border: 1px solid  rgba(255, 255, 255, 0.3);
