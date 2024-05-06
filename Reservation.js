@@ -11,7 +11,7 @@ const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 
-document.getElementById('firstNext').onclick = function() {
+ document.getElementById('firstNext').onclick = function() {
     var cityInput = document.getElementById('cityInput').value.toLowerCase();
     var cityOptions = document.getElementById('brow').getElementsByTagName('option');
     var cityFound = false;
@@ -145,16 +145,47 @@ return true;
         }
 
     
+}; 
+document.getElementById('submitBtn').onclick = function() {
+    var valid = true;
+
+    var cardHolderInput = document.getElementById('card-holder');
+    var cardHolderRegex = /^[A-Za-z\s]+$/; 
+    if (cardHolderInput.value.trim() === '' || !cardHolderRegex.test(cardHolderInput.value.trim())) {
+        alert("Please enter a valid card holder's name.");
+        valid = false;
+    }
+
+    var cardNumberInput = document.getElementById('card-number');
+    var cardNumberRegex = /^\d{4} \d{4} \d{4} \d{4}$/;
+    if (cardNumberInput.value.trim() === '' || !cardNumberRegex.test(cardNumberInput.value.trim())) {
+        alert("Please enter a valid card number.");
+        valid = false;
+    }
+
+    var expiryDateInput = document.getElementById('expiry-date');
+    var expiryDateRegex = /^(0[1-9]|1[0-2]) \/ ([0-9]{2})$/;
+    if (expiryDateInput.value.trim() === '' || !expiryDateRegex.test(expiryDateInput.value.trim())) {
+        alert("Please enter a valid expiry date in the format MM / YY.");
+        valid = false;
+    }
+
+    var cvcInput = document.getElementById('cvc');
+    var cvcRegex = /^\d{3}$/;
+    if (cvcInput.value.trim() === '' || !cvcRegex.test(cvcInput.value.trim())) {
+        alert("Please enter a valid CVC code.");
+        valid = false;
+    }
+
+    if (!valid) {
+         event.preventDefault();
+        
+    }
+    else{
+    alert("Successfully Reserved!");
+    }
 };
- 
-nextBtnThird.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "-75%";
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
-  });
+
 prevBtnSec.addEventListener("click", function(event){
     event.preventDefault();
     slidePage.style.marginLeft = "0%";

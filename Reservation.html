@@ -1,131 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Test Drive Form</title>
-    <link rel="stylesheet" href="testdriv.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Reservation</title>
+    <link rel="stylesheet" href="Reservation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
+
 <body>
     <div class="container">
         <header>Reservation</header>
         <div class="progress-bar">
             <div class="step">
                 <p>
-                   Location
+                    Location
                 </p>
                 <div class="bullet">
-                   <span>1</span>
+                    <span>1</span>
                 </div>
                 <div class="check fas fa-check"></div>
-             </div>
-             <div class="step">
+            </div>
+            <div class="step">
                 <p>
-                   Time
+                    Time
                 </p>
                 <div class="bullet">
-                   <span>2</span>
+                    <span>2</span>
                 </div>
                 <div class="check fas fa-check"></div>
-             </div>
-             <div class="step">
+            </div>
+            <div class="step">
                 <p>
-                   Contact
+                    Contact
                 </p>
                 <div class="bullet">
-                   <span>3</span>
+                    <span>3</span>
                 </div>
                 <div class="check fas fa-check"></div>
-             </div>
-             <div class="step">
+            </div>
+            <div class="step">
                 <p>
-                   Deposit
+                    Deposit
                 </p>
                 <div class="bullet">
-                   <span>4</span>
+                    <span>4</span>
                 </div>
                 <div class="check fas fa-check"></div>
-             </div>
-             
-          </div>
+            </div>
+
+        </div>
         <div class="form-outer">
             <form action="#">
                 <div class="page slide-page">
                     <div class="title">Model And Location</div>
                     <div class="field">
                         <div>
-                        <label for="carModel"> Car Model</label><br>
-                        <select id="carModel" name="carModel">
-                        <option value="Select">select</option>
-                        <option value="model1">DBX707</option>
-                        <option value="model2">DBS</option>
-                        <option value="model3">DB12</option>
-                        <option value="model3">VALOUR</option>
-                        <option value="model3">VANTAGE</option>
-                        </select><br></div>
+                            <label for="carModel"> Car Model</label><br>
+                            <select id="carModel" name="carModel">
+                                <option value="Select">select</option>
+                                <option value="model1">DBX707</option>
+                                <option value="model2">DBS</option>
+                                <option value="model3">DB12</option>
+                                <option value="model3">VALOUR</option>
+                                <option value="model3">VANTAGE</option>
+                            </select><br>
+                        </div>
                         <div>
-                        <label for="city">City</label>
-                        <input list="brow" id="cityInput" name="cityInput" required>
-                        <datalist id="brow">
-                          <option value="Amsterdam">
-                          <option value="Athens">
-                          <option value="Bangkok">
-                          <option value="Beijing">
-                          <option value="Berlin">
-                          <option value="Brasília">
-                          <option value="Cairo">
-                          <option value="Canberra">
-                          <option value="Hanoi">
-                          <option value="Havana">
-                          <option value="Islamabad">
-                          <option value="Kabul">
-                          <option value="Lima">
-                          <option value="London">
-                          <option value="Madrid">
-                          <option value="Moscow">
-                          <option value="Nairobi">
-                          <option value="Ottawa">
-                          <option value="Paris">
-                          <option value="Rome">
-                          <option value="Tokyo">
-                          <option value="Vienna">
-                          <option value="Wellington">
-                          <option value="Washington, D.C.">
-                          <option value="Dubai">
-                          <option value="California">
-                          <option value="Mecca">
-                        </datalist>                        
+                            <label for="city">City</label>
+                            <input list="brow" id="cityInput" name="cityInput" required>
+                            <datalist id="brow">
+                                <option value="Amsterdam">
+                                <option value="Athens">
+                                <option value="Bangkok">
+                                <option value="Beijing">
+                                <option value="Berlin">
+                                <option value="Brasília">
+                                <option value="Cairo">
+                                <option value="Canberra">
+                                <option value="Hanoi">
+                                <option value="Havana">
+                                <option value="Islamabad">
+                                <option value="Kabul">
+                                <option value="Lima">
+                                <option value="London">
+                                <option value="Madrid">
+                                <option value="Moscow">
+                                <option value="Nairobi">
+                                <option value="Ottawa">
+                                <option value="Paris">
+                                <option value="Rome">
+                                <option value="Tokyo">
+                                <option value="Vienna">
+                                <option value="Wellington">
+                                <option value="Washington, D.C.">
+                                <option value="Dubai">
+                                <option value="California">
+                                <option value="Mecca">
+                            </datalist>
+                        </div>
                     </div>
-                    </div>
-                    
+
                     <div class="field firstNext">
                         <button class="Next" id="firstNext"> Next
-                            <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+                            <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
+                                <path
+                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                                </path>
+                            </svg>
                         </button>
                     </div>
                 </div>
                 <div class="page">
-                    
+
                     <div class="title">Your preferred time</div>
                     <div class="info">
                         <label for="carModel">Select your preferred time period </label><br>
-                
-                        <input type="radio" id="AM" name="time"  value="Morning">
-                        <label for="AM"></label><b>Morning &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b>  9h-12h<br>
+
+                        <input type="radio" id="AM" name="time" value="Morning">
+                        <label for="AM"></label><b>Morning &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b> 9h-12h<br>
                         <input type="radio" id="PM" name="time" value="Afternoon">
-                        <label for="PM"></label><b>Afternoon &nbsp</b>  14h-16h<br>
-                        
+                        <label for="PM"></label><b>Afternoon &nbsp</b> 14h-16h<br>
+
                     </div>
                     <div class="field">
                         <button class="Prev prev-1">
                             <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
-                                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
+                                <path
+                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                                </path>
                             </svg>
                             Previous
                         </button>
-                        
+
                         <button class="Next next-1" id="next-1"> Next
-                            <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+                            <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
+                                <path
+                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                                </path>
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -133,88 +146,105 @@
                     <div class="title">Personal Data</div>
                     <div class="field-info">
                         <div class="info">
-                        <select id="title" name="title">
-                            <option value="Select">Select</option>
-                            <option value="mr">Mr.</option>
-                            <option value="mrs">Mrs.</option>
-                            <option value="ms">Ms.</option>
-                        </select><br>
-                        
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName"><br>
-                    
-                         
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName"><br>
-                       
-                        
-                        <label for="telephone">Telephone</label>
-                        <input type="tel" id="telephone" name="telephone"><br>
-                    
-                        <label for="email">Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                        <input type="email" id="email" name="email"><br>
-                    
-                        <label>Preferred Contact Method</label><br>
-                        <input type="checkbox" id="emailOptIn" name="contactMethod" value="email"> Email
-                        <input type="checkbox" id="smsOptIn" name="contactMethod" value="sms"> SMS
-                        <input type="checkbox" id="phoneOptIn" name="contactMethod" value="phone"> Phone<br>
-                    
-                    <div class="field">
-                    <button class="Prev prev-2">
-                        <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
-                            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-                        </svg>
-                        Previous
-                    </button>
-                    <button class="Next next-2" id="next-2"> Next
-                        <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
-                    </button>
-                    </div>
-                   </div>
-                </div>
-                </div>
-                <div class="page ">
-                    <div class="field-info">
-                    <div class="title">Payment</div>
-                    <div class="field">
-                    <label class="label">Card Holder:</label>
-                        <input type="text" id="card-holder" name="card-holder" class="input" placeholder="Coding Market"><br>
-                    </div>
-                    <div class="field">
-                        <label class="label">Card Number:</label>
-                            <input type="text" id="card-number" name="card-number" class="input" placeholder="card-number"><br>
-                    </div>
-                    <div class="field">
-                    <div class="class-grp">
-                        <div class="card-item">
-                        <label class="label">Expiry date:</label>
-                            <input type="text" id="expiry-date" name="expiry-date" class="input" placeholder="00 / 00"><br>
-                        </div>
-                        <div class="card-item">
-                            <label class="label">CVC:</label>
-                                <input type="text" id="cvc" name="cvc" class="input" placeholder="000"><br>
+                            <select id="title" name="title">
+                                <option value="Select">Select</option>
+                                <option value="mr">Mr.</option>
+                                <option value="mrs">Mrs.</option>
+                                <option value="ms">Ms.</option>
+                            </select><br>
+
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName"><br>
+
+
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName"><br>
+
+
+                            <label for="telephone">Telephone</label>
+                            <input type="tel" id="telephone" name="telephone"><br>
+
+                            <label for="email">Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                            <input type="email" id="email" name="email"><br>
+
+                            <label>Preferred Contact Method</label><br>
+                            <input type="checkbox" id="emailOptIn" name="contactMethod" value="email"> Email
+                            <input type="checkbox" id="smsOptIn" name="contactMethod" value="sms"> SMS
+                            <input type="checkbox" id="phoneOptIn" name="contactMethod" value="phone"> Phone<br>
+
+                            <div class="field">
+                                <button class="Prev prev-2">
+                                    <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
+                                        <path
+                                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                                        </path>
+                                    </svg>
+                                    Previous
+                                </button>
+                                <button class="Next next-2" id="next-2"> Next
+                                    <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
+                                        <path
+                                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="button-container">
-                    <button class="Prev prev-3">
-                        <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
-                            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-                        </svg>
-                        Previous
-                      </button>
+                <div class="page">
                     
-                    
-                        <button class="Next submitBtn" id="submitBtn">Reserve</button>
-                   </div>
+                        <div class="info">
+                            <div class="title">Payment</div>
+                            <p>Deposit of 50,000$</p>
+
+                            <label class="label">Card Holder: &nbsp&nbsp</label>
+                            <input type="text" id="card-holder" name="card-holder" class="input"
+                                placeholder="Coding Market"><br>
+
+
+                            <label class="label">Card Number:</label>
+                            <input type="text" id="card-number" name="card-number" class="input"
+                                placeholder="card-number" data-mask="0000 0000 0000 0000" ><br>
+
+
+                            <label class="label">Expiry date:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                           
+                            <input type="text" id="expiry-date" name="expiry-date" class="input"
+                                placeholder="00 / 00" data-mask="00 / 00"><br>
+
+
+                            <label class="label">CVC:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                            <input type="text" id="cvc" name="cvc" class="input" placeholder="000" data-mask="000"><br>
+
+
+
+                            <div class="field">
+                            <button class="prev-3 Prev">
+                                <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
+                                    <path
+                                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                                    </path>
+                                </svg>
+                                Previous
+                            </button>
+
+
+                            <button class="Next submitBtn" id="submitBtn">Reserve</button>
+
+                            </div>
+                        </div>
+                   
 
                 </div>
-
-            </div>
-                </div>
-            </form>
         </div>
+        </form>
     </div>
-<script src="testdrivejava.js"></script>
+    </div>
+    <script src="Reservation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
 </body>
+
 </html>

@@ -26,7 +26,7 @@ body {
 }
 .container .form-outer{
   width: 100%;
-    
+   overflow: hidden;
 }
 .container .form-outer form{
   display: flex;
@@ -237,7 +237,6 @@ form .page .btns button{
     animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-
 @keyframes slide-in-left {
     0% {
         transform: translateX(10px) rotate(180deg); 
@@ -309,4 +308,46 @@ form .page .btns button{
           opacity: 1;
       }
   }
-  
+  .page:last-child .field-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.page:last-child .field-info .title {
+    margin-bottom: 20px;
+}
+
+.page:last-child .field-info .field {
+    margin-bottom: 20px;
+}
+
+.page:last-child .field-info .field input,
+.page:last-child .field-info .field select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.page:last-child .field-info .field .label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.page:last-child .field-info .field .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.page:last-child .field-info .field .input-group label {
+    margin-right: 10px;
+}
+.page:last-child .field-info .field .input-group input {
+  width: 15px;
+}
