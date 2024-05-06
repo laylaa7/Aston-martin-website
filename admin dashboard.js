@@ -72,8 +72,6 @@ document.querySelector("#user-form").addEventListener("submit", (e)=>{
         clearfields();
     }
 });
-
-
 //edit data
 document.querySelector("#user-list").addEventListener("click" ,(e)=>{
     target=e.target;
@@ -86,3 +84,34 @@ document.querySelector("#user-list").addEventListener("click" ,(e)=>{
 
     }
 });
+document.getElementById('submit').onclick = function() {
+    var valid = true;
+
+    var firstNameInput = document.getElementById('firstName');
+    var firstNameRegex = /^[A-Za-z]+$/;
+    if (firstNameInput.value.trim() === '' || !firstNameRegex.test(firstNameInput.value.trim())) {
+        alert("Please enter a valid first name.");
+        valid = false;
+    }
+
+    var lastNameInput = document.getElementById('lastName');
+    var lastNameRegex = /^[A-Za-z]+$/; 
+    if (lastNameInput.value.trim() === '' || !lastNameRegex.test(lastNameInput.value.trim())) {
+        alert("Please enter a valid last name.");
+        valid = false;
+    }
+
+    var emailInput = document.getElementById('email');
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailInput.value.trim() === '' || !emailRegex.test(emailInput.value.trim())) {
+        alert("Please enter a valid email address.");
+        valid = false;
+    }
+
+    var numberInput = document.getElementById('number');
+    var numberRegex = /^[0-9]{10}$/;
+    if (numberInput.value.trim() === '' || !numberRegex.test(numberInput.value.trim())) {
+        alert("Please enter a valid 10-digit telephone number.");
+        valid = false;
+    }
+};
