@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- <link rel="stylesheet" href="/css/slidingCards.css">
     <link rel="stylesheet" href="/css/zoom-in.css"> -->
-
+    <link rel="stylesheet" href="chatbox2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/scrollreveal"></script>
-
+    
     <title>Aston Martin</title>
 </head>
 <body>
@@ -33,12 +34,12 @@
             <button class="signup-btn"><a href="">Sign up</a></button>
         </div>
      </header>
-
+     
      <div id="mySidenav" class="sidenav">
         <a class="a" href="" id="Home">Home</a>
-        <a class="a" href="#models">Models</a> 
-        <a class="a" href="#enquire">Enquire</a>
-        <a class="a" href="#testdrive">Test Drive</a>
+        <a class="a" href="models.html">Models</a> 
+        <a class="a" href="Reservation.html">Enquire</a>
+        <a class="a" href="testdrive2.html">Test Drive</a>
         <a class="a" href="#aboutus">About Us</a> 
         <a class="a" href="#contactUs">Contact Us</a> 
      </div>
@@ -49,6 +50,8 @@
     </script>
 
     <!--Main Home-->
+
+    
     <section class="home" id="home">
       <div class="vid-container">
         <video autoplay loop muted class="video" id="vid">
@@ -173,10 +176,37 @@
             </div>
         </div>
   </footer>
+  <div class="main-div">
+    <div class="menuToggle">
+        <i class='bx bx-help-circle'></i>
+    </div>
+    <div class="containeramgad">
+        <div class="top-part">
+        <div class="agent-details">
+            <h3>ChatBot</h3>  
+         </div>
+        </div>
+    <div class="chart-section">
+        <div class="agent-chart">
+        <div class="left-part">
+            <div class="msg1">
+            <img src="chatboxpfp2.png">
+            <p>Hi! How can I help you?</p>
+            </div>
+            <div class="common1" >
+                <button id="ch">Models Available</button>
+                <button id="ch2">Test drive Form</button>
+                <button id="ch3">About us </button>
+            </div>
+        </div>
+        </div>
+        <div class="chat" id="chat">
+            
+        </div>
+    </div>
 
 
-
-
+  <script src="chatbox.js"></script>
   <script src="/javascript/StartUp video.js"></script>
   <script src="/javascript/Models.js"></script>
   <script src="/javascript/About US.js"></script>
@@ -187,93 +217,4 @@
 </html>
 
 
-  <!--Main Home-->
-<!-- <section class="image-unmask">
-    <p>Aston Martin</p>
-    
-    <svg id="svg">
-      <defs>
-        <mask id="mask">
-          <rect width="100%" height="100%" fill="white"></rect>
-        </mask>
-      </defs>
-    </svg>
-    
-    <video autoplay loop muted class="video" id="vid">
-      <source src="/videos/project car video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </section> -->
-
-
-  <!--Models-->
-  <!-- <section class="models" id="models">
-    <div class="video-scroll">
-        <div class="video-container2">
-            <video autoplay loop muted class="video">
-                <source src="/videos/Model 1 video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="video-container2">
-            <video autoplay loop muted class="video">
-                <source src="/videos/Model 3 video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="video-container2">
-            <video autoplay loop muted class="video">
-                <source src="/videos/Model 4 video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-</section>  -->
-
-
-<!-- About Us Swiper cards -->
-<!-- <section class="about-us" id="aboutus">
-    <p>About Aston Martin</p>
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="/Images/model3.jpg" alt="" >
-                <h6>Aston Martin’s vision is to be the world’s most desirable, ultra-luxury British brand, creating the most exquisitely addictive performance cars.</h6>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="/Images/model4.jpg" alt="">
-                <h6>Founded in 1913, Aston Martin is acknowledged as an iconic global brand synonymous with style, luxury, performance, and exclusivity.</h6>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="/Images/model5.jpg" alt="">
-                <h6> Aston Martin fuses the latest technology, time honoured craftsmanship and beautiful styling to produce a range of critically acclaimed luxury models</h6>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="/Images/model6.jpg" alt="">
-                <h6> Aston Martin Lagonda designs, creates and exports cars which are sold in 55 countries around the world. </h6>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="card">
-                <img src="/Images/model7.jpg" alt="">
-                <h6>Aston Martin opens landmark showroom within internationally acclaimed luxury hotel, The Peninsula Tokyo</h6>
-            </div>
-        </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-</section>-->
-
- <!--Swiper cards JS -->
-<!--<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="/javascript/slidingcards.js"></script> -->
-
-
- 
+  

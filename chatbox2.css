@@ -6,47 +6,49 @@
     color: white;
     box-sizing: border-box;
 }
- body{
-    background-color: #000000;
-}
+ /* body{
+    background-color: green;
+} */
 .main-div{
     display:flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+   right:10%;
 }
-.container {
+.containeramgad {
     height: 30px;
     width: 30px;
     border: 3px solid rgba(220, 219, 219, 0.5);
     border-radius: 20px;
-    background: #fff;
+    background: white;
     overflow-y: scroll;
-    position:absolute;
-    z-index: -1;
+    position:fixed;
+    z-index: 999 !important;
     transition: .5s,height .5s , width .5s;
     transition-timing-function: cubic-bezier(0.075,.82,.165,1);
     bottom:30px;
     transition-delay: 0s,0.5s,0.5s;
+    left:70%;
   }
-  .container ::before{
+  .containeramgad ::before{
     content:"";
-    position: absolute;
+    position: fixed;
     background:transparent;
     height:100px;
     width:100px;
-    left:50%;
+    /* left:50%; */
     top:50%;
     transform: translate(-20%,-20%);
     border-radius: 50%;
     transition: .5s;
     
   }
-  .menuToggle.active ~ .container ::before{
+  .menuToggle.active ~ .containeramgad ::before{
     transition-delay: .5s;
 
   }
-  .menuToggle.active ~ .container{
+  .menuToggle.active ~ .containeramgad{
     height: 550px;
     width: 390px;
     z-index: 1;
@@ -58,7 +60,8 @@
     color: #19191b;
   }
   .menuToggle{
-    position: absolute;
+    position: fixed;
+    z-index: 1000 !important;
     bottom: 30px;
     height:70px;
     width:70px;
@@ -69,6 +72,7 @@
     box-shadow: 0 0 10px black ;
     border-radius: 58%;
     cursor: pointer;
+    left:70%;
   }
   
   .top-part {
@@ -127,12 +131,13 @@
 }
 .common1{
     display: flex;
-    flex-direction:column; 
+    flex-direction:column;
+    
 } 
-button{
+#ch , #ch2 , #ch3{
     color: rgb(56, 152, 225);
     border-color: rgb(56, 152, 225);
-
+    margin-top:  5px;
 }
  .right-part{
     margin: -50px 0;
@@ -164,7 +169,7 @@ button{
     margin-bottom: 30px;
     margin-top: 30px;
 }
-button {
+#ch , #ch2 , #ch3{
     background-color: #ffffff00;
     color: rgba(25,126,236,255);
     width: 10em;
@@ -173,15 +178,16 @@ button {
     border-radius: 11px;
     text-align: center;
     transition: all 0.6s ease;
+    
   }
   
-  button:hover {
+  #ch:hover, #ch2:hover, #ch3:hover {
     background-color: #2d5ee5;
     color:#fff;
     cursor: pointer;
   }
   
-  button svg {
+  #ch svg , #ch2 svg, #ch3 svg {
     width: 1.6em;
     margin: -0.2em 0.8em 1em;
     position: absolute;
@@ -189,9 +195,12 @@ button {
     transition: all 0.6s ease;
   }
   
-  button:hover svg {
+  #ch:hover svg, #ch2:hover svg, #ch3:hover svg {
     transform: translateX(5px);
   }
-  
+  .bx{
+    position: fixed;
+   
+  }
   
 
