@@ -17,19 +17,18 @@
    right:10%;
 }
 .containeramgad {
-    height: 30px;
+     height: 30px;
     width: 30px;
     border: 3px solid rgba(220, 219, 219, 0.5);
     border-radius: 20px;
-    background: white;
+    background: #fff;
     overflow-y: scroll;
-    position:fixed;
-    /* z-index: 999 !important; */
+    position:absolute;
+    z-index: -1;
     transition: .5s,height .5s , width .5s;
     transition-timing-function: cubic-bezier(0.075,.82,.165,1);
     bottom:30px;
     transition-delay: 0s,0.5s,0.5s;
-    left:50%;
   }
   .containeramgad ::before{
     content:"";
@@ -42,6 +41,7 @@
     transform: translate(-20%,-20%);
     border-radius: 50%;
     transition: .5s;
+    
     
   }
   .menuToggle.active ~ .containeramgad ::before{
@@ -132,28 +132,15 @@
 .common1{
     display: flex;
     flex-direction:column;
-    
+    background-color: green;
 } 
 .ch{
     color: rgb(56, 152, 225);
     border-color: rgb(56, 152, 225);
     margin-top:  5px;
 }
- .right-part{
-    margin: -50px 0;
-    text-align: right;
-    max-width: 260px 0;
-} 
- #right-part p{
-    color:#fff;
-    float: right;
-    background-color: #19191b;
-    padding: 8px 24px;
-    border: 10px;
-    border-radius: 10px;
-    font-size: 15px;
 
-} 
+ 
  .chart-section .right-part span{
     color:#fcf8f8;
     font-size: 8px;
@@ -200,6 +187,8 @@
   .ch:hover svg{
     transform: translateX(5px);
   }
+  
+
   .bx{
     position: fixed;
    
