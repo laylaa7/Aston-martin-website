@@ -24,7 +24,7 @@
     background: white;
     overflow-y: scroll;
     position:fixed;
-    z-index: 999 !important;
+    /* z-index: 999 !important; */
     transition: .5s,height .5s , width .5s;
     transition-timing-function: cubic-bezier(0.075,.82,.165,1);
     bottom:30px;
@@ -61,7 +61,7 @@
   }
   .menuToggle{
     position: fixed;
-    z-index: 1000 !important;
+    /* z-index: 1000 !important; */
     bottom: 30px;
     height:70px;
     width:70px;
