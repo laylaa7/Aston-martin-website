@@ -1,0 +1,338 @@
+/* #color-options label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  #color-options input[type="image"] {
+    
+    
+    object-fit: cover;
+    border: none;
+    cursor: pointer;
+  }*/
+ #background-image{
+   position:  fixed !important;
+ }
+
+  @font-face {
+    font-family: AstonMartinFlare;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url(AstonMartinFlare_W_Rg.9ee57a5762846d75.woff2) format("woff2"),url(AstonMartinFlare_W_Rg.a81f89e159e0486f.woff) format("woff")
+ }
+ header {
+    position: fixed;
+    top: -50;
+    right: -20;
+    z-index: 1;
+  }
+  
+  .logo {
+    width: 250px; /* adjust the width to your liking */
+    height: auto;
+    
+    z-index: 1;
+  }
+  
+  /* make the logo responsive */
+  @media (max-width: 768px) {
+   .logo {
+      width: 0px; /* adjust the width for smaller screens */
+    }
+  }
+  #next-btn {
+    position: fixed;
+    right: 2%;
+    bottom: 40%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#prev-btn {
+    position: fixed;
+    left: 19%;
+    bottom: 40%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+ @media only screen and (max-width: 768px) {
+    #next-btn, #prev-btn {
+      position: fixed;
+      bottom: 20%;
+    }
+  
+    #next-btn {
+      right: 2%;
+    }
+  
+    #prev-btn {
+      left: 2%;
+    }
+  }
+  
+  @media only screen and (min-width: 300px) {
+    #next-btn, #prev-btn {
+      position: fixed;
+      bottom: 300px;
+    }
+  
+    #next-btn {
+      right: 10px;
+    }
+  
+    #prev-btn {
+      left: 250px;
+    }
+  }
+  #prev-btn:hover{
+    transform: scale(0.9);
+    transform-origin: center center; /* Keep the transformation centered */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  #next-btn:hover{
+    transform: scale(0.9);
+    transform-origin: center center; /* Keep the transformation centered */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  h2,h4{
+    font-family: AstonMartinFlare;
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    cursor:not-allowed;
+ }
+ 
+  #color-options input[type="image"]:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid  rgba(255, 255, 255, 0.3);
+    transform: scale(0.96);
+    transform-origin: center center; /* Keep the transformation centered */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+ 
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    
+    /* padding: 20px; */
+    z-index: 1;
+  }
+  
+  .menu-item {
+    font-family: AstonMartinFlare;
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    justify-content: center;
+  }
+  
+  .menu-item:hover {
+    background-color: #444;
+    cursor: pointer;
+  }
+  
+  .submenu {
+    position: fixed;
+    top: 0;
+    left: 0.2px;
+    
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);;
+    /* padding: 20px; */
+    display: none;
+    z-index:2;
+    overflow-y: auto;
+  }
+  
+  .submenu-item {
+    display: block;
+    padding: 0px;
+    color: #fff;
+    text-decoration: none;
+    
+  }
+
+  #color-options label {
+    display: inline-block; /* Ensure labels are displayed as inline-block */
+    margin-bottom: 0px; /* Adjust margin between labels as needed */
+   }
+
+  #color-options input[type="image"] {
+    margin-bottom: 30px;
+    margin-left: 5px;
+    justify-content: center;
+    
+  }
+  
+  .submenu-item:hover {
+    background-color: #444;
+  }
+  
+  #background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+  }
+  .back-button {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .back-button:hover {
+    background-color: #444;
+  }
+
+  button {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: black;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    z-index: 1;
+    top:89.5%;
+    left:87%;
+  }
+  
+  button:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: rgb(82, 81, 81);
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+  }
+  
+  button:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+  
+  button span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 18px 25px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover span {
+    color: white;
+    animation: scaleUp 0.3s ease-in-out;
+  }
+  
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(0.95);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  #changemodel {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: black;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    z-index: 1;
+    top:89.5%; 
+    left:70%;
+  }
+  
+#changemodela{
+    text-decoration: none;
+    color:white;
+}
+#changemodela:visited{
+    text-decoration: none;
+    color:white;
+}
+#backtomenu{
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: black;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    z-index: 1;
+    top:2%;
+    left:1%;
+}
+#backtomenu span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 10px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+  }
+ #exterior-preview{
+    display: none;
+    z-index: 1;
+    top:89.5%;
+    left:1%;
+ }
+ #interior-preview{
+    display: none;
+    z-index: 1;
+    top:89.5%;
+    left:14%;
+ }
+  
