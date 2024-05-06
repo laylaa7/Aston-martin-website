@@ -42,7 +42,7 @@
     }
   }
   #next-btn {
-    position: absolute;
+    position: fixed;
     right: 2%;
     bottom: 40%;
     z-index: 1;
