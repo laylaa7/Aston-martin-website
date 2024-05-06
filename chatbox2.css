@@ -129,11 +129,11 @@
     align-items: center;
     flex-direction: row;
 }
-.common1{
+/* .common1{
     display: flex;
     flex-direction:column;
-    
-} 
+    display: flex;
+}  */
 .ch{
     color: rgb(56, 152, 225);
     border-color: rgb(56, 152, 225);
@@ -186,7 +186,7 @@
     color:white;
     cursor: pointer;
     margin-top:  5px;
-    
+    border-color: #2d5ee5;
   }
   
   .ch svg{
