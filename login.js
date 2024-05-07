@@ -42,6 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const usernameError = document.getElementById("username_error");
   const emailError = document.getElementById("email_error");
   const passwordError = document.getElementById("password_error");
+  const loginForm = document.getElementById("loginForm");
+  const loginSubmitBtn = document.getElementById("loginSubmitBtn");
+  const popup = document.getElementById("popup");
+  const closeBtn = document.querySelector(".close");
 
   signupForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -81,5 +85,31 @@ document.addEventListener("DOMContentLoaded", function () {
       // All fields are filled, show welcome message
       alert("Welcome!");
     }
+  });
+  loginSubmitBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    // Get the username input value
+    const username = document.getElementById("username").value;
+
+    // Check the username and show corresponding alerts
+    if (username === "malak@gmail.com") {
+      alert("Welcome!");
+      // Close the popup window by hiding it
+      popup.style.display = "none";
+    } else if (username === "abood@gmail.com") {
+      alert(
+        "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
+      );
+    } else {
+      alert("Invalid username.");
+    }
+    loginBtn.classList.add("hidden");
+  });
+
+  // Add event listener to the close button
+  closeBtn.addEventListener("click", function () {
+    // Close the popup window by hiding it
+    popup.style.display = "none";
   });
 });
