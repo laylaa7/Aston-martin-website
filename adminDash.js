@@ -84,7 +84,8 @@ document.querySelector("#user-list").addEventListener("click" ,(e)=>{
 
     }
 });
-document.getElementById('submit').onclick = function() {
+document.addEventListener("DOMContentLoaded", function() {
+document.getElementById('submit').onclick = function(event) {
     var valid = true;
 
     var firstNameInput = document.getElementById('firstName');
@@ -101,16 +102,23 @@ document.getElementById('submit').onclick = function() {
         valid = false;
     }
 
-    
-       
+      var TopSpeedInput = document.getElementById('TopSpeed');
+      var topSpeedRegex = /^\d{1,3}$/;
+ 
+
+        if (TopSpeedInput) {
+            if (TopSpeedInput.value.trim() === '' || !topSpeedRegex.test(TopSpeedInput.value.trim())) {
+                alert("Please enter a top speed in the format 'xxx km/h', where xxx is a number between 1 to 3 digits.");
+                valid = false;
+            }
+        }
+        console.log("TopSpeedInput value:", TopSpeedInput.value);
+       console.log("Regex test result:", topSpeedRegex.test(TopSpeedInput.value.trim()));
+  
+       if (!valid) {
+        event.preventDefault();
+       }
 };
-// Validation for top speed
-document.addEventListener("DOMContentLoaded", function() {
-    var TopSpeedInput = document.getElementById('TopSpeed');
-    var topSpeedRegex = /^\d{1,3}\s+km\/h$/;
-    
-    if (TopSpeedInput && (TopSpeedInput.value.trim() === '' || !topSpeedRegex.test(TopSpeedInput.value.trim()))) {
-        alert("Please enter a top speed in the format 'xxx km/h', where xxx is a number between 1 to 3 digits.");
-        valid = false;
-    }
 });
+
+
