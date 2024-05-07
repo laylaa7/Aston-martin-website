@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -7,8 +7,7 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #f3f3f3;
-}
-
+} */
 /* button {
   padding: 10px 20px;
   font-size: 16px;
@@ -18,11 +17,11 @@ body {
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-}
+}  */
 
-button:hover {
+/* button:hover {
   background-color: #333;
-} */
+}  */
 .btnmoka {
   padding: 1.3em 3em;
   font-size: 12px;
@@ -160,4 +159,17 @@ button:hover {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+
+}
+
+.login-title{
+  color: black;
+  margin-bottom: 10px;
+}
+form label {
+  color: black;
+}
+.input{
+  color: black;
+
 }
