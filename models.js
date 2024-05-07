@@ -40,6 +40,7 @@ const dbs = document.getElementById("dbs")
         }, 500);
     }
 
+    //CLOSE OVERLAY
     function toggleOverlay() {
       document.querySelector(".overlay-container").classList.toggle('active')
       var video = document.getElementById('overlayVideo');
@@ -77,7 +78,7 @@ const dbs = document.getElementById("dbs")
 
 
 
-
+    //READY MADE FUNCTION
     var swiper = new Swiper(".mySwiper", {
       loop: true,
       slidesPerView: 1,
@@ -96,13 +97,15 @@ const dbs = document.getElementById("dbs")
     });
 
     swiper.on('slideChange', () => {
-      topSpeedContainer.style = `--p:${topSpeedPercentage[swiper.realIndex]}; --v:${topSpeed[swiper.activeIndex]}`
-        zeroToHundredContainer.style = `--p:${zeroToHundredPercentage[swiper.realIndex]}; --v:${zeroToHundred[swiper.activeIndex]}`
-        accelarationContainer.style = `--p:${accelarationPercentage[swiper.realIndex]}; --v:${accelaration[swiper.activeIndex]}`
-        carHeader.innerHTML = `<h1>${carHeaders[swiper.realIndex].header}</h1>
-        <h2>${carHeaders[swiper.realIndex].subHeader}</h2>
-        <p>${carHeaders[swiper.realIndex].text}</p>`
+          topSpeedContainer.style = `--p:${topSpeedPercentage[swiper.realIndex]}; --v:${topSpeed[swiper.realIndex]}`
+            zeroToHundredContainer.style = `--p:${zeroToHundredPercentage[swiper.realIndex]}; --v:${zeroToHundred[swiper.realIndex]}`
+            accelarationContainer.style = `--p:${accelarationPercentage[swiper.realIndex]}; --v:${accelaration[swiper.realIndex]}`
+            carHeader.innerHTML = `<h1>${carHeaders[swiper.realIndex].header}</h1>
+            <h2>${carHeaders[swiper.realIndex].subHeader}</h2>
+            <p>${carHeaders[swiper.realIndex].text}</p>`
     })
+
+    
     swiper.on('slideChange', () => {
       configureBtn=document.getElementById('configure-link');
       console.log('swiper.realIndex:', swiper.realIndex);
