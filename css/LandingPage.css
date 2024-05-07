@@ -350,6 +350,8 @@ header{
     font-size: 20px;
     gap: 0.5rem;
     align-items: center;
+    overflow-y: hidden;
+    width: 20%;
 }
 .discover-btn a{
     margin: 0;
@@ -358,12 +360,6 @@ header{
     color: var(--primary-color);
     text-decoration: none;
 } 
-/* .discover-btn a:hover {
-    overflow: hidden;
-    overflow-y: hidden;
-
-} */
-
 .discover-btn::after {
     position: absolute;
     content: "";
@@ -376,30 +372,23 @@ header{
 }
 .discover-btn a::before {
     position: absolute;
-      box-sizing: border-box; 
-    content: "Discover More";
+    /*   box-sizing: border-box; */
+    /* content: "Discover More"; */
     width: 0%;
     inset: 0;
     color: var(--hovered-color);
     overflow: hidden;
     transition: 0.3s ease-out;
 }
-
-
- /*.discover-btn:hover::after {
+.discover-btn:hover::after {
     width: 100%;
-    /* overflow-x: hidden;
-s
-} */
+}
 .discover-btn:hover a::before {
      width: 100%;
-    /* overflow-x: hidden; */
-
 } 
 .discover-btn:hover svg {
     transform: translateX(4px);
     color: var(--hovered-color);
-
 }
 .discover-btn svg {
     color: var(--primary-color);
@@ -609,7 +598,3 @@ s
     fill: #fff;
 }
 
-.enquire-btn{
-    overflow-y: hidden;
-
-}
