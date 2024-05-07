@@ -101,24 +101,16 @@ document.getElementById('submit').onclick = function() {
         valid = false;
     }
 
-    var CarTypeInput = document.getElementById('email');
-    var CarTypeRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (CarTypeInput.value.trim() === '' || !CarTypeRegex.test(CarTypeInput.value.trim())) {
-        alert("Please enter a valid Car Type.");
+    
+       
+};
+// Validation for top speed
+document.addEventListener("DOMContentLoaded", function() {
+    var TopSpeedInput = document.getElementById('TopSpeed');
+    var topSpeedRegex = /^\d{1,3}\s+km\/h$/;
+    
+    if (TopSpeedInput && (TopSpeedInput.value.trim() === '' || !topSpeedRegex.test(TopSpeedInput.value.trim()))) {
+        alert("Please enter a top speed in the format 'xxx km/h', where xxx is a number between 1 to 3 digits.");
         valid = false;
     }
-
-
-
-
-    
-    const TopSpeedInput = document.getElementById('TopSpeed');
-        const topSpeed = parseInt(TopSpeedInput.value);
-        if (topSpeed > '330') {
-            alert("Please enter a top speed of no more than 3 digits.");
-            valid = false;
-        }
-    
-
-    
-};
+});
