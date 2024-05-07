@@ -8,6 +8,7 @@
     margin: 0px;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 @font-face {
     font-family: AstonMartinFlare;
@@ -246,6 +247,8 @@ header{
     align-items: center;
     justify-content:center;
     padding: 80px 100px;
+    overflow-y: hidden;
+
 }
 .container{
     background-color: #000;
@@ -254,6 +257,8 @@ header{
     align-items: center;
     justify-content:center;
     flex-direction: column;
+    overflow-y: hidden;
+
 }
 
 .main-title{
@@ -263,6 +268,8 @@ header{
     color: #fff;
     text-align: left;
     padding: 50px 0px 0px 50px ;
+    overflow-y: hidden;
+
 }
 .content{
     position: relative;
@@ -271,6 +278,7 @@ header{
     align-items: center;
     justify-content:center;
     margin: 80px;
+    overflow-y: hidden;
 }
 .content .image{
     position: relative;
@@ -350,6 +358,12 @@ header{
     color: var(--primary-color);
     text-decoration: none;
 } 
+/* .discover-btn a:hover {
+    overflow: hidden;
+    overflow-y: hidden;
+
+} */
+
 .discover-btn::after {
     position: absolute;
     content: "";
@@ -362,23 +376,30 @@ header{
 }
 .discover-btn a::before {
     position: absolute;
-    /*   box-sizing: border-box; */
-    /* content: "Discover More"; */
+      box-sizing: border-box; 
+    content: "Discover More";
     width: 0%;
     inset: 0;
     color: var(--hovered-color);
     overflow: hidden;
     transition: 0.3s ease-out;
 }
-.discover-btn:hover::after {
+
+
+ /*.discover-btn:hover::after {
     width: 100%;
-}
+    /* overflow-x: hidden;
+s
+} */
 .discover-btn:hover a::before {
      width: 100%;
+    /* overflow-x: hidden; */
+
 } 
 .discover-btn:hover svg {
     transform: translateX(4px);
     color: var(--hovered-color);
+
 }
 .discover-btn svg {
     color: var(--primary-color);
@@ -437,6 +458,8 @@ header{
     justify-content:center;
     flex-direction: column;
     height: 199vh;
+    overflow-y: hidden;
+
 }
 .aboutus{
     background-color: #000;
@@ -446,6 +469,7 @@ header{
     justify-content:center; */
     padding: 0;
     margin: 0;
+    overflow-y: hidden;
     
 }
 .main-title2{
@@ -454,6 +478,8 @@ header{
     margin-bottom: 60px;
     color: #fff;
     text-align: center;
+    overflow-y: hidden;
+
 }
 .split {
     height: 100%;
@@ -461,6 +487,8 @@ header{
     z-index: 1;
     top: 0;
     /* padding-top: 40px; */
+    overflow-y: hidden;
+
 }
 .left {
     left: 0;
@@ -516,12 +544,20 @@ header{
     align-items: left;
     justify-content:left;
     background-color: #5b5b5b64;
+    overflow-y: hidden;
+
 }
 .contact-contaier{
     display: flex;
     align-items: center;
     justify-content:left;
     flex-direction: row;
+    overflow-y: hidden;
+
+}
+.contact-text{
+    overflow-y: hidden;
+
 }
 .sidenav2, .contact-info{
     display: flex;
@@ -529,6 +565,8 @@ header{
     justify-content:left;
     flex-direction: column;
     margin-left: 100px;
+    overflow-y: hidden;
+
 }
 .sidenav2 a{
     text-decoration: none;
@@ -571,4 +609,7 @@ header{
     fill: #fff;
 }
 
+.enquire-btn{
+    overflow-y: hidden;
 
+}

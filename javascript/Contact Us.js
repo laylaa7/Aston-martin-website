@@ -42,7 +42,7 @@
         document.getElementById('contact-text').innerHTML = 
         'Please fill out your details and <br>we will be in touch shortly.<br><br><br>\
         <button class="discover-btn disc3" id="discover-btn"> \
-        <a href="Reservation.html">Enquire</a> \
+        <a href="Reservation.html" class="enquire-btn">Enquire</a> \
         <svg \
             xmlns="http://www.w3.org/2000/svg" \
             class="h-6 w-6" \
