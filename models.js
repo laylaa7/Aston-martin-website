@@ -50,12 +50,12 @@ const dbs = document.getElementById("dbs")
 
 
 
-    const topSpeed = [100,200,707,800,900]
-    const zeroToHundred = [1.5,2,4,6,9]
+    const topSpeed = [339,325,310,321,325]
+    const zeroToHundred = [3.4,3.5,3.3,3.6,3.5]
     const accelaration = [122,121,222,445,450]
 
-    const topSpeedPercentage = [45,55,69,78,67]
-    const zeroToHundredPercentage = [34,56,56,78,12]
+    const topSpeedPercentage = [75,68,60,65,67]
+    const zeroToHundredPercentage = [70,75,65,80,75]
     const accelarationPercentage  = [23,12,45,67,45]
 
     const topSpeedContainer = document.getElementById('top-speed')
