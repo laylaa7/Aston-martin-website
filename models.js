@@ -105,7 +105,7 @@ const dbs = document.getElementById("dbs")
             <p>${carHeaders[swiper.realIndex].text}</p>`
     })
 
-    
+
     swiper.on('slideChange', () => {
       configureBtn=document.getElementById('configure-link');
       console.log('swiper.realIndex:', swiper.realIndex);
@@ -132,3 +132,4 @@ const dbs = document.getElementById("dbs")
       console.log('configHtml:', configHtml);
       configureBtn.href = configHtml;
     });
+    ///ovhoe
