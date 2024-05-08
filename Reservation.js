@@ -212,4 +212,22 @@ prevBtnThird.addEventListener("click", function(event){
     progressText[current - 2].classList.remove("active");
     current -= 1;
   });
+  document.getElementById("expiry-date").addEventListener("input", function() {
+    // Get the input value and split it into month and year
+    var inputValue = this.value;
+    var parts = inputValue.split(" / ");
+    var month = parseInt(parts[0], 10);
+    var year = parseInt(parts[1], 10);
+
+    // Get the expiry year relative to the current year
+    var expiryYear = currentYear + Math.floor(month / 12);
+    
+    // Check if the expiry year is less than the current year or if the month is invalid
+    if (year < currentYear || year > currentYear + 10 || month < 1 || month > 12) {
+      document.getElementById("expiry-error").textContent = "Invalid expiry date";
+    } else {
+      document.getElementById("expiry-error").textContent = "";
+    }
+  });
+
 

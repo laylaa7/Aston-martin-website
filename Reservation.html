@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="Reservation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
+<header>
+    <div class="logo">
+      <a href="LandingPage.html"><img src="/imgs/logo.png" alt="logo" width="200"  style="padding: 0px; margin: 0px;"></a>
+        </div>
+</header>
 
 <body>
     <div class="container">
-        <header>Reservation</header>
+        <p>Reservation</p>
         <div class="progress-bar">
             <div class="step">
                 <p>
@@ -212,10 +217,9 @@
                                 placeholder="card-number" data-mask="0000 0000 0000 0000" ><br>
 
 
-                            <label class="label">Expiry date:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                           
-                            <input type="text" id="expiry-date" name="expiry-date" class="input"
-                                placeholder="00 / 00" data-mask="00 / 00"><br>
+                            <label class="label">Expiry date:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <input type="text" id="expiry-date" name="expiry-date" class="input" placeholder="MM / YY" data-mask="00 / 00">
+                            <span id="expiry-error" style="color: red;"></span><br>
 
 
                             <label class="label">CVC:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>

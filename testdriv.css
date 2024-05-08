@@ -2,14 +2,15 @@
 *{
   font-family: 'Poppins', sans-serif;
     padding: 0;
+    margin:0;
 }
 body {
     font-family: 'Poppins', sans-serif;
     display:flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    
+     
+   /* min-height: 100vh; */
 }
 .container {
   width: 330px;
@@ -18,6 +19,8 @@ body {
   text-align: center;
   border-radius: 5px;
   padding: 50px 35px 10px 35px;
+  
+
 }
 .container p{
   font-size: 35px;
@@ -323,7 +326,11 @@ form .page .btns button{
     justify-content: space-evenly;
     flex-direction: row;
     z-index: 9;
-    padding: 5px ;
+    padding: 5px ; 
+    background-color: #2626267f;
+    margin:0;
+    top:0;
+    height:6%;
     
   }
   .logo{
@@ -334,3 +341,4 @@ form .page .btns button{
     transform: scale(1);
     
   }
+  

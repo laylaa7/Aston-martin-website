@@ -22,8 +22,10 @@ const loginForm = document.querySelector("#popup form");
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const username = document.getElementById("username").value;
-  if (username === "malak@gmail.com") {
-    alert("Welcome!");
+  const password = document.getElementById("password").value;
+  if (username === "admin@gmail.com" && password === "123") {
+    window.location.href = 'AdminLandingPage.html';
+ 
   } else if (username === "abood@gmail.com") {
     alert(
       "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
@@ -168,3 +170,30 @@ document.getElementById("signup-btn").onclick = function () {
     alert("Your confirm password has to match your password");
   }
 };
+
+loginSubmitBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  if (username === "admin@gmail.com" && password === "123") {
+    window.location.href = 'AdminLandingPage.html';
+    popup.style.display = "none";
+  } else if (username === "abood@gmail.com") {
+    alert(
+      "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
+    );
+  } else {
+    alert("Invalid username.");
+  }
+  loginBtn.classList.add("hidden");
+});
+
+// Add event listener to the close button
+closeBtn.addEventListener("click", function () {
+  // Close the popup window by hiding it
+  popup.style.display = "none";
+});
+
+
+ 
