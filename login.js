@@ -22,8 +22,9 @@ const loginForm = document.querySelector("#popup form");
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const username = document.getElementById("username").value;
-  if (username === "malak@gmail.com") {
-    alert("Welcome!");
+  if (username === "admin@gmail.com" && password === "123") {
+    window.location.href = 'AdminLandingPage.html';
+    window.location.reload();
   } else if (username === "abood@gmail.com") {
     alert(
       "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
@@ -89,27 +90,27 @@ document.addEventListener("DOMContentLoaded", function () {
   loginSubmitBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
-    // Get the username input value
+    // Get the username and password input values
     const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-    // Check the username and show corresponding alerts
-    if (username === "malak@gmail.com") {
-      alert("Welcome!");
-      // Close the popup window by hiding it
+    // Check the username and password
+    if (username === "admin@gmail.com" && password === "123") {
+      window.location.href = 'AdminLandingPage.html';
+      window.location.reload();
       popup.style.display = "none";
     } else if (username === "abood@gmail.com") {
       alert(
         "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
       );
     } else {
-      alert("Invalid username.");
+      alert("Invalid username or password.");
     }
     loginBtn.classList.add("hidden");
   });
-
-  // Add event listener to the close button
-  closeBtn.addEventListener("click", function () {
-    // Close the popup window by hiding it
-    popup.style.display = "none";
-  });
+// Add event listener to the close button
+closeBtn.addEventListener("click", function () {
+  // Close the popup window by hiding it
+  popup.style.display = "none";
+});
 });
