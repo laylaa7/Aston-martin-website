@@ -49,7 +49,7 @@ const dbs = document.getElementById("dbs")
     }
 
 
-
+    //progress bar data
     const topSpeed = [339,325,310,321,325]
     const zeroToHundred = [3,4,2,4,3]
     const accelaration = [122,121,222,445,450]
@@ -132,4 +132,4 @@ const dbs = document.getElementById("dbs")
       console.log('configHtml:', configHtml);
       configureBtn.href = configHtml;
     });
-    ///ovhoe
+    
