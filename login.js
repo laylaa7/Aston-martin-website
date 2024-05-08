@@ -22,9 +22,8 @@ const loginForm = document.querySelector("#popup form");
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const username = document.getElementById("username").value;
-  if (username === "admin@gmail.com" && password === "123") {
-    window.location.href = 'AdminLandingPage.html';
-    window.location.reload();
+  if (username === "malak@gmail.com") {
+    alert("Welcome!");
   } else if (username === "abood@gmail.com") {
     alert(
       "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
@@ -35,82 +34,137 @@ loginForm.addEventListener("submit", function (event) {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const signupForm = document.getElementById("signupForm");
-  const usernameInput = document.getElementById("username");
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
-  const usernameError = document.getElementById("username_error");
-  const emailError = document.getElementById("email_error");
-  const passwordError = document.getElementById("password_error");
-  const loginForm = document.getElementById("loginForm");
-  const loginSubmitBtn = document.getElementById("loginSubmitBtn");
-  const popup = document.getElementById("popup");
-  const closeBtn = document.querySelector(".close");
+const form = document.getElementById("form");
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const password2 = document.getElementById("password2");
 
-  signupForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    let valid = true;
-
-    if (usernameInput.value.trim() === "") {
-      // usernameError.textContent = "Username is required";
-      valid = false;
-    } else {
-      usernameError.textContent = "";
-    }
-
-    if (emailInput.value.trim() === "") {
-      // emailError.textContent = "Email is required";
-      valid = false;
-    } else {
-      emailError.textContent = "";
-    }
-
-    if (passwordInput.value.trim() === "") {
-      // passwordError.textContent = "Password is required";
-      valid = false;
-    } else {
-      passwordError.textContent = "";
-    }
-
-    if (valid) {
-      // If all fields are valid, submit the form
-      alert("Form submitted successfully!");
-      signupForm.submit();
-    }
-    if (!username || !email || !password) {
-      // Check if any field is empty
-      alert("Username, email, and password are required.");
-    } else {
-      // All fields are filled, show welcome message
-      alert("Welcome!");
-    }
-  });
-  loginSubmitBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    // Get the username and password input values
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    // Check the username and password
-    if (username === "admin@gmail.com" && password === "123") {
-      window.location.href = 'AdminLandingPage.html';
-      window.location.reload();
-      popup.style.display = "none";
-    } else if (username === "abood@gmail.com") {
-      alert(
-        "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
-      );
-    } else {
-      alert("Invalid username or password.");
-    }
-    loginBtn.classList.add("hidden");
-  });
-// Add event listener to the close button
-closeBtn.addEventListener("click", function () {
-  // Close the popup window by hiding it
-  popup.style.display = "none";
+  validateInputs();
 });
-});
+
+const setError = (element, message) => {
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector(".error");
+
+  errorDisplay.innerText = message;
+  inputControl.classList.add("error");
+  inputControl.classList.remove("success");
+};
+
+const setSuccess = (element) => {
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector(".error");
+
+  errorDisplay.innerText = "";
+  inputControl.classList.add("success");
+  inputControl.classList.remove("error");
+};
+
+const isValidEmail = (email) => {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+};
+
+const validateInputs = () => {
+  // const usernameValue = username.value.trim();
+  // const emailValue = email.value.trim();
+  // const passwordValue = password.value.trim();
+  // const password2Value = password2.value.trim();
+
+  // if (usernameValue === "") {
+  //   setError(username, "Username is required");
+  // } else {
+  //   setSuccess(username);
+  // }
+
+  // if (emailValue === "") {
+  //   setError(email, "Email is required");
+  // } else if (!isValidEmail(emailValue)) {
+  //   setError(email, "Provide a valid email address");
+  // } else {
+  //   setSuccess(email);
+  // }
+
+  // if (passwordValue === "") {
+  //   setError(password, "Password is required");
+  // } else if (passwordValue.length < 8) {
+  //   setError(password, "Password must be at least 8 character.");
+  // } else {
+  //   setSuccess(password);
+  // }
+
+  // if (password2Value === "") {
+  //   setError(password2, "Please confirm your password");
+  // } else if (password2Value !== passwordValue) {
+  //   setError(password2, "Passwords doesn't match");
+  // } else {
+  //   setSuccess(password2);
+  // }
+  // if (password == password2) {
+  //   alert("Welcome!");
+  // } else {
+  //   alert("Your confirm password has to match your password");
+  // }
+  document.addEventListener("DOMContentLoaded", function () {
+    const signupLink = document.getElementById("signupLink");
+    const signupPopup = document.getElementById("signupPopup");
+    const closeBtn = signupPopup.querySelector(".close");
+
+    // Add event listener to open signup popup when signup link is clicked
+    signupLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      signupPopup.style.display = "block";
+    });
+
+    // Add event listener to close signup popup when close button is clicked
+    closeBtn.addEventListener("click", function () {
+      signupPopup.style.display = "none";
+    });
+  });
+};
+document.getElementById("signup-btn").onclick = function () {
+  const usernameValue = username.value.trim();
+  const emailValue = email.value.trim();
+  const passwordValue = password.value.trim();
+  const password2Value = password2.value.trim();
+
+  if (usernameValue === "") {
+    setError(username, "Username is required");
+  } else {
+    setSuccess(username);
+  }
+
+  if (emailValue === "") {
+    setError(email, "Email is required");
+  } else if (!isValidEmail(emailValue)) {
+    setError(email, "Provide a valid email address");
+  } else {
+    setSuccess(email);
+  }
+
+  if (passwordValue === "") {
+    setError(password, "Password is required");
+  } else if (passwordValue.length < 8) {
+    setError(password, "Password must be at least 8 character.");
+  } else {
+    setSuccess(password);
+  }
+
+  if (password2Value === "") {
+    setError(password2, "Please confirm your password");
+  } else if (password2Value !== passwordValue) {
+    setError(password2, "Passwords doesn't match");
+  } else {
+    setSuccess(password2);
+  }
+  if (password == password2) {
+    alert("Welcome!");
+  } else {
+    alert("Your confirm password has to match your password");
+  }
+};

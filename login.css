@@ -1,4 +1,4 @@
-/* body {
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -7,7 +7,8 @@
   align-items: center;
   height: 100vh;
   background-color: #f3f3f3;
-} */
+}
+
 button {
   padding: 10px 20px;
   font-size: 16px;
@@ -18,7 +19,8 @@ button {
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
-*/ button:hover {
+
+button:hover {
   background-color: #333;
 }
 
@@ -62,9 +64,7 @@ button {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
-.hidden {
-  display: none;
-}
+
 .popup-content form input[type="submit"] {
   width: 100%;
   padding: 10px;
@@ -117,15 +117,4 @@ button {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-}
-
-.login-title {
-  color: black;
-  margin-bottom: 10px;
-}
-form label {
-  color: black;
-}
-.input {
-  color: black;
 }
