@@ -92,6 +92,7 @@ document.getElementById('submit').onclick = function() {
     if (firstNameInput.value.trim() === '' || !firstNameRegex.test(firstNameInput.value.trim())) {
         alert("Please enter a valid first name.");
         valid = false;
+        return false;
     }
 
     var lastNameInput = document.getElementById('lastName');
@@ -99,6 +100,7 @@ document.getElementById('submit').onclick = function() {
     if (lastNameInput.value.trim() === '' || !lastNameRegex.test(lastNameInput.value.trim())) {
         alert("Please enter a valid last name.");
         valid = false;
+        return false;
     }
 
     var emailInput = document.getElementById('email');
@@ -106,6 +108,7 @@ document.getElementById('submit').onclick = function() {
     if (emailInput.value.trim() === '' || !emailRegex.test(emailInput.value.trim())) {
         alert("Please enter a valid email address.");
         valid = false;
+        return false;
     }
 
     var numberInput = document.getElementById('number');
@@ -113,5 +116,6 @@ document.getElementById('submit').onclick = function() {
     if (numberInput.value.trim() === '' || !numberRegex.test(numberInput.value.trim())) {
         alert("Please enter a valid 10-digit telephone number.");
         valid = false;
+        return false;
     }
 };

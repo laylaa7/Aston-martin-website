@@ -89,10 +89,11 @@ document.getElementById('submit').onclick = function(event) {
     var valid = true;
 
     var firstNameInput = document.getElementById('firstName');
-    var firstNameRegex = /^[A-Za-z]+$/;
+    var firstNameRegex = /^[a-zA-Z ]+$/   ;
     if (firstNameInput.value.trim() === '' || !firstNameRegex.test(firstNameInput.value.trim())) {
         alert("Please enter a valid first name.");
         valid = false;
+        return false;
     }
 
     var CarNameInput = document.getElementById('CarName');
@@ -100,6 +101,7 @@ document.getElementById('submit').onclick = function(event) {
     if (CarNameInput.value.trim() === '' || !CarNameRegex.test(CarNameInput.value.trim())) {
         alert("Please enter a valid Car name.");
         valid = false;
+        return false;
     }
 
       var TopSpeedInput = document.getElementById('TopSpeed');
@@ -108,8 +110,9 @@ document.getElementById('submit').onclick = function(event) {
 
         if (TopSpeedInput) {
             if (TopSpeedInput.value.trim() === '' || !topSpeedRegex.test(TopSpeedInput.value.trim())) {
-                alert("Please enter a top speed in the format 'xxx km/h', where xxx is a number between 1 to 3 digits.");
+                alert("Please enter a top speed in the format 'xxx ', where xxx is a number between 1 to 3 digits.");
                 valid = false;
+                return false;
             }
         }
         console.log("TopSpeedInput value:", TopSpeedInput.value);
