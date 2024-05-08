@@ -40,6 +40,7 @@ const dbs = document.getElementById("dbs")
         }, 500);
     }
 
+    //CLOSE OVERLAY
     function toggleOverlay() {
       document.querySelector(".overlay-container").classList.toggle('active')
       var video = document.getElementById('overlayVideo');
@@ -49,13 +50,13 @@ const dbs = document.getElementById("dbs")
 
 
 
-    const topSpeed = [100,200,707,800,900]
-    const zeroToHundred = [1.5,2,4,6,9]
+    const topSpeed = [339,325,310,321,325]
+    const zeroToHundred = [3,4,2,4,3]
     const accelaration = [122,121,222,445,450]
 
-    const topSpeedPercentage = [45,55,69,78,67]
-    const zeroToHundredPercentage = [34,56,56,78,12]
-    const accelarationPercentage  = [23,12,45,67,45]
+    const topSpeedPercentage = [75,68,60,65,67]
+    const zeroToHundredPercentage = [70,75,56,80,70]
+    const accelarationPercentage  = [23,67,45,67,45]
 
     const topSpeedContainer = document.getElementById('top-speed')
     const zeroToHundredContainer = document.getElementById('zeroToHundred')
@@ -77,7 +78,7 @@ const dbs = document.getElementById("dbs")
 
 
 
-
+    //READY MADE FUNCTION
     var swiper = new Swiper(".mySwiper", {
       loop: true,
       slidesPerView: 1,
@@ -96,13 +97,15 @@ const dbs = document.getElementById("dbs")
     });
 
     swiper.on('slideChange', () => {
-      topSpeedContainer.style = `--p:${topSpeedPercentage[swiper.realIndex]}; --v:${topSpeed[swiper.activeIndex]}`
-        zeroToHundredContainer.style = `--p:${zeroToHundredPercentage[swiper.realIndex]}; --v:${zeroToHundred[swiper.activeIndex]}`
-        accelarationContainer.style = `--p:${accelarationPercentage[swiper.realIndex]}; --v:${accelaration[swiper.activeIndex]}`
-        carHeader.innerHTML = `<h1>${carHeaders[swiper.realIndex].header}</h1>
-        <h2>${carHeaders[swiper.realIndex].subHeader}</h2>
-        <p>${carHeaders[swiper.realIndex].text}</p>`
+          topSpeedContainer.style = `--p:${topSpeedPercentage[swiper.realIndex]}; --v:${topSpeed[swiper.realIndex]}`
+            zeroToHundredContainer.style = `--p:${zeroToHundredPercentage[swiper.realIndex]}; --v:${zeroToHundred[swiper.realIndex]}`
+            accelarationContainer.style = `--p:${accelarationPercentage[swiper.realIndex]}; --v:${accelaration[swiper.realIndex]}`
+            carHeader.innerHTML = `<h1>${carHeaders[swiper.realIndex].header}</h1>
+            <h2>${carHeaders[swiper.realIndex].subHeader}</h2>
+            <p>${carHeaders[swiper.realIndex].text}</p>`
     })
+
+
     swiper.on('slideChange', () => {
       configureBtn=document.getElementById('configure-link');
       console.log('swiper.realIndex:', swiper.realIndex);
@@ -129,3 +132,4 @@ const dbs = document.getElementById("dbs")
       console.log('configHtml:', configHtml);
       configureBtn.href = configHtml;
     });
+    ///ovhoe
