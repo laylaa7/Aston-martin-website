@@ -105,7 +105,7 @@ const dbs = document.getElementById("dbs")
             <p>${carHeaders[swiper.realIndex].text}</p>`
     })
 
-
+      //configure button
     swiper.on('slideChange', () => {
       configureBtn=document.getElementById('configure-link');
       console.log('swiper.realIndex:', swiper.realIndex);
