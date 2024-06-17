@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/config.css">
+    <title>DB12 configuration</title>
+</head>
+<header>
+   <a href="/"> <img src="/assets/imgs/logo.png" alt="Logo" class="logo"></a>
+  </header>
+<body>
+    
+    <div id="sidebar">
+        <h2>DB12</h2>
+        <hr>
+        <a  href="#"  class="menu-item" onclick="openExteriorMenu()">Exterior</a>
+        <a href="#" class="menu-item" onclick="openInteriorMenu()">Interior</a>
+        <a class="menu-item" onclick="preview()">Preview</a>
+      </div>
+      
+
+      <div id="exterior-menu" class="submenu">
+        <a href="#" class="back-button">Back</a>
+        <div id="color-options">
+            <label for="color-red">
+                <input onclick="selectColor('green')" type="image" src="/assets/DB12img/green/GREEN.jpeg" >
+            </label>
+              
+            <label for="color-blue">
+                <input type="image" onclick="selectColor('grey')" src="/assets/DB12img/grey/grey.jpeg">
+              </label>
+              
+            <label for="color-silver">
+                <input type="image" onclick="selectColor('purple')" src="/assets/DB12img/purple/purple.jpeg">
+            </label>
+              
+              <label for="color-black">
+                <input type="image" onclick="selectColor('red')"  src="/assets/DB12img/red/red.jpeg">
+              </label>
+        </div>
+      </div>
+      <div id="interior-menu" class="submenu">
+        <a href="#" class="int-button back-button">Back</a>
+        <div id="color-options">
+            <label for="color-orange">
+                <input  type="image" onclick="selectColorInt('green')" src="/assets/DB12img/green/green1.jpeg" >
+            </label>
+              
+            <label for="color-silver">
+                <input type="image"  onclick="selectColorInt('grey')"  src="/assets/DB12img/grey/grey@.jpeg">
+              </label>
+              
+            <label for="color-green">
+                <input type="image"  onclick="selectColorInt('purple')"  src="/assets/DB12img/purple/purple1.jpeg">
+            </label>
+              
+              <label for="color-black">
+                <input type="image"  onclick="selectColorInt('red')"  src="/assets/DB12img/red/brown.jpeg">
+              </label>
+        </div>
+      </div>
+      <div>
+        <label id="prev-btn" onclick="previmg()">
+          <img src="/assets/imgs/prev-arrow.png">
+        </label>
+      </div>
+      
+      <div>
+        <label id="next-btn" onclick="nextimg()">
+          <img src="/assets/imgs/next-arrow.png">
+        </label>
+      </div>
+      
+      <button id="backtomenu" >
+         <span onclick="backtomenu()"> →</span>
+      </button>
+      <button id="summary">
+        <span><a id="changemodela" href="Reservation.html">ENQUIRE</a></span>
+      </button>
+      <button id="changemodel">
+        <span><a id="changemodela" href="models.html">CHANGE MODEL</a></span>
+      </button>
+      
+      <button id="exterior-preview">
+        <span onclick="previewexterior()">EXTERIOR</span>
+      </button>
+      <button id="interior-preview">
+        <span onclick="previewinterior()">INTERIOR</span>
+      </button>
+      <div id="background-image" style="background-image: url('/assets/DB12img/green/ext/DB12-1-green.jpeg'); "></div>
+  
+      <script src="/scripts/config/config.js"></script>
+</body>
+</html> 
+
+
+
+
+<!-- <div id="car-preview">
+        <img id="car-image" src="DBSimg/DBS-black.jpeg" alt="Car Base">
+    </div>
+    <div id="color-options">
+        <label for="color-red">
+            <input type="image" id="color-red" name="color" value="red" src="DBSimg/Red.jpeg">
+        </label>
+          
+        <label for="color-blue">
+            <input type="image" id="color-blue" name="color" value="blue" src="DBSimg/blue.jpeg">
+          </label>
+          
+        <label for="color-silver">
+            <input type="image" id="color-silver" name="color" value="silver" src="DBSimg/silver.jpeg">
+        </label>
+          
+          <label for="color-black">
+            <input type="image" id="color-black" name="color" value="black" src="DBSimg/black.jpeg">
+          </label>
+    </div> -->
