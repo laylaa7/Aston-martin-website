@@ -4,7 +4,7 @@ const dbs = document.getElementById("dbs")
     const db12 = document.getElementById('db12')
 
     dbs.onclick = () => {
-      document.getElementById('videoSource').src ="assets/vids/dbs_vid.mp4"
+      document.getElementById('videoSource').src ="/assets/vids/dbs_vid.mp4"
       document.querySelector(".overlay-container").classList.toggle('active')
       setTimeout(function() {
             var video = document.getElementById('overlayVideo');
@@ -13,7 +13,7 @@ const dbs = document.getElementById("dbs")
         }, 500);
     }
     vantage.onclick = () => {
-      document.getElementById('videoSource').src ="assets/vids/vantage_vid.mp4"
+      document.getElementById('videoSource').src ="/assets/vids/vantage_vid.mp4"
       document.querySelector(".overlay-container").classList.toggle('active')
       setTimeout(function() {
             var video = document.getElementById('overlayVideo');
@@ -22,7 +22,7 @@ const dbs = document.getElementById("dbs")
         }, 500);
     }
     valour.onclick = () => {
-      document.getElementById('videoSource').src ="assets/vids/valour_vid.mp4"
+      document.getElementById('videoSource').src ="/assets/vids/valour_vid.mp4"
       document.querySelector(".overlay-container").classList.toggle('active')
       setTimeout(function() {
             var video = document.getElementById('overlayVideo');
@@ -31,7 +31,7 @@ const dbs = document.getElementById("dbs")
         }, 500);
     }
     db12.onclick = () => {
-      document.getElementById('videoSource').src ="assets/vids/db12_vid.mp4"
+      document.getElementById('videoSource').src ="/assets/vids/db12_vid.mp4"
       document.querySelector(".overlay-container").classList.toggle('active')
       setTimeout(function() {
             var video = document.getElementById('overlayVideo');
