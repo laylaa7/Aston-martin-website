@@ -553,7 +553,7 @@ header{
 
 }
 .sidenav2 a{
-    text-decoration: none;
+    text-decoration:underline;
     font-size: 2em; 
     color: #ffffffc4;
     margin: 2px;
