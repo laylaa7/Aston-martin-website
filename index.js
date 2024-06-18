@@ -23,6 +23,16 @@ app.get("/src/views/testdrive.html", (req,res) => {
 app.get("/src/views/reservation.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/reservation.html'))
 })
+app.get("/src/views/admin_User_dashboard.html", (req,res) => {
+    res.sendFile(path.join(__dirname, 'src/views/admin_User_dashboard.html'))
+})
+app.get("/src/views/historyusers.html", (req,res) => {
+    res.sendFile(path.join(__dirname, 'src/views/historyusers.html'))
+})
+app.get("/src/views/adminLandingPage.html", (req,res) => {
+    res.sendFile(path.join(__dirname, 'src/views/adminLandingPage.html'))
+})
+
 
 app.listen(8080, function () {
     console.log('CORS-enabled web server listening on port 80')
