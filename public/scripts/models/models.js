@@ -2,6 +2,7 @@ const dbs = document.getElementById("dbs")
     const vantage = document.getElementById('vantage')
     const valour = document.getElementById('valour')
     const db12 = document.getElementById('db12')
+    const dbx707 = document.getElementById('dbx707')
 
     dbs.onclick = () => {
       document.getElementById('videoSource').src ="/assets/vids/dbs_vid.mp4"
@@ -32,6 +33,15 @@ const dbs = document.getElementById("dbs")
     }
     db12.onclick = () => {
       document.getElementById('videoSource').src ="/assets/vids/db12_vid.mp4"
+      document.querySelector(".overlay-container").classList.toggle('active')
+      setTimeout(function() {
+            var video = document.getElementById('overlayVideo');
+            video.load()
+            video.play();
+        }, 500);
+    }
+    dbx707.onclick = () => {
+      document.getElementById('videoSource').src ="/assets/vids/dbx707_vid.mp4"
       document.querySelector(".overlay-container").classList.toggle('active')
       setTimeout(function() {
             var video = document.getElementById('overlayVideo');
