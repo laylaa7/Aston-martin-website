@@ -4,6 +4,10 @@ const path = require("path")
 
 var app = express()
 
+const mongoose= require('mongoose');
+const dbURI='mongodb+srv://dbUser:dbUserPassword@car-aston-martin.kii8rpt.mongodb.net/';
+mongoose.connect(dbURI).then(result=>app.listen(8080)).catch(err=>console.log(err));
+
 app.use(cors())
 
 app.use(express.static(path.join(__dirname, 'public')));

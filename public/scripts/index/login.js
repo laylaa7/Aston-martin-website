@@ -24,7 +24,7 @@ loginForm.addEventListener("submit", function (event) {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   if (username === "admin@gmail.com" && password === "123") {
-    window.location.href = 'AdminLandingPage.html';
+    window.location.href = '/src/views/adminLandingPage.html';
  
   } else if (username === "abood@gmail.com") {
     alert(
