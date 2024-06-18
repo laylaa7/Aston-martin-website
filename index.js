@@ -17,6 +17,9 @@ app.use('/models', modelsRoutes)
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'))
 })
+app.get("/src/views/testdrive.html", (req,res) => {
+    res.sendFile(path.join(__dirname, 'src/views/testdrive.html'))
+})
 
 app.listen(8080, function () {
     console.log('CORS-enabled web server listening on port 80')
