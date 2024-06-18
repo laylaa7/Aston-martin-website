@@ -193,6 +193,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   }
 
+  const nextButton = document.getElementById('next-btn');
+    if (nextButton) {
+        nextButton.addEventListener('click', nextimg);
+    }
+
+    const prevButton = document.getElementById('prev-btn');
+    if (prevButton) {
+        prevButton.addEventListener('click', previmg);
+    }
+
+    const menubtn = document.getElementById('preview');
+    if(menubtn){
+        menubtn.addEventListener('click',preview);
+    }
+
+
+  
   const backButton = document.querySelector('.back-button');
   backButton.addEventListener('click', () => {
       document.getElementById("interior-menu").style.display = "none";
@@ -200,6 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("sidebar").style.display = "block";
   });
 
+  
+  
   const intBackButton = document.querySelector('.int-button');
   intBackButton.addEventListener('click', () => {
       document.getElementById("interior-menu").style.display = "none";
