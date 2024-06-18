@@ -20,7 +20,10 @@ app.get("/", (req,res) => {
 app.get("/src/views/testdrive.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/testdrive.html'))
 })
+app.get("/src/views/reservation.html", (req,res) => {
+    res.sendFile(path.join(__dirname, 'src/views/reservation.html'))
+})
 
 app.listen(8080, function () {
     console.log('CORS-enabled web server listening on port 80')
-  })
+})
