@@ -1,19 +1,28 @@
-var express = require("express")
+const express = require('express')
 var cors = require('cors')
-const path = require("path")
+const path = require('path')
 
-var app = express()
+// const session = require('express-session')
+// const fileUpload = require('express-fileupload');
 
-const mongoose= require('mongoose');
-const dbURI='mongodb+srv://dbUser:dbUserPassword@car-aston-martin.kii8rpt.mongodb.net/';
-mongoose.connect(dbURI).then(result=>app.listen(8080)).catch(err=>console.log(err));
+const app = express()
 
-app.use(cors())
+// const mongoose = require('mongoose')
+
+// const dbURI = 'mongodb+srv://dbUser:nourPassword@cluster0.t2qbiv0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+// mongoose.connect(dbURI)
+//   .then(result => app.listen(8080))
+//   .catch(err => console.log(err));
+
+app.use(express.urlencoded({ extended: true }));
+
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-//load routes
-const modelsRoutes = require('./src/routes/modelsRoutes')
+// load routes
+const modelsRoutes = require('./src/routes/modelsRoutes');
 
 app.use('/models', modelsRoutes)
 
