@@ -1,5 +1,9 @@
 const nodemailer = require('nodemailer');
+const express = require('express');
+const mongoose = require('mongoose');
 require('dotenv').config();
+const app = express();
+app.use(express.json());
 
 const html = `<h1> hello world</h1>
 <p>poof</p>
