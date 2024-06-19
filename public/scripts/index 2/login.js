@@ -168,24 +168,3 @@ document.getElementById("signup-btn").onclick = function () {
     alert("Your confirm password has to match your password");
   }
 };
-
-const express = require("express");
-const path = require("path");
-
-const app = express();
-const port = 3000; // You can change this port as needed
-
-// Serve static files from the 'public' directory
-app.use(express.static("public"));
-
-// Route for handling logout button click
-// Route for handling logout button click
-app.get("/logout", (req, res) => {
-  // Redirect to the first page (index.html)
-  res.redirect("src/vantage_car.html");
-});
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
