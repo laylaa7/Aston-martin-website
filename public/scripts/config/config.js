@@ -262,3 +262,13 @@ function backtomenu() {
       carModelElement.addEventListener('click', preview);
   }
 });
+
+
+const colors = document.getElementById("color-options")
+
+carConfig[car].map((color) => {
+    colors.innerHTML += ```
+    <label for="color-${color}">
+    <input onclick="selectColor('${color}')" type="image" src="
+    ```
+})
