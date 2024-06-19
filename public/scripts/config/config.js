@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
   // Extract the car model from the URL path
   const pathname = window.location.pathname;
   const car = pathname.split("/").pop();
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "vantage": ["black", "blue", "bronze", "green"],
       "valour": ["black", "blue", "green", "red"],
       "dbs": ["black", "blue", "red", "silver"],
-      "db12": ["green", "gray", "purple", "red"]
+      "db12": ["green", "grey", "purple", "red"]
   };
 
   // Function to set the car model name in the HTML
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setCarModelName(car);
 
   let isInterior = false;
-  let selectedColor = carConfig[car][0];
+  var selectedColor = carConfig[car][0];
 
   function openExteriorMenu() {
       isInterior = false;
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function previewinterior() {
       isInterior = true;
-      changeBackgroundImage1(selectedColorInt);
+      changeBackgroundImage1(currentColorInt);
   }
 
   const prevint = document.getElementById('interior-preview');
@@ -132,9 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function selectColor(color) {
       currentColor = color;
+      selectedColor = color
       currentImageIndex = 0;
       const backgroundImage = document.getElementById("background-image");
-      backgroundImage.style.backgroundImage = `url('/assets/config/${car}/${color}/ext/${color}-1.jpeg')`;
+      backgroundImage.style.backgroundImage = `url('/assets/config/${car}/${currentColor}/ext/${currentColor}-1.jpeg')`;
 
       carImages = [
           `/assets/config/${car}/${currentColor}/ext/${currentColor}-1.jpeg`,
@@ -159,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `/assets/config/${car}/${selectedColorInt}/int/${selectedColorInt}-4.jpeg`
   ];
 
-  let currentColorInt = carConfig[car][1];
+  var currentColorInt = carConfig[car][1];
 
   function selectColorInt(color) {
       currentColorInt = color;
@@ -261,14 +262,29 @@ function backtomenu() {
   if (carModelElement) {
       carModelElement.addEventListener('click', preview);
   }
-});
-
-
-const colors = document.getElementById("color-options")
-
+  const colors_ext = document.getElementById("color-options-ext")
+var ext_html = ''
 carConfig[car].map((color) => {
-    colors.innerHTML += ```
+    ext_html += `
     <label for="color-${color}">
-    <input onclick="selectColor('${color}')" type="image" src="
-    ```
+    <input onclick="selectColor('${color}')" type="image" src="/assets/config/${car}/${color}/${color}-ext.jpeg">
+    </label>
+    `
 })
+
+colors_ext.innerHTML = ext_html
+
+const colors_int = document.getElementById("color-options-int")
+var int_html = ''
+carConfig[car].map((color) => {
+    int_html += `
+    <label for="color-${color}">
+    <input onclick="selectColorInt('${color}')" type="image" src="/assets/config/${car}/${color}/${color}-int.jpeg">
+    </label>
+    `
+})
+
+colors_int.innerHTML = int_html
+// });
+
+
