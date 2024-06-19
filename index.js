@@ -13,6 +13,9 @@ const modelsRoutes = require('./src/routes/modelsRoutes')
 
 app.use('/models', modelsRoutes)
 
+app.get("src/views/models.html", (req,res) => {
+    res.sendFile(path.join(__dirname, 'src/views/models.html'))
+})
 
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'))

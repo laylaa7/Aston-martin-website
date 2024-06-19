@@ -40,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
       changeBackgroundImage(selectedColor);
   }
 
+  const openexterior = document.getElementById('ext');
+  if(openexterior){
+    openexterior.addEventListener('click',openExteriorMenu);
+  }
+
   let selectedColorInt = carConfig[car][1];
 
   function openInteriorMenu() {
@@ -50,6 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("sidebar").style.display = "none";
       isInterior = true;
   }
+  const openinterior= document.getElementById('int');
+  if(openinterior){
+    openinterior.addEventListener('click',openInteriorMenu);
+  }
+
 
   function preview() {
       const prevBtn = document.getElementById('prev-btn');
@@ -89,10 +99,21 @@ document.addEventListener('DOMContentLoaded', () => {
       changeBackgroundImage1(selectedColorInt);
   }
 
+  const prevint = document.getElementById('interior-preview');
+  if(prevint){
+    prevint.addEventListener('click',previewinterior);
+  }
+  
   function previewexterior() {
       isInterior = false;
       changeBackgroundImage(selectedColor);
   }
+
+  const prevext = document.getElementById('exterior-preview');
+  if(prevext){
+    prevext.addEventListener('click',previewexterior);
+  }
+
 
   let carImages = [ 
       `/assets/config/${car}/${selectedColor}/ext/${selectedColor}-1.jpeg`,
@@ -221,6 +242,11 @@ function backtomenu() {
       document.getElementById("sidebar").style.display = "block";
   });
 
+
+  // change model
+  document.getElementById('changemodel').addEventListener('click', function() {
+    window.location.href = '/models/cars';
+  });
   
   
   const intBackButton = document.querySelector('.int-button');
