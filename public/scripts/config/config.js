@@ -70,19 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       intpreview.style.display = 'flex';
   }
 
-  function backtomenu() {
-      const prevBtn = document.getElementById('prev-btn');
-      const BacktomenuBtn = document.getElementById('backtomenu');
-      const extpreview = document.getElementById("exterior-preview");
-      const intpreview = document.getElementById("interior-preview");
-      document.getElementById("sidebar").style.display = "block";
-      BacktomenuBtn.style.transition = "display 0.3s";
-      BacktomenuBtn.style.display = 'none';
-      prevBtn.style.transition = "left 0.2s";
-      prevBtn.style.left = '250px';
-      extpreview.style.display = 'none';
-      intpreview.style.display = 'none';
-  }
+  
 
   function changeBackgroundImage(color) {
       const backgroundImage = document.getElementById("background-image");
@@ -207,8 +195,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if(menubtn){
         menubtn.addEventListener('click',preview);
     }
-//b
 
+    const backmenu = document.getElementById('backtomenu');
+    if (backmenu) {
+        backmenu.addEventListener('click', backtomenu);
+    }
+function backtomenu() {
+    const prevBtn = document.getElementById('prev-btn');
+    const BacktomenuBtn = document.getElementById('backtomenu');
+    const extpreview = document.getElementById("exterior-preview");
+    const intpreview = document.getElementById("interior-preview");
+    document.getElementById("sidebar").style.display = "block";
+    BacktomenuBtn.style.transition = "display 0.3s";
+    BacktomenuBtn.style.display = 'none';
+    prevBtn.style.transition = "left 0.2s";
+    prevBtn.style.left = '250px';
+    extpreview.style.display = 'none';
+    intpreview.style.display = 'none';
+}
   
   const backButton = document.querySelector('.back-button');
   backButton.addEventListener('click', () => {
