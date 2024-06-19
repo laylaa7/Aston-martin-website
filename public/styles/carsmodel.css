@@ -617,3 +617,18 @@ span {
   font-family: "Arial", sans-serif;
   width: 20%;
 }
+/* Responsive design */
+@media screen and(max-width :600px) {
+  h2 {
+    font-size: 36px;
+    line-height: 50px;
+  }
+  h3 {
+    font-size: 36px;
+    line-height: 50px;
+  }
+  p {
+    font-size: 36px;
+    line-height: 50px;
+  }
+}
