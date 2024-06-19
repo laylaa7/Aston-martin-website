@@ -17,6 +17,9 @@ app.get("src/views/models.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/models.html'))
 })
 
+app.get("/src/views/reservation.html", (req,res) => {
+    res.sendFile(path.join(__dirname, 'src/views/reservation.html'))
+})
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'))
 })
