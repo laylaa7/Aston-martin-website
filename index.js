@@ -1,11 +1,16 @@
 const express = require('express')
 const path = require('path')
 var cors = require('cors')
+const bodyParser = require('body-parser');
+const userController = require('./src/controllers/userController');
+require('dotenv').config();
 
 const mongoose = require('mongoose')
 const User= require('./models/database')
 
 const app = express()
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const dbURI = 'mongodb+srv://dbUser:nourPassword@cluster0.t2qbiv0.mongodb.net/data_History?retryWrites=true&w=majority&appName=Cluster0';
 
@@ -67,6 +72,9 @@ app.get('/index-database-readSingle', (req,res)=>{
 const modelsRoutes = require('./src/routes/modelsRoutes');
 
 app.use('/models', modelsRoutes)
+app.post("/api/user/signup",userController.signup)
+app.post("/api/user/verify-otp",userController.verifyOtp)
+
 
 
 app.get("/", (req,res) => {
