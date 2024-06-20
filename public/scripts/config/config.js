@@ -3,6 +3,10 @@
   const pathname = window.location.pathname;
   const car = pathname.split("/").pop();
 
+  document.getElementById("enquire-button").onclick = () => {
+    window.location = `/models/enquire/${car}`
+  }
+
   // Define the car configuration
   const carConfig = {
       "dbx707": ["black", "green", "orange", "silver"],
