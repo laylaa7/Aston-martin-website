@@ -1,4 +1,3 @@
-// controllers/authController.js
 const Users = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');

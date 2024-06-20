@@ -2,16 +2,18 @@ const express = require('express')
 const path = require('path')
 var cors = require('cors')
 const bodyParser = require('body-parser');
-const userController = require('./src/controllers/userController');
-const testDriveController = require('./src/controllers/testDriveController');
 require('dotenv').config();
+
+const userController = require('./src/controllers/userController');
+const reservationController = require('./src/controllers/reservationController');
+const testDriveController = require('./src/controllers/reservationController');
 
 const mongoose = require('mongoose')
 const User = require('./src/models/userModel');
+const Reservation=require('./src/models/reservationModel');
 // const Testdrive=require('./src/models/database')
 
 const app = express()
-const router = express.Router();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -33,11 +35,13 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('/reservationHistory', async(req, res) => {
-  // Retrieve users data from your database 
-  const reservations = await User.find({}).sort({ createdAt: -1 }); 
-
-  res.render('reservationHistory', { reservations: reservations });
+app.get('/reservationHistory', async (req, res) => {
+  try {
+    const reservations = await Reservation.find({}).sort({ createdAt: -1 }); 
+    res.render('reservationHistory', { reservations: reservations });
+  } catch (err) {
+      res.status(500).json({ error: err.message });
+  }
 });
 
 app.get('/userHistory', async (req, res) => {
@@ -58,7 +62,7 @@ app.use('/models', modelsRoutes)
 
 app.post("/api/user/signup",userController.signup)
 app.post("/api/user/verify-otp",userController.verifyOtp)
-
+app.post('/api/reservation', reservationController.saveReservation);
 
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'))

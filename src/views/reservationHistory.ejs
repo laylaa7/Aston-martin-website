@@ -43,18 +43,20 @@
                             <th>Telephone</th>
                             <th>Reservation</th>
                             <th>Car Model</th>
+                            <th>City</th>
                             <th>Actions</th> 
                         </tr>
                     </thead>
                     <tbody id="user-list">
-                        <% users.forEach(user => { %>
+                        <% reservations.forEach(reservation => { %>
                             <tr>
-                                <td><%= user.firstName %></td>
-                                <td><%= user.lastname %></td>
-                                <td><%= user.email %></td>
-                                <td><%= user.telephone %></td>
-                                <td><%= user.reservation %></td>
-                                <td><%= user.carmodel %></td>
+                                <td><%= reservation.firstName %></td>
+                                <td><%= reservation.lastname %></td>
+                                <td><%= reservation.email %></td>
+                                <td><%= reservation.telephone %></td>
+                                <td><%= reservation.reservation %></td>
+                                <td><%= reservation.carmodel %></td>
+                                <td><%= reservation.cityInput %></td>
                                 <td>
                                     <a href="#" class="btn btn-warning btn-sm edit">Edit</a>
                                     <a href="#" class="btn btn-danger btn-sm delete">Delete</a>
@@ -66,6 +68,7 @@
             </div>
         </div>
         <script src="/scripts/admin/reservationHistory.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

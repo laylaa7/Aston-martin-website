@@ -161,8 +161,36 @@ document.getElementById('submit').onclick = function() {
         valid=false;
        return false;
     }
-
- 
-    
     
 };
+
+
+//  code to fetch historydata into database
+$(document).ready(function() {
+    $('#reservationForm').on('submit', function(event) {
+        event.preventDefault();
+        const formData = {
+            firstName: $('#firstName').val(),
+            lastName: $('#lastName').val(),
+            email: $('#email').val(),
+            telephone: $('#telephone').val(),
+            time: $('input[name="time"]:checked').val(),
+            carModel: $('#carModel').val(),
+            cityInput: $('#cityInput').val()
+        };
+
+        $.ajax({
+            url: '/api/reservation',
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                alert('Reservation saved successfully!');
+                // Optionally, redirect to a confirmation page
+            },
+            error: function(error) {
+                alert('Failed to save reservation. Please try again.');
+            }
+        });
+    });
+});
+
