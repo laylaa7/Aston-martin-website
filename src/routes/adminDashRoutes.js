@@ -8,5 +8,6 @@ router.get("/product", adminDashController.renderProduct)
 
 router.get("/user", adminDashController.renderUser)
 
+router.get("/user", adminDashController.renderUserHistory)
 
 module.exports = router;
