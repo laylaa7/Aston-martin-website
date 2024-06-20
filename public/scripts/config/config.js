@@ -127,8 +127,7 @@
       `/assets/config/${car}/${selectedColor}/ext/${selectedColor}-5.jpeg`,
       `/assets/config/${car}/${selectedColor}/ext/${selectedColor}-6.jpeg`,
       `/assets/config/${car}/${selectedColor}/ext/${selectedColor}-7.jpeg`,
-      `/assets/config/${car}/${selectedColor}/ext/${selectedColor}-8.jpeg`,
-      `/assets/config/${car}/${selectedColor}/ext/${selectedColor}-9.jpeg`
+      `/assets/config/${car}/${selectedColor}/ext/${selectedColor}-8.jpeg`
   ];
 
   let currentImageIndex = 0;
