@@ -53,8 +53,8 @@ app.get('/userHistory', async (req, res) => {
 const modelsRoutes = require('./src/routes/modelsRoutes');
 app.use('/models', modelsRoutes)
 
-// const userRoutes = require('./src/routes/userRoutes');
-// app.use('/views', userRoutes);
+ const userRoutes = require('./src/routes/userRoutes');
+ app.use('/views', userRoutes);
 
 app.post("/api/user/signup",userController.signup)
 app.post("/api/user/verify-otp",userController.verifyOtp)
