@@ -33,11 +33,20 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('/historyusers', async(req, res) => {
+app.get('/reservationHistory', async(req, res) => {
   // Retrieve users data from your database 
-  const users = await User.find({}).sort({ createdAt: -1 }); 
+  const reservations = await User.find({}).sort({ createdAt: -1 }); 
 
-  res.render('historyusers', { users: users });
+  res.render('reservationHistory', { reservations: reservations });
+});
+
+app.get('/userHistory', async (req, res) => {
+  try {
+      const users = await User.find({}).sort({ createdAt: -1 });
+      res.render('userHistory', { users: users });
+  } catch (err) {
+      res.status(500).json({ error: err.message });
+  }
 });
 
 // load routes
@@ -60,9 +69,6 @@ app.get("/src/views/testdrive.html", (req,res) => {
 app.get("/src/views/reservation.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/reservation.html'))
 })
-app.get("/src/views/admin_User_dashboard.html", (req,res) => {
-    res.sendFile(path.join(__dirname, 'src/views/admin_User_dashboard.html'))
-})
 app.get("/src/views/adminLandingPage.html", (req,res) => {
   res.sendFile(path.join(__dirname, 'src/views/adminLandingPage.html'))
 })
@@ -74,10 +80,12 @@ app.set('view engine', 'ejs');
 // Set the views directory
 app.set('views', path.join(__dirname, 'src/views'));
 
-app.get('/historyusers', (req, res) => {
-    res.render('historyusers');
+app.get('/reservationHistory', (req, res) => {
+    res.render('reservationHistory');
 });
-
+app.get('/userHistory', (req,res) => {
+    res.render('userHistory');
+});
 app.get('/testdrive', (req, res) => {
   res.render('testdrive');
 });

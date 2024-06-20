@@ -49,7 +49,7 @@
                     <span class="close">&times;</span>
                     <h2 class="login-title">Sign Up</h2>
                     <form id="signupForm" action="/api/user/signup" method="post">
-                        <label for="username">Username:</label>
+                        <label for="username">Name:</label>
                         <input id="username" name="signupusername" type="text" placeholder="Enter username" required />
                         <span id="username_error" class="error"></span>
                         <label for="email">Email:</label>
@@ -234,6 +234,8 @@
     <script src="/scripts/index/about.js"></script>
     <script src="/scripts/index/contact.js"></script>
     <script src="/scripts/index/login.js"></script>
+
+    
     <script>
        document.getElementById('signupForm').addEventListener('submit', function (e) {
     e.preventDefault();

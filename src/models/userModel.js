@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     type: Date,
     required: false,
   },
-});
+}, {collection: 'userHistory.users' });
 
-const Users = mongoose.model('users', userSchema);
+const Users = mongoose.model('userHistory.users', userSchema);  
 module.exports = Users;

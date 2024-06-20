@@ -37,23 +37,24 @@
                 <table class="table table-striped table-dark">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>User Name</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
                             <th>Email</th>
-                            <th>password</th>
-                            <!-- <th>Reservation</th>
+                            <th>Telephone</th>
+                            <th>Reservation</th>
                             <th>Car Model</th>
-                            <th>Actions</th> -->
+                            <th>Actions</th> 
                         </tr>
                     </thead>
                     <tbody id="user-list">
                         <% users.forEach(user => { %>
                             <tr>
-                                <td><%= user.id %></td>
-                                <td><%= user.username %></td>
+                                <td><%= user.firstName %></td>
+                                <td><%= user.lastname %></td>
                                 <td><%= user.email %></td>
-                                <td><%= user.password %></td>
-                             
+                                <td><%= user.telephone %></td>
+                                <td><%= user.reservation %></td>
+                                <td><%= user.carmodel %></td>
                                 <td>
                                     <a href="#" class="btn btn-warning btn-sm edit">Edit</a>
                                     <a href="#" class="btn btn-danger btn-sm delete">Delete</a>
@@ -64,7 +65,7 @@
                 </table>
             </div>
         </div>
-        <script src="/scripts/admin/historyusers.js"></script>
+        <script src="/scripts/admin/reservationHistory.js"></script>
 </body>
 
 </html>
