@@ -2,8 +2,8 @@ const express = require("express")
 const router = express.Router()
 const adminDashController = require("../controllers/adminDashController.js")
 
-router.get("/cars", adminDashController.renderAdmin)
+router.get("/", adminDashController.renderAdmin)
 
-router.get("/config/:car", adminDashController.renderProduct)
+router.get("/product", adminDashController.renderProduct)
 
-router.get("/enquire/:car", adminDashController.renderUser)
+router.get("/user", adminDashController.renderUser)
