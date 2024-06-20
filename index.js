@@ -20,8 +20,12 @@ app.get("/src/views/popularModelVantage.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/popularModelVantage.html'))
   })
 
-  app.get("/src/views/popularModelDBS.html", (req,res) => {
+app.get("/src/views/popularModelDBS.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/popularModelDBS.html'))
+  })
+
+app.get("/src/views/testdrive.html", (req,res) => {
+    res.sendFile(path.join(__dirname, 'src/views/testdrive.html'))
   })
 
 app.get("/", (req,res) => {
