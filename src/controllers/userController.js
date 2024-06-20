@@ -28,7 +28,7 @@ exports.signup = async (req, res) => {
 
     // Create a new user
     const newUsers = new Users({
-      username:signupusername,
+      name:signupusername,
       email:signupemail,
       password: hashedPassword,
       otp, // Save OTP in user document
@@ -107,3 +107,37 @@ exports.verifyOtp = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 }
+exports.addUser = async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+    const newUser = new Users({ name, email, password });
+    await newUser.save();
+    res.status(201).json({ message: 'User added successfully', newUser });
+  } catch (error) {
+    console.error('Error adding user:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+exports.editUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, email, password } = req.body;
+    const updatedUser = await Users.findByIdAndUpdate(id, { name, email, password }, { new: true });
+    res.status(200).json({ message: 'User updated successfully', updatedUser });
+  } catch (error) {
+    console.error('Error updating user:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+exports.deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Users.findByIdAndDelete(id);
+    res.status(200).json({ message: 'User deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
