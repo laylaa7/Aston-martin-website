@@ -10,11 +10,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //load routes
 const modelsRoutes = require('./src/routes/modelsRoutes')
-// const adminRoutes = 
+const adminDashRoutes = require('./src/routes/adminDashRoutes')
 
 
 app.use('/models', modelsRoutes)
-// app.use('/admin')
+app.use('/admin' , adminDashRoutes)
 
 app.get("/src/views/popularModelVantage.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/popularModelVantage.html'))
