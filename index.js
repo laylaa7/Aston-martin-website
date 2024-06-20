@@ -16,7 +16,7 @@ const router = express.Router();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const dbURI = 'mongodb+srv://dbUser:nourPassword@cluster0.t2qbiv0.mongodb.net/data_History?retryWrites=true&w=majority&appName=Cluster0';
+const dbURI = 'mongodb+srv://nourB:nour54321@car-aston-martin.kii8rpt.mongodb.net/?retryWrites=true&w=majority&appName=car-aston-martin';
 
 mongoose.connect(dbURI)
   .then(result => {
@@ -32,84 +32,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//mongo code
-// app.get('/index-database-write', (req,res)=>{
-//     const user=new User({
-//         title:'new user 2',
-//         snippet:'user email',
-//         body:'user info'
-//     });
 
-//     user.save()
-//        .then((result)=>{
-//          console.log('write to database done');
-//          res.send(result)
-//        })
-//        .catch((eer)=>{
-//         console.log(err);
-//        });
-// })
+app.get('/historyusers', async(req, res) => {
+  // Retrieve users data from your database 
+  const users = await User.find({}).sort({ createdAt: -1 }); 
 
-// Create a new user instance
-// app.post('/users', async (req, res) => {
-//   try {
-//       const { firstName, lastName, email, telephone, reservation, carModel } = req.body;
-
-//       const newUser = new User({
-//           firstName,
-//           lastName,
-//           email,
-//           telephone,
-//           reservation,
-//           carModel
-//       });
-
-//       // Save the user to the database
-//       const savedUser = await newUser.save();
-//       res.status(201).json(savedUser); 
-//   } catch (error) {
-//       console.error('Error saving user:', error);
-//       res.status(500).json({ message: 'Server error' });
-//   }
-// });
-
-// // read from database all users in descending order
-// router.get('/historyusers', async (req, res) => {
-//   try {
-//       const users = await User.find().sort({ createdAt: -1 }).exec();
-//       console.log(users);
-//       res.render('./historyusers', { users: users });
-//   } catch (error) {
-//       console.error('Error fetching users:', error);
-//       res.status(500).send('Internal Server Error');
-//   }
-// });
-
-// module.exports = router;
-
-
-// app.get('/index-database-readSingle', (req,res)=>{
-//     User.findById('6672aa1fca6a32995f7f99c8')
-//     .then((result)=>{
-//         console.log('read single record from database done');
-//         res.send(result)
-//       })
-//       .catch((eer)=>{
-//        console.log(err);
-//       });
-// })
+  res.render('historyusers', { users: users });
+});
 
 // load routes
 const modelsRoutes = require('./src/routes/modelsRoutes');
 app.use('/models', modelsRoutes)
 
-const userRoutes = require('./src/routes/userRoutes');
-app.use('/views', userRoutes);
-
+// const userRoutes = require('./src/routes/userRoutes');
+// app.use('/views', userRoutes);
 
 app.post("/api/user/signup",userController.signup)
 app.post("/api/user/verify-otp",userController.verifyOtp)
-
 
 
 app.get("/", (req,res) => {
@@ -137,6 +76,10 @@ app.set('views', path.join(__dirname, 'src/views'));
 
 app.get('/historyusers', (req, res) => {
     res.render('historyusers');
+});
+
+app.get('/testdrive', (req, res) => {
+  res.render('testdrive');
 });
 
 app.use(express.static(path.join(__dirname, 'public')));

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/userModelN'); 
+const User = require('../models/userModel'); 
 // Fetch all users
 router.get('/users', async (req, res) => {
     try {
