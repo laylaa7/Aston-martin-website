@@ -7,3 +7,6 @@ router.get("/", adminDashController.renderAdmin)
 router.get("/product", adminDashController.renderProduct)
 
 router.get("/user", adminDashController.renderUser)
+
+
+module.exports = router;
