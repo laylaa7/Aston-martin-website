@@ -193,7 +193,6 @@ video {
 .page2 .content p {
   font-size: 2.5rem;
   font-family: "Times New Roman", Times, serif;
-
   color: rgba(69, 67, 67, 0.846);
   position: relative;
   overflow: hidden;
@@ -320,342 +319,127 @@ section:last-of-type {
   right: 130px;
   left: 100px; /* Adjust left position */
   color: white;
-  font-size: 30px;
+  font-size: 1.5rem;
   font-family: "Arial", sans-serif;
-  text-transform: uppercase;
-}
-span {
-  border-right: 0.05em solid;
-  animation: caret 1s steps(1) infinite;
-  font-size: 30px;
+  font-weight: lighter;
+  font-style: italic;
+  text-align: left;
 }
 
-@keyframes caret {
-  50% {
-    border-color: transparent;
-  }
-}
-.page4 h3:hover {
-  color: #363333cc;
-}
-
-.page4 .engText {
+.page4 h4 {
   position: absolute;
-  bottom: 560px; /* Adjust bottom position */
-  left: 100px; /* Adjust left position */
-  /* background-color: #11101060; */
+  bottom: 100px; /* Adjust bottom position */
+  right: 50px; /* Adjust right position */
   color: white;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 1.2rem;
   font-family: "Arial", sans-serif;
-  width: 20%;
+  font-weight: lighter;
+  font-style: italic;
 }
 
-.page4 .engText .big {
-  font-size: 2.5rem;
-}
-.page4 .engText:hover {
-  color: rgb(66, 64, 64);
-  transition: color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-}
-.page5 {
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.5s ease;
-  justify-content: start;
-  background-color: #161616;
-}
-.pic5 img {
-  width: 45em;
-  min-height: 25em;
-  overflow: hidden;
+/* Media Queries for Responsive Design */
 
-  /* opacity: 0.9; */
-}
-.pic5 img:hover {
-  opacity: 0.7;
-}
-
-.page5tittle {
-  margin: 90px;
-  width: 70%;
-}
-
-.page5tittle h3 {
-  font-size: 30px;
-  margin-bottom: 20px; /* Add space below the h3 */
-}
-
-.page5 .content {
-  font-size: 2.5rem;
-  font-family: "Times New Roman", Times, serif;
-  padding: 0;
-  color: rgba(69, 67, 67, 0.846);
-  position: relative;
-  overflow: hidden;
-  transition: 1.99s ease;
-  text-align: center;
-  max-width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 60px;
-}
-
-.page5 .content:hover {
-  color: #fffafa;
-  transform: scale(1);
-}
-
-.contentcardd {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 100px;
-}
-
-.card {
-  background-color: #4b4747;
-  height: 60vh;
-  width: 433px;
-  overflow: hidden;
-  border: 1px solid #4b4747;
-  border-radius: 10px;
-  margin: 15px;
-  transition: 0.7s ease;
-  position: relative;
-
-  /* overflow-x: auto; */
-}
-
-/* Add any other styling you need for the info part */
-
-.card::-webkit-scrollbar {
-  width: 0;
-}
-
-.card:hover {
-  transform: scale(1.1);
-}
-
-.card:hover .info {
-  opacity: 1;
-}
-
-.info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
-  color: white;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth transition */
-}
-.iconn img {
-  /* width: 300px;
-  height: 400px; */
-  height: 66vh;
-  width: 433px;
-  z-index: -1;
-}
-.soretelengine {
-  object-fit: cover;
-  display: inline-block;
-  border-radius: 5px;
-  /* width: 100% !important;
-  height: 100% !important;
-  max-width: 500px !important;
-  max-height: 500px !important; */
-  margin: 0;
-}
-.info h3 {
-  text-transform: uppercase;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-/* .info {
-  z-index: 1;
-} */
-.info a {
-  text-decoration: none;
-  color: #fff;
-}
-.info a:hover {
-  color: #100d0dcc;
-  transition: 0.7s ease;
-}
-.page6 {
-  position: relative;
-  height: 100vh;
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
-}
-
-.page6 img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.page6 .inttittle {
-  position: absolute;
-  top: 500px;
-  right: 410px;
-  /* Adjust left position */
-  color: white;
-  font-size: 30px;
-  font-family: "Arial", sans-serif;
-  text-transform: uppercase;
-}
-.page6 .intText {
-  position: absolute;
-  top: 560px;
-  right: 267px;
-
-  color: white;
-  font-size: 17px;
-  font-weight: 500;
-  font-family: "Arial", sans-serif;
-  width: 20%;
-}
-.page7 {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.page7 img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.page7 h3 {
-  position: absolute;
-  bottom: 700px; /* Adjust bottom position */
-  left: 600px;
-  /* Adjust left position */
-  color: white;
-  font-size: 30px;
-  font-family: "Arial", sans-serif;
-  text-transform: uppercase;
-}
-.page7 .extText {
-  position: absolute;
-  bottom: 560px;
-  left: 600px;
-
-  color: white;
-  font-size: 17px;
-  font-weight: 500;
-  font-family: "Arial", sans-serif;
-  width: 20%;
-}
-.cards3 {
-  background-color: white;
-}
-.end {
-  background-color: whitesmoke;
-  padding: 100px 200px;
-}
-
-.endddtitle h3 {
-  color: black;
-  font-size: 1.4em;
-}
-
-.social-iconsss {
-  position: relative;
-  top: 50px; /* Adjust the vertical position */
-  right: 149px;
-  color: white;
-
-  font-size: 1.7em;
-  padding-right: 50px;
-}
-.social-iconsss a {
-  color: black; /* Set the color of each icon to black */
-}
-
-.social-iconsss a:not(:last-child) {
-  margin-right: 20px; /* Adjust the space between each social icon */
-}
-.page6 .intTextDbs {
-  position: absolute;
-  bottom: 500px;
-  left: 150px;
-
-  color: white;
-  font-size: 17px;
-  font-weight: 500;
-  font-family: "Arial", sans-serif;
-  width: 20%;
-}
-.inttittleDbs h3 {
-  position: absolute;
-  bottom: 100px;
-  right: 150px;
-
-  color: white;
-  font-size: 20px;
-  font-weight: 500;
-  font-family: "Arial", sans-serif;
-  width: 20%;
-}
-/* Responsive design */
-@media screen and(max-width :600px) {
-  h2 {
-    font-size: 36px;
-    line-height: 50px;
-  }
-  h3 {
-    font-size: 36px;
-    line-height: 50px;
-  }
-  p {
-    font-size: 36px;
-    line-height: 50px;
-  }
-}
-@media (max-width: 1200px) {
-  #loginContainer {
-    max-width: 80%;
-  }
-}
-
+/* Adjust font sizes and padding for smaller screens */
 @media (max-width: 768px) {
-  #loginContainer {
-    max-width: 90%;
+  .second-header ul {
+    flex-direction: column; /* Stack menu items vertically on small screens */
   }
 
-  form {
-    padding: 10px;
+  .second-header a {
+    font-size: 0.9em; /* Reduce font size */
+  }
+
+  .main h2,
+  .main h3 {
+    font-size: 1.5rem; /* Reduce heading font size */
+  }
+
+  .config-btn a {
+    padding: 10px; /* Adjust padding */
+  }
+
+  .main-btn,
+  .main-btn2 {
+    padding: 0.75rem 1.25rem; /* Adjust button padding */
+  }
+
+  .page2 .content p {
+    font-size: 1.5rem; /* Reduce font size */
+    line-height: 1.5; /* Adjust line height */
+    padding-left: 20px; /* Adjust padding */
+  }
+
+  .nums .num {
+    font-size: 30px; /* Reduce number font size */
+  }
+
+  .page4 h2 {
+    font-size: 2rem; /* Reduce font size */
+  }
+
+  .page4 h3 {
+    bottom: 300px; /* Adjust bottom position */
+    left: 50px; /* Adjust left position */
+  }
+
+  .page4 h4 {
+    bottom: 50px; /* Adjust bottom position */
+    right: 20px; /* Adjust right position */
   }
 }
 
-@media (max-width: 480px) {
-  #loginContainer {
-    max-width: 95%;
+/* Further adjustments for iPhone 12 Pro Max */
+@media (max-width: 430px) {
+  .first-header,
+  .second-header {
+    flex-direction: column; /* Stack headers vertically */
+    padding: 10px; /* Adjust padding */
   }
 
-  input,
-  button {
-    padding: 15px;
-    font-size: 16px;
+  .logo {
+    font-size: 12px; /* Reduce logo font size */
+  }
+
+  .second-header ul {
+    padding: 0; /* Remove padding */
+  }
+
+  .main h2,
+  .main h3 {
+    font-size: 1.2rem; /* Further reduce heading font size */
+  }
+
+  .config-btn a {
+    padding: 8px; /* Adjust padding */
+    margin: 10px 10px 10px 0; /* Adjust margin */
+  }
+
+  .main-btn,
+  .main-btn2 {
+    padding: 0.5rem 1rem; /* Adjust button padding */
+  }
+
+  .page2 .content p {
+    font-size: 1.2rem; /* Further reduce font size */
+    line-height: 1.2; /* Adjust line height */
+    padding-left: 10px; /* Adjust padding */
+  }
+
+  .nums .num {
+    font-size: 25px; /* Further reduce number font size */
+  }
+
+  .page4 h2 {
+    font-size: 1.5rem; /* Further reduce font size */
+  }
+
+  .page4 h3 {
+    bottom: 150px; /* Adjust bottom position */
+    left: 30px; /* Adjust left position */
+  }
+
+  .page4 h4 {
+    bottom: 30px; /* Adjust bottom position */
+    right: 10px; /* Adjust right position */
   }
 }
