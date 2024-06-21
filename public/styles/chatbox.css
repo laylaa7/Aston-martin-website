@@ -197,4 +197,50 @@
    
   }
   
+  .user-input-section {
+    
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
 
+#userInput {
+  
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    min-width: 200px;
+    padding:10px 10px 10px 10px;
+    color:black;
+}
+
+#fileInput {
+  
+    margin-right: 10px;
+}
+
+#sendMessage {
+  
+  padding: 1.3em 3em;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #0e0e0e;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-left: 10px;
+  text-align: center;
+  
+}
+#sendMessage:hover {
+  
+  background-color: #2d5ee5;
+  box-shadow: 0px 15px 20px rgba(59, 42, 249, 0.4);
+  color: #fff;
+}

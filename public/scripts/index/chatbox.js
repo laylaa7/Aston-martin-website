@@ -27,3 +27,33 @@ const menuToggle=document.querySelector('.menuToggle');
 menuToggle.onclick = function(){
     menuToggle.classList.toggle('active');
 }
+document.getElementById('sendMessage').onclick = function() {
+    const userInput = document.getElementById('userInput').value;
+    const fileInput = document.getElementById('fileInput').files[0];
+
+    if (userInput) {
+        document.getElementById('chat').innerHTML += `<p class="user-message">${userInput}</p>`;
+        handleTextMessage(userInput);
+    }
+
+    if (fileInput) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const imgElement = document.createElement('img');
+            imgElement.src = event.target.result;
+            imgElement.style.maxWidth = '100px';
+            document.getElementById('chat').appendChild(imgElement);
+            handleImageUpload();
+        };
+        reader.readAsDataURL(fileInput);
+    }
+
+    // Clear inputs
+    document.getElementById('userInput').value = '';
+    document.getElementById('fileInput').value = '';
+};
+
+
+
+
+

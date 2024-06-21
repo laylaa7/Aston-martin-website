@@ -1,13 +1,23 @@
 var express = require("express")
 var cors = require('cors')
 const path = require("path")
-
 var app = express()
 
-app.use(cors())
 
+app.use(cors())
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//api
+
+
+const dialogflowConfig = {
+  credentials: {
+    client_email: 'YOUR_CLIENT_EMAIL',
+    private_key: 'YOUR_PRIVATE_KEY',
+  },
+  project_id: 'YOUR_PROJECT_ID',
+};
 //load routes
 const modelsRoutes = require('./src/routes/modelsRoutes')
 const adminDashRoutes = require('./src/routes/adminDashRoutes')
