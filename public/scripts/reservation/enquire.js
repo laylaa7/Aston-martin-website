@@ -1,3 +1,16 @@
+const pathname = window.location.pathname;
+const car = pathname.split("/").pop();
+function setCarModelName(car) {
+    const carModelElement = document.getElementById('carModel');
+    if (carModelElement) {
+        carModelElement.textContent = car;
+    }
+}
+
+setCarModelName(car);
+
+
+
 const slidePage = document.querySelector(".slide-page");
 const nextBtnFirst = document.querySelector(".firstNext");
 const prevBtnSec = document.querySelector(".prev-1");
@@ -28,15 +41,14 @@ let current = 1;
     var validModels = ['model1', 'model2', 'model3', 'model4', 'model5']; // Add all valid model values here
 
 
-    if (!validModels.includes(selectedModel)) {
-        document.getElementById('carModel').setCustomValidity('Please select a valid car model.');
-        alert("Please Select a Valid Car Model");
-    }
+    //if (!validModels.includes(selectedModel)) {
+      //  document.getElementById('carModel').setCustomValidity('Please select a valid car model.');
+        //alert("Please Select a Valid Car Model");
+    //}
 
     
-    if (cityFound && validModels.includes(selectedModel)) {
+    if (cityFound ) {
         document.getElementById('cityInput').setCustomValidity('');
-        document.getElementById('carModel').setCustomValidity('');
         event.preventDefault();
         slidePage.style.marginLeft = "-25%";
         bullet[current - 1].classList.add("active");
@@ -204,7 +216,7 @@ prevBtnThird.addEventListener("click", function(event){
     current -= 1;
 });
 
-  prevBtnFourth.addEventListener("click", function(event){
+prevBtnFourth.addEventListener("click", function(event){
     event.preventDefault();
     slidePage.style.marginLeft = "-50%";
     bullet[current - 2].classList.remove("active");

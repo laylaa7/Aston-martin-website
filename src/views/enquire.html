@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Reservation</title>
-    <link rel="stylesheet" href="/styles/reservation.css">
+    <link rel="stylesheet" href="/styles/enquire.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 <header>
@@ -15,7 +15,7 @@
 
 <body>
     <div class="container">
-        <p>Reservation</p>
+        <p>Enquire</p>
         <div class="progress-bar">
             <div class="step">
                 <p>
@@ -56,21 +56,15 @@
 
         </div>
         <div class="form-outer">
-            <form action="/api/reservation" method="POST">
+            <form action="#">
                 <div class="page slide-page">
                     <div class="title">Model And Location</div>
                     <div class="field">
                         <div>
-                            <label for="carModel"> Car Model</label><br>
-                            <select id="carModel" name="carModel">
-                                <option value="Select">select</option>
-                                <option value="model1">DBX707</option>
-                                <option value="model2">DBS</option>
-                                <option value="model3">DB12</option>
-                                <option value="model3">VALOUR</option>
-                                <option value="model3">VANTAGE</option>
-                            </select><br>
+                            <h3>Car Model</h3>
+                            <label for="carModel" id="carModel"> Car Model</label><br>
                         </div>
+                        <div> </div>
                         <div>
                             <label for="city">City</label>
                             <input list="brow" id="cityInput" name="cityInput" required>
@@ -249,7 +243,7 @@
         </form>
     </div>
     </div>
-    <script src="/scripts/reservation/reservation.js"></script>
+    <script src="/scripts/reservation/enquire.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 

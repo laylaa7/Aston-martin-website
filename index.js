@@ -11,7 +11,6 @@ const testDriveController = require('./src/controllers/reservationController');
 const mongoose = require('mongoose')
 const User = require('./src/models/userModel');
 const Reservation=require('./src/models/reservationModel');
-// const Testdrive=require('./src/models/database')
 
 const app = express()
 
@@ -29,10 +28,9 @@ mongoose.connect(dbURI)
   })
   .catch(err => console.log(err));
 
-
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/reservationHistory', async (req, res) => {
@@ -70,8 +68,8 @@ app.get("/", (req,res) => {
 app.get("/src/views/testdrive.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/testdrive.html'))
 })
-app.get("/src/views/reservation.html", (req,res) => {
-    res.sendFile(path.join(__dirname, 'src/views/reservation.html'))
+app.get("/src/views/enquire.html", (req,res) => {
+    res.sendFile(path.join(__dirname, 'src/views/enquire.html'))
 })
 app.get("/src/views/adminLandingPage.html", (req,res) => {
   res.sendFile(path.join(__dirname, 'src/views/adminLandingPage.html'))
@@ -90,16 +88,13 @@ app.get('/reservationHistory', (req, res) => {
 app.get('/userHistory', (req,res) => {
     res.render('userHistory');
 });
-app.get('/testdrive', (req, res) => {
-  res.render('testdrive');
-});
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-//testDrive database
-// app.post('/testDriveHistory', testDriveController.saveTestDrive);
+
 
 
 
