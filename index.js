@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+/* 
 app.get('/reservationHistory', async (req, res) => {
   try {
     const reservations = await Reservation.find({}).sort({ createdAt: -1 }); 
@@ -42,7 +42,7 @@ app.get('/reservationHistory', async (req, res) => {
   } catch (err) {
       res.status(500).json({ error: err.message });
   }
-});
+}); */
 
 app.get('/userHistory', async (req, res) => {
   try {
@@ -62,7 +62,7 @@ app.use('/models', modelsRoutes)
 
 app.post("/api/user/signup",userController.signup)
 app.post("/api/user/verify-otp",userController.verifyOtp)
-app.post('/api/reservation', reservationController.saveReservation);
+/* app.post('/api/reservation', reservationController.saveReservation); */
 
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'))
@@ -70,9 +70,10 @@ app.get("/", (req,res) => {
 app.get("/src/views/testdrive.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/testdrive.html'))
 })
-app.get("/src/views/reservation.html", (req,res) => {
+/* app.get("/src/views/reservation.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/reservation.html'))
-})
+    
+}) */
 app.get("/src/views/adminLandingPage.html", (req,res) => {
   res.sendFile(path.join(__dirname, 'src/views/adminLandingPage.html'))
 })

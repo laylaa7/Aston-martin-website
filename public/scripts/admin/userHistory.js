@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('user-form');
     const userList = document.getElementById('user-list');
     let selectedRow = null;
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function getUsers() {
         try {
-            const response = await fetch('/get-users');
+            const response = await fetch('/views/get-users');
             if (!response.ok) {
                 throw new Error(`Server responded with ${response.status}`);
             }
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error fetching users:', error);
             showAlert('Server error', 'danger');
         }
-    }
+    } 
 
     function populateUsers(users) {
         userList.innerHTML = '';
@@ -129,6 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initial load of users
-    getUsers();
-});
+     // Initial load of users
+    getUsers(); 
+});   

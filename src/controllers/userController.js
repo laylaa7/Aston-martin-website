@@ -5,7 +5,10 @@ const crypto = require('crypto');
 require('dotenv').config();
 
 exports.signup = async (req, res) => {
+  console.log('before try' );
   try {
+    console.log('after try' );
+
     const { signupusername, signupemail, signuppassword } = req.body;
     console.log('Signup request received', req.body );
 
@@ -28,7 +31,7 @@ exports.signup = async (req, res) => {
 
     // Create a new user
     const newUsers = new Users({
-      name:signupusername,
+      username:signupusername,
       email:signupemail,
       password: hashedPassword,
       otp, // Save OTP in user document
@@ -37,6 +40,7 @@ exports.signup = async (req, res) => {
     console.log('New user created:', newUsers);
 
     // Save the user
+    
     await newUsers.save();
     console.log('User saved to database');
 
@@ -140,4 +144,4 @@ exports.deleteUser = async (req, res) => {
     console.error('Error deleting user:', error);
     res.status(500).json({ message: 'Server error' });
   }
-};
+}; 

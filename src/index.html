@@ -50,13 +50,13 @@
                     <h2 class="login-title">Sign Up</h2>
                     <form id="signupForm" action="/api/user/signup" method="post">
                         <label for="username">Name:</label>
-                        <input id="username" name="signupusername" type="text" placeholder="Enter username" required />
+                        <input id="usernamee" name="signupusername" type="text" placeholder="Enter username" required />
                         <span id="username_error" class="error"></span>
                         <label for="email">Email:</label>
                         <input id="email" name="signupemail" type="email" placeholder="Enter email" required />
                         <span id="email_error" class="error"></span>
                         <label for="password">Password:</label>
-                        <input id="password" name="signuppassword" type="password" placeholder="Enter password" required />
+                        <input id="passwordd" name="signuppassword" type="password" placeholder="Enter password" required />
                         <span id="password_error" class="error"></span>
                         <button class="btnmoka" type="submit" id="signup-bt">Sign Up</button>
                     </form>
@@ -240,19 +240,23 @@
        document.getElementById('signupForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData(this);
+    console.log(JSON,"before befoe befor ")
 
     const plainFormData = Object.fromEntries(formData.entries());
     const jsonString = JSON.stringify(plainFormData);
 
     fetch('/api/user/signup', {
+        
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: jsonString,
     })
+    console.log(JSON,"before before then")
     .then(response => response.json())
     .then(data => {
+        console.log(JSON,"befoe then")
         if (data.message === 'Signup successful, OTP sent') {
             document.getElementById('signupPopup').style.display = 'none';
             document.getElementById('otpPopup').style.display = 'block';
@@ -260,7 +264,9 @@
         } else {
             document.getElementById('username_error').textContent = data.message;
         }
+        console.log(JSON,"after then")
     });
+
 });
 
 document.getElementById('otpForm').addEventListener('submit', function (e) {
