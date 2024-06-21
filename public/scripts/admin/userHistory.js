@@ -19,45 +19,81 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#password').value = '';
     }
 
+    async function getUsers() {
+        try {
+            const response = await fetch('/get-users');
+            if (!response.ok) {
+                throw new Error(`Server responded with ${response.status}`);
+            }
+            const data = await response.json();
+            populateUsers(data.users);
+        } catch (error) {
+            console.error('Error fetching users:', error);
+            showAlert('Server error', 'danger');
+        }
+    }
+
+    function populateUsers(users) {
+        userList.innerHTML = '';
+        users.forEach(user => {
+            const row = document.createElement('tr');
+            row.dataset.id = user._id;
+            row.innerHTML = `
+                <td>${user.username}</td>
+                <td>${user.email}</td>
+                <td>${user.password}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm edit">Edit</button>
+                    <button class="btn btn-danger btn-sm delete">Delete</button>
+                </td>
+            `;
+            userList.appendChild(row);
+        });
+    }
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const firstName = document.querySelector('#firstName').value;
+        const username = document.querySelector('#firstName').value;
         const email = document.querySelector('#email').value;
         const password = document.querySelector('#password').value;
 
-        if (firstName === '' || email === '' || password === '') {
+        if (username === '' || email === '' || password === '') {
             showAlert('Please fill in all fields', 'danger');
             return;
         }
 
-        const data = { name: firstName, email, password };
+        const data = { username, email, password };
 
         try {
+            let response;
             if (selectedRow === null) {
-                const response = await fetch('/views/add-user', {
+                response = await fetch('/views/add-user', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-                const result = await response.json();
-                showAlert(result.message, 'success');
             } else {
                 const id = selectedRow.dataset.id;
-                const response = await fetch(`/views/edit-user/${id}`, {
+                response = await fetch(`/views/edit-user/${id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-                const result = await response.json();
-                showAlert(result.message, 'info');
-                selectedRow = null;
             }
+
+            const result = await response.json();
+            if (!response.ok) {
+                showAlert(result.message, 'danger');
+                throw new Error(result.message);
+            }
+
+            showAlert(result.message, 'success');
             clearFields();
-            location.reload();
+            getUsers();
+            selectedRow = null;
         } catch (error) {
             console.error('Error:', error);
-            showAlert('Server error', 'danger');
         }
     });
 
@@ -78,12 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     method: 'DELETE'
                 });
 
+                const result = await response.json();
                 if (!response.ok) {
-                    throw new Error(`Server responded with ${response.status}`);
+                    showAlert(result.message, 'danger');
+                    throw new Error(result.message);
                 }
 
-                const result = await response.json();
-                showAlert(result.message, 'danger');
+                showAlert(result.message, 'success');
                 row.remove();
             } catch (error) {
                 console.error('Error deleting user:', error);
@@ -92,30 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.getElementById('submit').onclick = function() {
-        let valid = true;
-
-        const firstNameInput = document.getElementById('firstName');
-        const firstNameRegex = /^[A-Za-z]+$/;
-        if (firstNameInput.value.trim() === '' || !firstNameRegex.test(firstNameInput.value.trim())) {
-            alert("Please enter a valid first name.");
-            valid = false;
-        }
-
-        const emailInput = document.getElementById('email');
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (emailInput.value.trim() === '' || !emailRegex.test(emailInput.value.trim())) {
-            alert("Please enter a valid email address.");
-            valid = false;
-        }
-
-        const passwordInput = document.getElementById('password');
-        const passwordRegex = /^[A-Za-z0-9]{6,}$/; // Adjust regex for password validation as needed
-        if (passwordInput.value.trim() === '' || !passwordRegex.test(passwordInput.value.trim())) {
-            alert("Please enter a valid password.");
-            valid = false;
-        }
-
-        return valid;
-    };
+    // Initial load of users
+    getUsers();
 });
