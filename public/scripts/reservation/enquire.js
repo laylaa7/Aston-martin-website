@@ -1,13 +1,13 @@
-const pathname = window.location.pathname;
-const car = pathname.split("/").pop();
-function setCarModelName(car) {
-    const carModelElement = document.getElementById('carModel');
-    if (carModelElement) {
-        carModelElement.textContent = car;
-    }
-}
+// const pathname = window.location.pathname;
+// const car = pathname.split("/").pop();
+// function setCarModelName(car) {
+//     const carModel = document.getElementById('carModel');
+//     if (carModel) {
+//         carModel.textContent = car;
+//     }
+// }
 
-setCarModelName(car);
+// setCarModelName(car);
 
 
 
@@ -37,7 +37,7 @@ let current = 1;
         }
     }
 
-    var selectedModel = document.getElementById('carModel').value;
+    // var selectedModel = document.getElementById('carModel').value;
     var validModels = ['model1', 'model2', 'model3', 'model4', 'model5']; // Add all valid model values here
 
 
@@ -102,14 +102,14 @@ return true;
         }
     
       
-        var firstnameInput = document.getElementById('firstname');
+        var firstnameInput = document.getElementById('firstName');
         if (firstnameInput.value.trim() === '') {
             alert("Please enter your first name.");
             valid = false;
         }
     
     
-        var lastnameInput = document.getElementById('lastname');
+        var lastnameInput = document.getElementById('lastName');
         if (lastnameInput.value.trim() === '') {
             alert("Please enter your last name.");
             valid = false;

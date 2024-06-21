@@ -38,11 +38,11 @@ exports.signup = async (req, res) => {
       otpExpires: Date.now() + 3600000, // OTP expires in 1 hour
     });
     console.log('New user created:', newUsers);
-
+    console.log('Username:', newUsers.username);
+    
     // Save the user
     
-    await newUsers.save();
-    console.log('User saved to database');
+    // await newUsers.save();
 
     // Setup Nodsignupemailer
     const transporter = nodemailer.createTransport({
@@ -71,6 +71,9 @@ exports.signup = async (req, res) => {
             res.status(200).json({ message: 'Signup successful, OTP sent', signupemail }); // Send email back to the client
         }
     });
+
+
+  
   } catch (error) {
     console.error('Error during signup:', error);
     res.status(500).json({ message: 'Server error' });

@@ -19,11 +19,14 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 const bcrypt = require('bcrypt');
 
+// router.post('/signup', userController.signup);
+// router.post('/verify-otp', userController.verifyOtp);
+
 router.post('/add-user', async (req, res) => {
-  try {
+    try {
     const { username, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new Users({ username, email, password: hashedPassword });
+    const newUser = new User({ username, email, password: hashedPassword }); 
     await newUser.save();
     res.status(201).json({ message: 'User added successfully' });
   } catch (error) {
@@ -33,9 +36,9 @@ router.post('/add-user', async (req, res) => {
 
 // Edit User
 router.put('/edit-user/:id', async (req, res) => {
-  try {
+    try {
     const { username, email, password } = req.body;
-    const user = await Users.findById(req.params.id);
+    const user = await User.findById(req.params.id);
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
@@ -58,7 +61,7 @@ router.put('/edit-user/:id', async (req, res) => {
  // Get Users
  router.get('/get-users', async (req, res) => {
   try {
-    const users = await Users.find();
+    const users = await User.find();
     res.json({ users });
   } catch (error) {
     res.status(500).json({ message: 'Error fetching users', error });

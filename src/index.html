@@ -48,7 +48,7 @@
                 <div class="popup-content">
                     <span class="close">&times;</span>
                     <h2 class="login-title">Sign Up</h2>
-                    <form id="signupForm" action="/api/user/signup" method="post">
+                    <form id="signupForm" action="/views/signup" method="post">
                         <label for="username">Name:</label>
                         <input id="usernamee" name="signupusername" type="text" placeholder="Enter username" required />
                         <span id="username_error" class="error"></span>
@@ -67,7 +67,7 @@
                 <div class="popup-content">
                     <span class="close">&times;</span>
                     <h2 class="login-title">Verify OTP</h2>
-                    <form id="otpForm" action="/api/user/verify-otp" method="post">
+                    <form id="otpForm" action="/views/verify-otp" method="post">
                         <label for="otp">OTP:</label>
                         <input id="otp" name="otp" type="text" placeholder="Enter OTP" required />
                         <input id="signupemail" name="signupemail" type="hidden" value="user@example.com" /> <!-- Add hidden email field -->
@@ -237,7 +237,7 @@
 
     
     <script>
-       document.getElementById('signupForm').addEventListener('submit', function (e) {
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData(this);
     console.log(JSON,"before befoe befor ")
@@ -245,7 +245,7 @@
     const plainFormData = Object.fromEntries(formData.entries());
     const jsonString = JSON.stringify(plainFormData);
 
-    fetch('/api/user/signup', {
+    fetch('/views/signup', {
         
         method: 'POST',
         headers: {
@@ -253,7 +253,6 @@
         },
         body: jsonString,
     })
-    console.log(JSON,"before before then")
     .then(response => response.json())
     .then(data => {
         console.log(JSON,"befoe then")
@@ -276,7 +275,7 @@ document.getElementById('otpForm').addEventListener('submit', function (e) {
     const plainFormData = Object.fromEntries(formData.entries());
     const jsonString = JSON.stringify(plainFormData);
 
-    fetch('/api/user/verify-otp', {
+    fetch('/views/verify-otp', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

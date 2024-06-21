@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-/* 
+
 app.get('/reservationHistory', async (req, res) => {
   try {
     const reservations = await Reservation.find({}).sort({ createdAt: -1 }); 
@@ -39,7 +39,7 @@ app.get('/reservationHistory', async (req, res) => {
   } catch (err) {
       res.status(500).json({ error: err.message });
   }
-}); */
+}); 
 
 app.get('/userHistory', async (req, res) => {
   try {
@@ -51,19 +51,20 @@ app.get('/userHistory', async (req, res) => {
 });
 
 // load routes
-const modelsRoutes = require('./src/routes/modelsRoutes');
-app.use('/models', modelsRoutes)
+// const modelsRoutes = require('./src/routes/modelsRoutes');
+// app.use('/models', modelsRoutes);
 
- const userRoutes = require('./src/routes/userRoutes');
- app.use('/views', userRoutes);
+const userRoutes = require('./src/routes/userRoutes'); 
+app.use('/views', userRoutes);
 
- const reservationRoutes = require('./src/routes/reservationRoutes'); 
- app.use('/', reservationRoutes);
+const reservationRoutes = require('./src/routes/reservationRoutes'); 
+app.use('/', reservationRoutes);
 
 
-app.post("/api/user/signup",userController.signup)
-app.post("/api/user/verify-otp",userController.verifyOtp)
-/* app.post('/api/reservation', reservationController.saveReservation); */
+app.post("/views/signup", userController.signup); 
+app.post("/views/verify-otp", userController.verifyOtp); 
+
+app.post('/reservation', reservationController.saveReservation); 
 
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'))
