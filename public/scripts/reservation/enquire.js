@@ -64,7 +64,7 @@ let current = 1;
 };
 
 document.getElementById('next-1').onclick = function() { 
-     var radioButtons = document.getElementsByName('time');
+     var radioButtons = document.getElementsByName('reservationtime');
      var radioChecked = false;
 
 for (var i = 0; i < radioButtons.length; i++) {
@@ -102,15 +102,15 @@ return true;
         }
     
       
-        var firstNameInput = document.getElementById('firstName');
-        if (firstNameInput.value.trim() === '') {
+        var firstnameInput = document.getElementById('firstname');
+        if (firstnameInput.value.trim() === '') {
             alert("Please enter your first name.");
             valid = false;
         }
     
     
-        var lastNameInput = document.getElementById('lastName');
-        if (lastNameInput.value.trim() === '') {
+        var lastnameInput = document.getElementById('lastname');
+        if (lastnameInput.value.trim() === '') {
             alert("Please enter your last name.");
             valid = false;
         }

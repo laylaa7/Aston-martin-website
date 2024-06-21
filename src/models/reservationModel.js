@@ -1,6 +1,18 @@
 const mongoose = require('mongoose');
 
 const reservationSchema = new mongoose.Schema({
+  carmodel: {
+    type: String,
+    required: true,
+  },
+  cityInput: {
+    type: String,
+    required: true
+  },
+  reservationtime: {
+    type: String,
+    required: true,
+  },
   firstname: {
     type: String,
     required: true,
@@ -9,26 +21,15 @@ const reservationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  email: {
-    type: String,
-    required: true,
-  },
   telephone: {
     type: String,
     required: true,
   },
-  reservationtime: {
+  email: {
     type: String,
     required: true,
   },
-  carmodel: {
-    type: String,
-    required: true,
-  },
-  cityInput: {
-    type: String,
-    required: true
-}
+
 },  {collection: 'reservations', timestamps: true });
 
 const Reservations = mongoose.model('Reservation', reservationSchema);  

@@ -8,7 +8,7 @@ const saveReservation = async (req, res) => {
             email,
             telephone,
             reservationtime,
-            carmodel,
+            carModelElement,
             cityInput
         } = req.body;
 
@@ -19,7 +19,7 @@ const saveReservation = async (req, res) => {
             email,
             telephone,
             reservationtime,
-            carmodel,
+            carModelElement,
             cityInput
         });
 
