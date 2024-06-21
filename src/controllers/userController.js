@@ -42,7 +42,7 @@ exports.signup = async (req, res) => {
     
     // Save the user
     
-    await newUsers.save();
+     await newUsers.save(); 
 
     // Setup Nodsignupemailer
     const transporter = nodemailer.createTransport({

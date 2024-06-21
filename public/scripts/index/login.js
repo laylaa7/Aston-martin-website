@@ -134,6 +134,7 @@ document.getElementById("signup-btn").onclick = function () {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
   const password2Value = password2.value.trim();
+  console.log(username.value + 'im here ')
 
   if (usernameValue === "") {
     setError(username, "Username is required");
