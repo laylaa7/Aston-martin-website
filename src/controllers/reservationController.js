@@ -14,25 +14,27 @@ const saveReservation = async (req, res) => {
 
         // Create a new reservation instance
         const newReservation = new Reservation({ 
-            FirstName: firstname,
-            LastName: lastname,
-            Email: email,
-            Telephone: telephone,
-            Reservation:reservationtime,
-            CarModel: carmodel,
-            city: cityInput
+            firstname,
+            lastname,
+            email,
+            telephone,
+            reservationtime,
+            carmodel,
+            cityInput
         });
 
-        // Save to database
-        await newReservation.save();
+       // Save to database
+       await newReservation.save();
 
-        res.status(201).json({ message: 'Reservation saved successfully' });
-    } catch (err) {
-        console.error('Error saving Reservation:', err);
-        res.status(500).json({ error: 'Failed to save Reservation' });
-    }
+       console.log('Reservation saved:', newReservation); // Log the saved reservation for debugging
+
+       res.redirect('/');  // Redirect to home page after submitting
+   } catch (err) {
+       console.error('Error saving reservation:', err);
+       res.status(500).json({ error: 'Failed to save reservation' });
+   }
 };
 
 module.exports = {
-    saveReservation
+   saveReservation
 };

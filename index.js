@@ -6,7 +6,6 @@ require('dotenv').config();
 
 const userController = require('./src/controllers/userController');
 const reservationController = require('./src/controllers/reservationController');
-const testDriveController = require('./src/controllers/reservationController');
 
 const mongoose = require('mongoose')
 const User = require('./src/models/userModel');
@@ -57,6 +56,10 @@ app.use('/models', modelsRoutes)
 
  const userRoutes = require('./src/routes/userRoutes');
  app.use('/views', userRoutes);
+
+ const reservationRoutes = require('./src/routes/reservationRoutes'); 
+ app.use('/', reservationRoutes);
+
 
 app.post("/api/user/signup",userController.signup)
 app.post("/api/user/verify-otp",userController.verifyOtp)
