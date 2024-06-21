@@ -4,18 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Reservation</title>
-    <link rel="stylesheet" href="/public/styles/Reservation.css">
+    <link rel="stylesheet" href="Reservation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
-<header>
-    <div class="logo">
-      <a href="LandingPage.html"><img src="/imgs/logo.png" alt="logo" width="200"  style="padding: 0px; margin: 0px;"></a>
-        </div>
-</header>
 
 <body>
     <div class="container">
-        <p>Reservation</p>
+        <header>Reservation</header>
         <div class="progress-bar">
             <div class="step">
                 <p>
@@ -57,11 +52,11 @@
         </div>
         <div class="form-outer">
             <form action="#">
-                <div class="slide-page">
+                <div class="page slide-page">
                     <div class="title">Model And Location</div>
                     <div class="field">
                         <div>
-                            <label for="carModells" id="carModells"> Car Model</label><br>
+                            <label for="carModel"> Car Model</label><br>
                             <select id="carModel" name="carModel">
                                 <option value="Select">select</option>
                                 <option value="model1">DBX707</option>
@@ -123,13 +118,9 @@
                         <label for="carModel">Select your preferred time period </label><br>
 
                         <input type="radio" id="AM" name="time" value="Morning">
-                        <label for="AM"></label><b>Morning &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b> 9h-10h<br>
-                        <input type="radio" id="AM" name="time" value="Morning">
-                        <label for="AM"></label><b>Morning &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b> 11h-12h<br>
+                        <label for="AM"></label><b>Morning &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b> 9h-12h<br>
                         <input type="radio" id="PM" name="time" value="Afternoon">
-                        <label for="PM"></label><b>Afternoon &nbsp</b> 14h-15h<br>
-                        <input type="radio" id="PM" name="time" value="Afternoon">
-                        <label for="PM"></label><b>Afternoon &nbsp</b> 15h-16h<br>
+                        <label for="PM"></label><b>Afternoon &nbsp</b> 14h-16h<br>
 
                     </div>
                     <div class="field">
@@ -217,13 +208,14 @@
                                 placeholder="card-number" data-mask="0000 0000 0000 0000" ><br>
 
 
-                            <label class="label">Expiry date:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            <input type="text" id="expiry-date" name="expiry-date" class="input" placeholder="MM / YY" data-mask="00 / 00">
-                            <span id="expiry-error" style="color: red;"></span><br>
+                            <label class="label">Expiry date:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                           
+                            <input type="text" id="expiry-date" name="expiry-date" class="input"
+                                placeholder="00 / 00" data-mask="00 / 00"><br>
 
 
-                            <label for="cardCvc">CVC</label>
-<input type="password" id="cardCvc" name="cardCvc" maxlength="3"><br>
+                            <label class="label">CVC:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                            <input type="text" id="cvc" name="cvc" class="input" placeholder="000" data-mask="000"><br>
 
 
 
@@ -239,7 +231,6 @@
 
 
                             <button class="Next submitBtn" id="submitBtn">Reserve</button>
-                            
 
                             </div>
                         </div>
@@ -250,7 +241,7 @@
         </form>
     </div>
     </div>
-    <script src="/public/scripts/index/Reservation.js"></script>
+    <script src="Reservation.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 
