@@ -14,7 +14,7 @@ const reservationSchema = new mongoose.Schema({
     required: true,
   },
   telephone: {
-    type: Number,
+    type: String,
     required: true,
   },
   reservationtime: {
@@ -29,7 +29,7 @@ const reservationSchema = new mongoose.Schema({
     type: String,
     required: true
 }
-},  { timestamps: true });
+},  {collection: 'reservations', timestamps: true });
 
-const Reservations = mongoose.model('reservations', reservationSchema);  
+const Reservations = mongoose.model('Reservation', reservationSchema);  
 module.exports = Reservations;
