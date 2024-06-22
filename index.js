@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 var cors = require('cors')
 const bodyParser = require('body-parser');
+
 require('dotenv').config();
 
 const userController = require('./src/controllers/userController');
@@ -74,7 +75,7 @@ app.use('/', reservationRoutes);
 const testDriveRoutes = require('./src/routes/testDriveRoutes'); 
 app.use('/', testDriveRoutes);
 
-
+app.post("/login", userController.login); 
 app.post("/views/signup", userController.signup); 
 app.post("/views/verify-otp", userController.verifyOtp); 
 

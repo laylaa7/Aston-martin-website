@@ -33,7 +33,7 @@
                 <div class="popup-content">
                     <span class="close">&times;</span>
                     <h2 class="login-title">Login / Sign Up</h2>
-                    <form action="#">
+                    <form action="/login" method="POST">
                         <label for="username">Username:</label>
                         <input type="text" id="username" class="input" name="username" /><br /><br />
                         <label for="password">Password:</label>
@@ -240,7 +240,6 @@
     document.getElementById('signupForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData(this);
-    console.log(JSON,"before befoe befor ")
 
     const plainFormData = Object.fromEntries(formData.entries());
     const jsonString = JSON.stringify(plainFormData);
@@ -312,6 +311,37 @@ document.getElementById('otpForm').addEventListener('submit', function (e) {
         document.getElementById('loginBtn').onclick = function () {
             document.getElementById('popup').style.display = 'block';
         };
+
+
+
+    //login AJAX
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    const plainFormData = Object.fromEntries(formData.entries());
+    const jsonString = JSON.stringify(plainFormData);
+
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonString,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'Login successful') {
+            console.log('Login successful');
+        } else {
+            console.log('Login error:', data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
     </script>
 </body>
 

@@ -18,23 +18,23 @@ closeBtns.forEach((btn) => {
   });
 });
 
-const loginForm = document.querySelector("#popup form");
-loginForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  if (username === "admin@gmail.com" && password === "123") {
-    window.location.href = '/src/views/adminLandingPage.html';
+// const loginForm = document.querySelector("#popup form");
+// loginForm.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   const username = document.getElementById("username").value;
+//   const password = document.getElementById("password").value;
+//   if (username === "admin@gmail.com" && password === "123") {
+//     window.location.href = '/src/views/adminLandingPage.html';
  
-  } else if (username === "abood@gmail.com") {
-    alert(
-      "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
-    );
-  } else {
-    // Handle other usernames
-    alert("Invalid username.");
-  }
-});
+//   } else if (username === "abood@gmail.com") {
+//     alert(
+//       "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
+//     );
+//   } else {
+//     // Handle other usernames
+//     alert("Invalid username.");
+//   }
+// });
 
 const form = document.getElementById("form");
 const username = document.getElementById("username");
