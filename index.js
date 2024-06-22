@@ -75,7 +75,7 @@ app.use('/', reservationRoutes);
 const testDriveRoutes = require('./src/routes/testDriveRoutes'); 
 app.use('/', testDriveRoutes);
 
-app.post("/login", userController.login); 
+// app.post("/login", userController.login); 
 app.post("/views/signup", userController.signup); 
 app.post("/views/verify-otp", userController.verifyOtp); 
 

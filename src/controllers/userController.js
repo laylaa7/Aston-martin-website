@@ -4,46 +4,46 @@ const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 require('dotenv').config();
 
-exports.login = async (req, res) => {
-  try{
-    const { username, password } = req.body;
-    console.log('Login request received', req.body );
+// exports.login = async (req, res) => {
+//   try{
+//     const { username, password } = req.body;
+//     console.log('Login request received', req.body );
 
-      // Find the user in the database by username
-      const result= await Users.findOne({username});
-      console.log(result);
-      if (!result) {
-        // User not found, display error message
-        return res.status(400).json({ message:  'User does not exists'});
+//       // Find the user in the database by username
+//       const result= await Users.findOne({username});
+//       console.log(result);
+//       if (!result) {
+//         // User not found, display error message
+//         return res.status(400).json({ message:  'User does not exists'});
 
-        // return res.render("login", { errors: "Invalid username or password",user:req.session.user===undefined?"":req.session.user });
-      }
-     // Comparing the entered password with the hashed one.
-     console.log(result.password);
-     console.log(password);
+//         // return res.render("login", { errors: "Invalid username or password",user:req.session.user===undefined?"":req.session.user });
+//       }
+//      // Comparing the entered password with the hashed one.
+//      console.log(result.password);
+//      console.log(password);
 
-      const isPasValid= await bcrypt.compare(password,result.password);
-          if (!isPasValid) {
+//       const isPasValid= await bcrypt.compare(password,result.password);
+//           if (!isPasValid) {
 
-            // Password does not match, display error message
-            console.log("error");
-            return res.status(400).json({ message: "password not valid" });
+//             // Password does not match, display error message
+//             console.log("error");
+//             return res.status(400).json({ message: "password not valid" });
 
-            // return res.render("login", { errors: "Invalid username or password",user:req.session.user===undefined?"":req.session.user });
-          }
+//             // return res.render("login", { errors: "Invalid username or password",user:req.session.user===undefined?"":req.session.user });
+//           }
 
-      // req.session.user = result;
-      // console.log(req.session.user);
+//       // req.session.user = result;
+//       // console.log(req.session.user);
 
-      // Password matches, render the account page with user data
-      // return res.render("account", { userP:result});
-      return res.redirect('/');
-  }
-  catch (error) {
-    console.error('Error during signup:', error);
-    res.status(500).json({ message: 'Server error' });
-  }
-};
+//       // Password matches, render the account page with user data
+//       // return res.render("account", { userP:result});
+//       return res.redirect('/');
+//   }
+//   catch (error) {
+//     console.error('Error during signup:', error);
+//     res.status(500).json({ message: 'Server error' });
+//   }
+// };
 
 exports.signup = async (req, res) => {
   try {
