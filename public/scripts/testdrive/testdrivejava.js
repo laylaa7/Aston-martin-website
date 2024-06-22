@@ -24,13 +24,13 @@ document.getElementById('firstNext').onclick = function() {
     }
 
     var selectedModel = document.getElementById('carModel').value;
-    var validModels = ['model1', 'model2', 'model3', 'model4', 'model5']; // Add all valid model values here
-
+    var validModels = ['VALOUR', 'DBS', 'VANTAGE', 'DBX707', 'DB12']; // Add all valid model values here
 
     if (!validModels.includes(selectedModel)) {
         document.getElementById('carModel').setCustomValidity('Please select a valid car model.');
         alert("Please Select a Valid Car Model");
     }
+    
 
     
     if (cityFound && validModels.includes(selectedModel)) {

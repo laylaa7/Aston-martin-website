@@ -25,7 +25,7 @@ function clearfields() {
     document.querySelector("#email").value = "";
     document.querySelector("#telephone").value = "";
     document.querySelector("#cityInput").value = "";
-    document.querySelector("#carModel").value = "";
+    document.querySelector("#carModel").value = "Select";
 }
 
 // add data
@@ -41,7 +41,7 @@ document.querySelector("#user-form").addEventListener("submit", (e) => {
     const carModel = document.querySelector("#carModel").value;
 
     // validate
-    if (firstName === "" || lastName === "" || email === "" || number === "" || cityInput === "" || carModel === "") {
+    if (firstName === "" || lastName === "" || email === "" || number === "" || cityInput === "" || carModel === "Select") {
         showAlert("Please fill in all fields", "danger");
     } else {
         if (selectedRow == null) {
@@ -140,10 +140,10 @@ document.getElementById('submit').onclick = function(event) {
     var carModelInput = document.getElementById('carModel');
     var validModels = ['VALOUR', 'DBS', 'VANTAGE', 'DBX707', 'DB12'];
     if (
-        carModelInput.value.trim() === '' ||
-        !validModels.includes(carModelInput.value.trim().toUpperCase())
+        carModelInput.value === 'Select' || 
+        !validModels.includes(carModelInput.value) 
     ) {
-        alert("Please enter a valid car model.");
+        alert("Please select a valid car model.");
         valid = false;
         return false;
     }
@@ -173,7 +173,7 @@ $(document).ready(function() {
             data: formData,
             success: function(response) {
                 alert('Reservation saved successfully!');
-                // Optionally, redirect to a confirmation page
+               
             },
             error: function(error) {
                 alert('Failed to save reservation. Please try again.');

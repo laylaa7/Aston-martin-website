@@ -44,8 +44,8 @@ app.get('/reservationHistory', async (req, res) => {
 }); 
 app.get('/testdriveHistory', async (req, res) => {
   try {
-    const testDrive = await testDrive.find({}).sort({ createdAt: -1 }); 
-    res.render('testdriveHistory', { testDrive: testDrive });
+    const testDrives = await testDrive.find({}).sort({ createdAt: -1 }); 
+    res.render('testdriveHistory', { testDrives: testDrives });
   } catch (err) {
       res.status(500).json({ error: err.message });
   }
