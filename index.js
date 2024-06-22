@@ -5,7 +5,7 @@ var app = express()
 
 require('dotenv').config();
 const mongoose = require('mongoose');
-const carRoutes = require('./routes/carRoutes');
+const carRoutes = require('./src/routes/carRoutes');
 
 app.use(cors())
 app.use(express.json());
