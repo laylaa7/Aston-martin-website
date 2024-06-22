@@ -4,11 +4,47 @@ const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 require('dotenv').config();
 
-exports.signup = async (req, res) => {
-  console.log('before try' );
+exports.login = async (req, res) => {
   try {
-    console.log('after try' );
+    const { username, password } = req.body;
+    console.log(req.body);
 
+    // Check if the user is admin with a hardcoded password
+    if (username === 'admin' && password === '123') {
+      req.session.user = { username: 'admin', role: 'admin' };
+      return res.status(200).json({ message: "Login successful", redirectUrl: "/adminLandingPage" });
+    }
+    // Find the user in the database by username
+    const user = await Users.findOne({ username });
+    if (!user) {
+      return res.status(400).json({ message: "Invalid username" });
+    }
+    // Compare the entered password with the hashed password in the database
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    console.log(password)
+    console.log(user.password)
+    console.log(isPasswordValid)
+    if (!isPasswordValid) {
+      return res.status(400).json({ message: "Invalid password" });
+    }
+    console.log(user);
+    // If username and password are correct, set user session
+    req.session.user = user; // Directly assign user object to req.session.user
+    console.log('user session hena',req.session.user);
+
+    res.status(200).json({ message: "Login successful", user: req.session.user ,redirectUrl: "/"}); //must send status bec ajax 
+      
+  } catch (error) {
+    console.error("Error during login:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+  
+};
+
+
+
+exports.signup = async (req, res) => {
+  try {
     const { signupusername, signupemail, signuppassword } = req.body;
     console.log('Signup request received', req.body );
 
