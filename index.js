@@ -12,7 +12,7 @@ const testDriveController = require('./src/controllers/testDriveController');
 const mongoose = require('mongoose')
 const User = require('./src/models/userModel');
 const Reservation=require('./src/models/reservationModel');
-const testDrive=require('./src/models/testDriveModel');
+const testDrive = require('./src/models/testDriveModel');
 
 const app = express()
 
@@ -81,7 +81,7 @@ app.post("/views/verify-otp", userController.verifyOtp);
 
 app.post('/reservation', reservationController.addReservation); 
 
-app.post('/testDrive', testDriveController.savetestDrive)
+app.post('/testDrive', testDriveController.addTestDrive)
 
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'))

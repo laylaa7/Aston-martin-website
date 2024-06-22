@@ -20,14 +20,30 @@
             <h1 class="display-5 mb-5"><strong>Test Drive History</strong></h1>
         </div>
         <div class="main row justify-content-center">
-            <form action="/testdriveHistory" method="POST" id="user-form" class="row justify-content-center mb-4" autocomplete="off">
+            <form action="/testdriveHistory" method="POST" id="testdrive-form" class="row justify-content-center mb-4" autocomplete="off">
                 <div class="col-10 col-mid-8 mb-3">
                     <label for="firstName">FirstName</label>
                     <input class="form-control" id="firstName" type="text" placeholder="Enter FirstName">
                 </div>
                 <div class="col-10 col-mid-8 mb-3">
+                    <label for="lastName">LastName</label>
+                    <input class="form-control" id="lastName" type="text" placeholder="Enter LastName">
+                </div>
+                <div class="col-10 col-mid-8 mb-3">
                     <label for="email">Email Address</label>
                     <input class="form-control" id="email" type="email" placeholder="Enter Email">
+                </div>
+                <div class="col-10 col-mid-8 mb-3">
+                    <label for="telephone">Telephone</label>
+                    <input class="form-control" id="telephone" type="text" placeholder="Enter Number">
+                </div>
+                <div class="col-10 col-mid-8 mb-3">
+                    <label for="city">City</label>
+                    <input class="form-control" id="cityInput" type="text" placeholder="Enter city">
+                </div>
+                <div class="col-10 col-mid-8 mb-3">
+                    <label for="carModel">Car Model</label>
+                    <input class="form-control" id="carModel" type="text" placeholder="Enter Car Model">
                 </div>
                 <div class="col-10 col-mid-8">
                     <input class="btn btn-success add-btn" type="submit" value="submit" id="submit">
@@ -47,7 +63,7 @@
                             <th>Actions</th> 
                         </tr>
                     </thead>
-                    <tbody id="user-list">
+                    <tbody id="testDrive-list">
                         <% testDrives.forEach(testDrive => { %>
                             <tr>
                                 <td><%= testDrive.firstname %></td>
