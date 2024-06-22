@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 var cors = require('cors')
 const bodyParser = require('body-parser');
+const session = require("express-session");
 
 require('dotenv').config();
 
@@ -34,6 +35,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.use(
+  session({
+    secret: "ASTONMARTIN_KEY",
+    resave: false, 
+    saveUninitialized: true,
+  })
+);
 
 app.get('/reservationHistory', async (req, res) => {
   try {
@@ -47,6 +55,7 @@ app.get('/testdriveHistory', async (req, res) => {
   try {
     const testDrives = await testDrive.find({}).sort({ createdAt: -1 }); 
     res.render('testdriveHistory', { testDrives: testDrives });
+    
   } catch (err) {
       res.status(500).json({ error: err.message });
   }
@@ -73,7 +82,7 @@ app.use('/', reservationRoutes);
 const testDriveRoutes = require('./src/routes/testDriveRoutes'); 
 app.use('/', testDriveRoutes);
 
-// app.post("/login", userController.login); 
+app.post("/login", userController.login);
 app.post("/views/signup", userController.signup); 
 app.post("/verify-otp", userController.verifyOtp); 
 
@@ -81,9 +90,9 @@ app.post('/reservation', reservationController.addReservation);
 
 app.post('/testDrive', testDriveController.addTestDrive)
 
-app.get("/", (req,res) => {
-    res.sendFile(path.join(__dirname, 'src/index.html'))
-})
+// app.get("/", (req,res) => {
+//     res.sendFile(path.join(__dirname, 'src/index.html'))
+// })
 app.get("/src/views/testdrive.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/testdrive.html'))
 })
@@ -101,6 +110,11 @@ app.set('view engine', 'ejs');
 // Set the views directory
 app.set('views', path.join(__dirname, 'src/views'));
 
+app.get("/", (req, res) => {
+  res.render("index", {
+    user: req.session.user === undefined ? "" : req.session.user,
+  });
+});
 app.get('/reservationHistory', (req, res) => {
     res.render('reservationHistory');
 });
