@@ -6,10 +6,12 @@ require('dotenv').config();
 
 const userController = require('./src/controllers/userController');
 const reservationController = require('./src/controllers/reservationController');
+const testDriveController = require('./src/controllers/testDriveController');
 
 const mongoose = require('mongoose')
 const User = require('./src/models/userModel');
 const Reservation=require('./src/models/reservationModel');
+const testDrive=require('./src/models/testDriveModel');
 
 const app = express()
 
@@ -40,6 +42,15 @@ app.get('/reservationHistory', async (req, res) => {
       res.status(500).json({ error: err.message });
   }
 }); 
+app.get('/testdriveHistory', async (req, res) => {
+  try {
+    const testDrive = await testDrive.find({}).sort({ createdAt: -1 }); 
+    res.render('testdriveHistory', { testDrive: testDrive });
+  } catch (err) {
+      res.status(500).json({ error: err.message });
+  }
+}); 
+
 
 app.get('/userHistory', async (req, res) => {
   try {
@@ -60,11 +71,16 @@ app.use('/views', userRoutes);
 const reservationRoutes = require('./src/routes/reservationRoutes'); 
 app.use('/', reservationRoutes);
 
+const testDriveRoutes = require('./src/routes/testDriveRoutes'); 
+app.use('/', testDriveRoutes);
+
 
 app.post("/views/signup", userController.signup); 
 app.post("/views/verify-otp", userController.verifyOtp); 
 
 app.post('/reservation', reservationController.saveReservation); 
+
+app.post('/testDrive', testDriveController.savetestDrive)
 
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'))
@@ -91,6 +107,9 @@ app.get('/reservationHistory', (req, res) => {
 });
 app.get('/userHistory', (req,res) => {
     res.render('userHistory');
+});
+app.get('/testdriveHistory', (req,res) => {
+  res.render('testdriveHistory');
 });
 
 
