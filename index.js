@@ -51,8 +51,6 @@ app.get('/testdriveHistory', async (req, res) => {
       res.status(500).json({ error: err.message });
   }
 }); 
-
-
 app.get('/userHistory', async (req, res) => {
   try {
       const users = await User.find({}).sort({ createdAt: -1 });
@@ -77,7 +75,7 @@ app.use('/', testDriveRoutes);
 
 // app.post("/login", userController.login); 
 app.post("/views/signup", userController.signup); 
-app.post("/views/verify-otp", userController.verifyOtp); 
+app.post("/verify-otp", userController.verifyOtp); 
 
 app.post('/reservation', reservationController.addReservation); 
 

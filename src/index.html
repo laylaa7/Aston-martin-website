@@ -33,7 +33,7 @@
                 <div class="popup-content">
                     <span class="close">&times;</span>
                     <h2 class="login-title">Login / Sign Up</h2>
-                    <form action="/login" method="POST">
+                    <form id="loginForm" action="/login" method="POST">
                         <label for="username">Username:</label>
                         <input type="text" id="username" class="input" name="username" /><br /><br />
                         <label for="password">Password:</label>
@@ -67,7 +67,7 @@
                 <div class="popup-content">
                     <span class="close">&times;</span>
                     <h2 class="login-title">Verify OTP</h2>
-                    <form id="otpForm" action="/views/verify-otp" method="post">
+                    <form id="otpForm" action="/verify-otp" method="post">
                         <label for="otp">OTP:</label>
                         <input id="otp" name="otp" type="text" placeholder="Enter OTP" required />
                         <input id="signupemail" name="signupemail" type="hidden" value="user@example.com" /> <!-- Add hidden email field -->
@@ -274,7 +274,7 @@ document.getElementById('otpForm').addEventListener('submit', function (e) {
     const plainFormData = Object.fromEntries(formData.entries());
     const jsonString = JSON.stringify(plainFormData);
 
-    fetch('/views/verify-otp', {
+    fetch('/verify-otp', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -315,32 +315,32 @@ document.getElementById('otpForm').addEventListener('submit', function (e) {
 
 
     //login AJAX
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
+//     document.getElementById('loginForm').addEventListener('submit', function (e) {
+//     e.preventDefault();
+//     const formData = new FormData(this);
 
-    const plainFormData = Object.fromEntries(formData.entries());
-    const jsonString = JSON.stringify(plainFormData);
+//     const plainFormData = Object.fromEntries(formData.entries());
+//     const jsonString = JSON.stringify(plainFormData);
 
-    fetch('/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: jsonString,
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.message === 'Login successful') {
-            console.log('Login successful');
-        } else {
-            console.log('Login error:', data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
+//     fetch('/login', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: jsonString,
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         if (data.message === 'Login successful') {
+//             console.log('Login successful');
+//         } else {
+//             console.log('Login error:', data.message);
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// });
 
     </script>
 </body>
