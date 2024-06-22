@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
             form.elements['lastName'].value = row.cells[1].textContent;
             form.elements['email'].value = row.cells[2].textContent;
             form.elements['telephone'].value = row.cells[3].textContent;
-            form.elements['city'].value = row.cells[4].textContent;
+            form.elements['cityInput'].value = row.cells[4].textContent;
             form.elements['reservationtime'].value = row.cells[5].textContent;
         } else if (event.target.classList.contains('delete-btn')) {
             const row = event.target.closest('tr');
