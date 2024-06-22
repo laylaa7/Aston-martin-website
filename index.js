@@ -79,7 +79,7 @@ app.use('/', testDriveRoutes);
 app.post("/views/signup", userController.signup); 
 app.post("/views/verify-otp", userController.verifyOtp); 
 
-app.post('/reservation', reservationController.saveReservation); 
+app.post('/reservation', reservationController.addReservation); 
 
 app.post('/testDrive', testDriveController.savetestDrive)
 
