@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="/styles/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/styles/chatbox.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Aston Martin</title>
+</head>
+
+<body>
+    <!--Navigation Bar-->
+    <header>
+        <div class="open-menu">
+            <div class="menu-btn" onclick="toggleNav()" id="menuBtn">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <div class="logo">
+            <a href="#home"><img src="/assets/img/logonour.png" alt="logo" width="160" height="35px" style="padding: 0px; margin: 0px;"></a>
+            <p>POWER. DRIVEN</p>
+        </div>
+        <div class="signup">
+            <!-- <button class="signup-btn" id="loginBtn">Login</button> -->
+            <% if (user=== "") { %>
+                <button class="signup-btn" id="loginBtn">login</button>
+                <% } else { %>
+                <p>Welcome, <%= user.username%>!</p>
+                <button class="side-btn">
+                    <a href="/logout">Logout</a>
+                </button>
+                <% } %>
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <h2 class="login-title">Login / Sign Up</h2>
+                    <form id="loginForm" action="/login" method="POST">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" class="input" name="username" /><br /><br />
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" class="input" name="password" /><br /><br />
+                        <input type="submit" value="Login" />
+                        <span class="signup-link">Don't have an account? <a href="#" id="signupLink">Sign Up</a></span>
+                    </form>
+                </div>
+            </div>
+
+            <div id="signupPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <h2 class="login-title">Sign Up</h2>
+                    <form id="signupForm" action="/views/signup" method="post">
+                        <label for="username">Name:</label>
+                        <input id="usernamee" name="signupusername" type="text" placeholder="Enter username" required />
+                        <span id="username_error" class="error"></span>
+                        <label for="email">Email:</label>
+                        <input id="email" name="signupemail" type="email" placeholder="Enter email" required />
+                        <span id="email_error" class="error"></span>
+                        <label for="password">Password:</label>
+                        <input id="passwordd" name="signuppassword" type="password" placeholder="Enter password" required />
+                        <span id="password_error" class="error"></span>
+                        <button class="btnmoka" type="submit" id="signup-btn">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="otpPopup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <h2 class="login-title">Verify OTP</h2>
+                    <form id="otpForm" action="/verify-otp" method="post">
+                        <label for="otp">OTP:</label>
+                        <input id="otp" name="otp" type="text" placeholder="Enter OTP" required />
+                        <input id="signupemail" name="signupemail" type="hidden" value="user@example.com" /> <!-- Add hidden email field -->
+                        <span id="otp_error" class="error"></span>
+                        <button class="btnmoka" type="submit" id="verify-otp-bt">Verify OTP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a class="a" href="" id="Home">Home</a>
+        <a class="a" href="/models/cars">Models</a>
+        <a class="a" href="/src/views/testdrive.html">Test Drive</a>
+        <a class="a" href="#aboutus">About Us</a>
+        <a class="a" href="#contactUs">Contact Us</a>
+    </div>
+    <script>
+        document.getElementById('Home').onclick = function () {
+            location.reload();
+        };
+    </script>
+
+    <!--Main Home-->
+    <section class="home" id="home">
+        <div class="vid-container">
+            <video autoplay loop muted class="video" id="vid">
+                <source src="/assets/vids/project car video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="text-box" id="text-box">
+                <h1>ASTON MARTIN</h1>
+            </div>
+        </div>
+        <a href="#models"><img class="arrow" src="/assets/img/arrows.png" alt="arrow" width="40"></a>
+    </section>
+
+    <section class="home2" id="home2"></section>
+
+    <!--Models-->
+    <div class="main-title" style="background-color: black;">
+        <p>Popular Models</p>
+    </div>
+    <section class="models" id="models">
+        <div class="container">
+            <div class="model-name">
+                <p>&nbsp; DBS770 VOLANTE</p>
+            </div>
+            <button class="discover-btn disc1">
+                <a href="/src/views/popularModelDBS.html">Discover More</a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </button>
+            <div class="content">
+                <div class="image">
+                    <img src="/assets/img/model9-p1.jpg" alt="model5">
+                </div>
+                <div class="image2">
+                    <img src="/assets/img/model9-p2.jpg" alt="model5">
+                </div>
+            </div>
+
+            <div class="model-name">
+                <p>VANTAGE</p>
+            </div>
+            <button class="discover-btn disc2">
+                <a href="/src/views/popularModelVantage.htmll">Discover More</a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </button>
+            <div class="content">
+                <div class="image">
+                    <img src="/assets/img/model11-p1.jpg" alt="model5">
+                </div>
+                <div class="image2">
+                    <img src="/assets/img/model11-p2.jpg" alt="model5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--About US-->
+    <!--About US-->
+    <section class="cards" id="EXTERIOR">
+        <div class="contentcardd">
+          <div class="card">
+            <div class="iconn">
+              <img class="soretelengine" src="/assets/img/aboutus3n.jpg" alt="" />
+            </div>
+            <div class="info">
+              <p>
+                ASTON MARTIN BEGINGS IMPORTANT NEW ERA WITH RETURN TO FORMULA ONE
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="iconn">
+              <img class="soretelengine" src="/assets/img/aboutus7.jpg" alt="" />
+            </div>
+            <div class="info">
+              <p>
+                ASTON MARTIN'S VISION IS TO BE THE WORLD'S MOST DESIRABLE,
+                ULTRA-LEXURY BRITISH BRAND
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="iconn">
+              <img class="soretelengine" src="/assets/img/aboutus10.jpg" alt="" />
+            </div>
+            <div class="info">
+              <p>GLOBAL JAMES BOND DAY 2018</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="iconn">
+              <img class="soretelengine" src="/assets/img/aboutus11nn.jpg" alt="" />
+            </div>
+            <div class="info">
+              <p>
+                A COCKPIT DOUSED IN DECIBELS Seething with sound. Vantage comes
+                with the option of the Halo system developed with Aston Martin’s
+                audio partner, Bowers & Wilkins. Wrapping every corner with the
+                15-speaker, double amplified 1,170W surround sound system.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <footer class="contactUs" id="contactUs">
+        <div class="contact-contaier">
+            <div class="sidenav2">
+                <a class="a1" href="#customerSupport">Customer Support</a>
+                <a class="a2" href="#enquireOnline">Enquire Online</a>
+                <a class="a3" href="#contactUs">Contact Us</a>
+            </div>
+            <div class="contact-info" id="contact-info">
+                <p class="contact-text" id="contact-text">
+                    Aston Martin Client Support<br><br>
+                    Tel: 44 (0) 1926 644722<br>
+                    US customers: (866) 278-6661</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+
+    <script src="/scripts/index/chatbox.js"></script>
+    <script src="/scripts/index/video.js"></script>
+    <script src="/scripts/index/models.js"></script>
+    <script src="/scripts/index/about.js"></script>
+    <script src="/scripts/index/contact.js"></script>
+    <script src="/scripts/index/login.js"></script>
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="ae044341-171a-47ef-9b9f-6b35ec620b69";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script></body>
+
+    <script>
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    const plainFormData = Object.fromEntries(formData.entries());
+    const jsonString = JSON.stringify(plainFormData);
+
+    fetch('/views/signup', {
+        
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonString,
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(JSON,"befoe then")
+        if (data.message === 'Signup successful, OTP sent') {
+            document.getElementById('signupPopup').style.display = 'none';
+            document.getElementById('otpPopup').style.display = 'block';
+            document.getElementById('signupemail').value = data.signupemail; // Set the hidden email field
+        } else {
+            document.getElementById('username_error').textContent = data.message;
+        }
+        console.log(JSON,"after then")
+    });
+
+});
+
+document.getElementById('otpForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    const plainFormData = Object.fromEntries(formData.entries());
+    const jsonString = JSON.stringify(plainFormData);
+
+    fetch('/verify-otp', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonString,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'OTP verified successfully') {
+            alert('Signup complete');
+            // Redirect or update UI as needed
+        } else {
+            document.getElementById('otp_error').textContent = data.message;
+        }
+    });
+});
+    
+        // Close popup
+        const closeButtons = document.querySelectorAll('.close');
+        closeButtons.forEach(button => {
+            button.onclick = function () {
+                document.querySelector('.popup').style.display = 'none';
+            }
+        });
+    
+        // Open signup popup from login popup
+        document.getElementById('signupLink').onclick = function (e) {
+            e.preventDefault();
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('signupPopup').style.display = 'block';
+        };
+    
+        // Open login popup
+        document.getElementById('loginBtn').onclick = function () {
+            document.getElementById('popup').style.display = 'block';
+        };
+
+
+
+//login AJAX
+        document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(this);
+
+          const plainFormData = Object.fromEntries(formData.entries());
+          const jsonString = JSON.stringify(plainFormData);
+
+          fetch("/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: jsonString,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.message === "Login successful") {
+                console.log("Login successful");
+                window.location.href = data.redirectUrl;
+              } else {
+                console.log("Login error:", data.message); 
+              }
+            })
+            .catch((error) => {
+               console.error("Error:", error); 
+            }); 
+        });
+    </script>
+  </body>
+</html>

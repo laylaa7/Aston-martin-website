@@ -220,7 +220,7 @@ header{
 }
 
 .home2{
-    background: url("/assets/Images/Background\ image.png");
+    background: url("/assets/img/Background image.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right right;  
@@ -729,4 +729,78 @@ button {
   .input {
     color: black;
   }
+  .contentcardd {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+  }
   
+  .card {
+    background-color: #4b4747;
+    height: 60vh;
+    width: calc(50% - 30px); /* Adjust width for two cards per row with margin /
+    overflow: hidden;
+    border: 1px solid #4b4747;
+    border-radius: 10px;
+    margin: 15px;
+    transition: 0.7s ease;
+    position: relative;
+  }
+  
+  .card::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+  }
+  
+  .card:hover .info {
+    opacity: 1;
+  }
+  
+  .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); / Transparent black background /
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0; / Initially hidden /
+    transition: opacity 0.3s ease; / Smooth transition /
+  }
+  
+  .iconn img {
+    height: 66vh;
+    width: 100%; / Make sure the image fills the card /
+    object-fit: cover; / Maintain aspect ratio */
+    z-index: -1;
+  }
+  
+  .soretelengine {
+    object-fit: cover;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 0;
+  }
+  
+  .info h3 {
+    text-transform: uppercase;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  .info a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .info a:hover {
+    color: #100d0dcc;
+    transition: 0.7s ease;
+  }
