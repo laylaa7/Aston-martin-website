@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
     required: false,
   },
 }, {collection: 'userHistory.users' });
-userSchema.pre('save', async function(next) {
+/* userSchema.pre('save', async function(next) {
   if (!this.isModified('password')) {
     return next();
   }
@@ -36,7 +36,7 @@ userSchema.pre('save', async function(next) {
   } catch (err) {
     next(err);
   }
-});
+}); */
 
 const Users = mongoose.model('userHistory.users', userSchema);
 module.exports = Users;

@@ -32,9 +32,9 @@
             <% if (user=== "") { %>
                 <button class="signup-btn" id="loginBtn">login</button>
                 <% } else { %>
-                <p>Welcome, <%= user%>!</p>
+                <p>Welcome, <%= user.username%>!</p>
                 <button class="side-btn">
-                  <i class="material-icons">logout</i> Logout
+                    <a href="/logout">Logout</a>
                 </button>
                 <% } %>
             <div id="popup" class="popup">
@@ -343,13 +343,14 @@ document.getElementById('otpForm').addEventListener('submit', function (e) {
             .then((data) => {
               if (data.message === "Login successful") {
                 console.log("Login successful");
+                window.location.href = data.redirectUrl;
               } else {
-                console.log("Login error:", data.message);
+                console.log("Login error:", data.message); 
               }
             })
             .catch((error) => {
-              console.error("Error:", error);
-            });
+               console.error("Error:", error); 
+            }); 
         });
     </script>
   </body>

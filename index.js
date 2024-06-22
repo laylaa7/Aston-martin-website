@@ -99,10 +99,13 @@ app.get("/src/views/testdrive.html", (req,res) => {
 app.get("/src/views/enquire.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/enquire.html'))
 })
-app.get("/src/views/adminLandingPage.html", (req,res) => {
-  res.sendFile(path.join(__dirname, 'src/views/adminLandingPage.html'))
-})
-
+/* app.get("/src/views/adminLandingPage.html", (req,res) => {
+  res.sendFile(path.join(__dirname, 'src/views/adminLandingPage.ejs'))
+}) */
+app.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+});
 
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -112,6 +115,11 @@ app.set('views', path.join(__dirname, 'src/views'));
 
 app.get("/", (req, res) => {
   res.render("index", {
+    user: req.session.user === undefined ? "" : req.session.user,
+  });
+});
+app.get("/adminLandingPage", (req, res) => {
+  res.render("adminLandingPage", {
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });

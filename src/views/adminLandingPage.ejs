@@ -32,7 +32,14 @@
                     style="padding: 0px; margin: 0px;"></a>
             <p> POWER. DRIVEN</p> 
         </div>
-
+        <% if (user=== "") { %>
+            <button class="signup-btn" id="loginBtn">login</button>
+            <% } else { %>
+            <p>Welcome, <%= user.username%>!</p>
+            <button class="side-btn">
+                <a href="/logout">Logout</a>
+            </button>
+            <% } %>
     </header>
 
     <div id="mySidenav" class="sidenav">
