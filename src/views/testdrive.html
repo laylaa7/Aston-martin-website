@@ -1,181 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Test Drive Form</title>
-    <link rel="stylesheet" href="/styles/testdrive.css">   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>CRUD</title>
 </head>
-<header>
+<header style="height: 10vh; width: 100%; position: fixed; top: 0; display: flex; align-items: center; justify-content: space-evenly; flex-direction: row; z-index: 9; padding: 5px; margin: 0;">
     <div class="logo">
-      <a href="/"><img src="/assets/imgs/logo.png" alt="logo" width="200"  style="padding: 0px; margin: 0px;"></a>
-        </div>
+        <a href="/src/views/adminLandingPage.html"><img src="/assets/imgs/logo.png" alt="logo" width="200" style="padding: 0px; margin: 0px;"></a>
+    </div>
 </header>
 
-
-<body>
-    
-    <div class="container">
-        <p>Test Drive Form</p>
-        <div class="progress-bar">
-            <div class="step">
-                <p>
-                   Location
-                </p>
-                <div class="bullet">
-                   <span>1</span>
+<body style="color:white; background-color: black;">
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-5"><strong>Test Drive History</strong></h1>
+        </div>
+        <div class="main row justify-content-center">
+            <form action="" id="testdrive-form" class="row justify-content-center mb-4" autocomplete="off">
+                <div class="col-10 col-mid-8 mb-3">
+                    <label for="firstName">FirstName</label>
+                    <input class="form-control" id="firstName" type="text" placeholder="Enter FirstName">
                 </div>
-                <div class="check fas fa-check"></div>
-             </div>
-             <div class="step">
-                <p>
-                   Time
-                </p>
-                <div class="bullet">
-                   <span>2</span>
+                <div class="col-10 col-mid-8 mb-3">
+                    <label for="lastName">LastName</label>
+                    <input class="form-control" id="lastName" type="text" placeholder="Enter LastName">
                 </div>
-                <div class="check fas fa-check"></div>
-             </div>
-             <div class="step">
-                <p>
-                   Contact
-                </p>
-                <div class="bullet">
-                   <span>3</span>
+                <div class="col-10 col-mid-8 mb-3">
+                    <label for="email">Email Address</label>
+                    <input class="form-control" id="email" type="email" placeholder="Enter Email">
                 </div>
-                <div class="check fas fa-check"></div>
-             </div>
-             
-          </div>
-        <div class="form-outer">
-            <form action="/testdriveHistory" method="POST">
-                <div class="page slide-page">
-                    <div class="title">Model And Location</div>
-                    <div class="field">
-                        <div>
-                        <label for="carModel">Select Car Model</label><br>
-                        <select id="carModel" name="carModel">
-                        <option value="Select">select</option>
-                        <option value="DBX707">DBX707</option>
-                        <option value="DBS">DBS</option>
-                        <option value="DB12">DB12</option>
-                        <option value="VALOUR">VALOUR</option>
-                        <option value="VANTAGE">VANTAGE</option>
-                        </select><br></div>
-                        <div>
-                        <label for="city">City</label>
-                        <input list="brow" id="cityInput" name="cityInput" required>
-                        <datalist id="brow">
-                          <option value="Amsterdam">
-                          <option value="Athens">
-                          <option value="Bangkok">
-                          <option value="Beijing">
-                          <option value="Berlin">
-                          <option value="Brasília">
-                          <option value="Cairo">
-                          <option value="Canberra">
-                          <option value="Hanoi">
-                          <option value="Havana">
-                          <option value="Islamabad">
-                          <option value="Kabul">
-                          <option value="Lima">
-                          <option value="London">
-                          <option value="Madrid">
-                          <option value="Moscow">
-                          <option value="Nairobi">
-                          <option value="Ottawa">
-                          <option value="Paris">
-                          <option value="Rome">
-                          <option value="Tokyo">
-                          <option value="Vienna">
-                          <option value="Wellington">
-                          <option value="Washington, D.C.">
-                          <option value="Dubai">
-                          <option value="California">
-                          <option value="Mecca">
-                        </datalist>                        
-                    </div>
-                    </div>
-                    
-                    <div class="field firstNext">
-                        <button class="Next" id="firstNext"> Next
-                            <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
-                        </button>
-                    </div>
+                <div class="col-10 col-mid-8 mb-3">
+                    <label for="telephone">Telephone</label>
+                    <input class="form-control" id="telephone" type="text" placeholder="Enter Number">
                 </div>
-                <div class="page">
-                    
-                    <div class="title">Your preferred time</div>
-                    <div class="info">
-                        <label for="carModel">Select your preferred time period </label><br>
-                
-                        <input type="radio" id="AM" name="time"  value="Morning">
-                        <label for="AM"></label><b>Morning &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b>  9h-12h<br>
-                        <input type="radio" id="PM" name="time" value="Afternoon">
-                        <label for="PM"></label><b>Afternoon &nbsp</b>  14h-16h<br>
-                        
-                    </div>
-                    <div class="field">
-                        <button class="Prev prev-1">
-                            <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
-                                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-                            </svg>
-                            Previous
-                        </button>
-                        
-                        <button class="Next next-1" id="next-1"> Next
-                            <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
-                        </button>
-                    </div>
+                <div class="col-10 col-mid-8 mb-3">
+                    <label for="city">City</label>
+                    <input class="form-control" id="cityInput" type="text" placeholder="Enter city">
                 </div>
-                <div class="page">
-                    <div class="title">Personal Data</div>
-                    <div class="field-info">
-                        <div class="info">
-                        <select id="title" name="title">
-                            <option value="Select">Select</option>
-                            <option value="mr">Mr.</option>
-                            <option value="mrs">Mrs.</option>
-                            <option value="ms">Ms.</option>
-                        </select><br>
-                        
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstname"><br>
-                    
-                         
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastname"><br>
-                       
-                        
-                        <label for="telephone">Telephone</label>
-                        <input type="tel" id="telephone" name="telephone"><br>
-                    
-                        <label for="email">Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                        <input type="email" id="email" name="email"><br>
-                    
-                        <label>Preferred Contact Method</label><br>
-                        <input type="checkbox" id="emailOptIn" name="contactMethod" value="email"> Email
-                        <input type="checkbox" id="smsOptIn" name="contactMethod" value="sms"> SMS
-                        <input type="checkbox" id="phoneOptIn" name="contactMethod" value="phone"> Phone<br>
-                    
-                        <div class="button-container">
-                    <button class="Prev prev-2">
-                        <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow">
-                            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-                        </svg>
-                        Previous
-                    </button>
-                    
-                    
-                        <button class="Next submitBtn" id="submitBtn" type="submit" value="submit"> submit                        </button>
-                   </div>
-                
+                <div class="col-10 col-mid-8 mb-3">
+                    <label for="carModel">Car Model</label>
+                    <input class="form-control" id="carModel" type="text" placeholder="Enter Car Model">
                 </div>
-            </div>
+                <div class="col-10 col-mid-8">
+                    <input class="btn btn-success add-btn" type="submit" value="submit" id="submit">
                 </div>
             </form>
+            <div class="col-17 col-mid-10 mt-5">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Telephone</th>
+                            <th>City</th>
+                            <th>Car Model</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="testdrive-list">
+                        <!-- Test drive entries will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-<script src="/scripts/testdrive/testdrivejava.js"></script>
+        <script src="/scripts/admin/testDriveHistory.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
+
 </html>
