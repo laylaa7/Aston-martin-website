@@ -6,6 +6,8 @@ router.get('/cars/:id', carController.getCarById);
 
 router.get('/cars', carController.getAllCars);
 
-router.post('/cars', carController.createCar);
+router.post('/create/cars', carController.createCar);
+
+router.post('/edit/cars/:id', carController.editCar)
 
 module.exports = router;

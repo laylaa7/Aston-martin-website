@@ -1,8 +1,48 @@
-const dbs = document.getElementById("dbs")
+    //progress bar data
+    var topSpeed = []
+    var zeroToHundred = []
+    var accelaration = []
+
+    var topSpeedPercentage = []
+    var zeroToHundredPercentage = []
+    var accelarationPercentage  = []
+
+    var topSpeedContainer = document.getElementById('top-speed')
+    var zeroToHundredContainer = document.getElementById('zeroToHundred')
+    var accelarationContainer = document.getElementById('accelaration')
+
+    var carHeaders = []
+    
+    fetch("/api/cars").then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    }).then(data => {
+      data.map(car => {
+        topSpeed.push(car.topSpeed)
+        topSpeedPercentage.push((car.topSpeed / 400) * 100)
+        zeroToHundred.push(Math.floor(car.zeroToHundredKmh))
+        zeroToHundredPercentage.push((car.zeroToHundredKmh / 4) * 100)
+
+        accelaration.push(car.acceleration)
+        accelarationPercentage.push((car.acceleration/470) * 100)
+
+        carHeaders.push({header:car.carName, subHeader: car.subHeader, text:car.carDescription})
+      })
+
+      document.getElementById("loading-screen").style.display = "none"
+      document.getElementById("car-models").style.display = "block"
+      
+    })
+    
+    const dbs = document.getElementById("dbs")
     const vantage = document.getElementById('vantage')
     const valour = document.getElementById('valour')
     const db12 = document.getElementById('db12')
     const dbx707 = document.getElementById('dbx707')
+
+
 
     dbs.onclick = () => {
       document.getElementById('videoSource').src ="/assets/vids/dbs_vid.mp4"
@@ -59,24 +99,7 @@ const dbs = document.getElementById("dbs")
     }
 
 
-    //progress bar data
-    const topSpeed = [339,325,310,321,325]
-    const zeroToHundred = [3,4,2,4,3]
-    const accelaration = [122,121,222,445,450]
-
-    const topSpeedPercentage = [75,68,60,65,67]
-    const zeroToHundredPercentage = [70,75,56,80,70]
-    const accelarationPercentage  = [23,67,45,67,45]
-
-    const topSpeedContainer = document.getElementById('top-speed')
-    const zeroToHundredContainer = document.getElementById('zeroToHundred')
-    const accelarationContainer = document.getElementById('accelaration')
-
-    const carHeaders = [{header: "DBS", subHeader:"770 ULTIMATE", text:"For over half a century, the name DBS has meant just one thing: the ultimate production Aston Martin."},
-    {header: "VANTAGE", subHeader:"F1 EDITION", text:"The Vantage F1® Edition is a new breed of Aston Martin. One that celebrates the marques return to Formula 1® for the first time in over 60 years."},
-    {header: "DBX707", subHeader:"707", text:"The most powerful and efficient ‘DB’ production model in Aston Martin’s history, DB11 is the ultimate Grand Tourer, and the standard-bearer for an all-new generation of cars."},
-    {header: "VALOUR", subHeader:"DB11", text:"The most powerful and efficient ‘DB’ production model in Aston Martin’s history, DB11 is the ultimate Grand Tourer, and the standard-bearer for an all-new generation of cars."},
-    {header: "DB12", subHeader:"VOLANTE", text:"The most powerful and efficient ‘DB’ production model in Aston Martin’s history, DB11 is the ultimate Grand Tourer, and the standard-bearer for an all-new generation of cars."}]
+    
 
     const carHeader = document.getElementById('car-header')
 

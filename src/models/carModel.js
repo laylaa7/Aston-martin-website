@@ -21,10 +21,8 @@ const carSchema = new mongoose.Schema({
         type: Number,
         required: true
     }
-}, {
-    timestamps: true
 });
 
-const Car = mongoose.model('car', carSchema);
+const Car = mongoose.model('cars', carSchema);
 
 module.exports = Car;
