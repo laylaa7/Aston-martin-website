@@ -28,7 +28,7 @@
         accelaration.push(car.acceleration)
         accelarationPercentage.push((car.acceleration/470) * 100)
 
-        carHeaders.push({header:car.carName, subHeader: car.subHeader, text:car.carDescription})
+        carHeaders.push({header:car.carName, subHeader: car.subBar, text:car.carDescription})
       })
 
       document.getElementById("loading-screen").style.display = "none"

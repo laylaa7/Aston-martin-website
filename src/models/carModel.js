@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const carSchema = new mongoose.Schema({
     carName: {
         type: String,
@@ -25,8 +26,8 @@ const carSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-});
+},{collection:'cars'}
+);
 
 const Car = mongoose.model('cars', carSchema);
-
 module.exports = Car;

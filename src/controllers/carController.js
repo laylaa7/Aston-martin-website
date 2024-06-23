@@ -22,14 +22,15 @@ exports.getAllCars = async (req, res) => {
 };
 
 exports.createCar = async (req, res) => {
-    const { carName, carDescription, topSpeed, zeroToHundredKmh, acceleration } = req.body;
+    const { carName, carDescription, topSpeed, zeroToHundredKmh, acceleration, subBar } = req.body;
 
     const newCar = new Car({
         carName,
         carDescription,
         topSpeed,
         zeroToHundredKmh,
-        acceleration
+        acceleration,
+        subBar
     });
 
     try {

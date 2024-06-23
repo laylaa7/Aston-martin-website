@@ -9,14 +9,17 @@ const session = require("express-session");
 
 require('dotenv').config();
 const mongoose = require('mongoose');
-const carRoutes = require('./src/routes/carRoutes');
+//const carRoutes = require('./src/routes/carRoutes');
 const userController = require('./src/controllers/userController');
 const reservationController = require('./src/controllers/reservationController');
 const testDriveController = require('./src/controllers/testDriveController');
+const carController = require('./src/controllers/carController.js');
 
 const User = require('./src/models/userModel');
 const Reservation=require('./src/models/reservationModel');
 const testDrive = require('./src/models/testDriveModel');
+const Car = require('./src/models/carModel.js');
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -75,6 +78,14 @@ app.get('/userHistory', async (req, res) => {
       res.status(500).json({ error: err.message });
   }
 });
+app.get('/car', async (req, res) => {
+  try {
+      const cars = await Car.find({}).sort({ createdAt: -1 });
+      res.render('car', { cars: cars });
+  } catch (err) {
+      res.status(500).json({ error: err.message });
+  }
+});
 
 
 //load routes
@@ -88,6 +99,9 @@ app.use('/', reservationRoutes);
 
 const testDriveRoutes = require('./src/routes/testDriveRoutes'); 
 app.use('/', testDriveRoutes);
+
+const carRoutes = require('./src/routes/carRoutes'); 
+app.use('/', carRoutes);
 
 app.post("/login", userController.login);
 app.post("/views/signup", userController.signup); 
@@ -145,7 +159,9 @@ app.get('/userHistory', (req,res) => {
 app.get('/testdriveHistory', (req,res) => {
   res.render('testdriveHistory');
 });
-
+app.get('/car', (req,res) => {
+  res.render('car');
+});
 
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/index.html'))

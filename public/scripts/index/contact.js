@@ -66,27 +66,27 @@ function toggleNav() {
         <ul>
             <li class="logo">
                 <a href="https://instagram.com/astonmartin" target="_blank">
-                    <img src="/assets/Images/instagram_733614.png" alt="">  
+                    <img src="/assets/img/instagram_733614.png" alt="">  
                 </a>
             </li>
             <li class="logo">
                 <a href="https://www.facebook.com/astonmartin/" target="_blank">
-                    <img src="/assets/Images/facebook_1384005.png" alt="">
+                    <img src="/assets/img/facebook_1384005.png" alt="">
                 </a>
             </li>
             <li class="logo">
                 <a href="https://twitter.com/astonmartin" target="_blank">
-                    <img src="/assets/Images/twitter_5968958.png" alt="">
+                    <img src="/assets/img/twitter_5968958.png" alt="">
                 </a>
             </li>
             <li class="logo">
                 <a href="https://www.youtube.com/user/AstonMartin" target="_blank">
-                    <img src="/assets/Images/youtube.png" alt="">
+                    <img src="/assets/img/youtube.png" alt="">
                 </a>
             </li>
             <li class="logo">
                 <a href="https://www.linkedin.com/company/aston-martin-lagonda-ltd/" target="_blank">
-                    <img src="/assets/Images/linkedin-logo.png" alt="">
+                    <img src="/assets/img/linkedin-logo.png" alt="">
                 </a>
             </li>
         </ul>
