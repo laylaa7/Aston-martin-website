@@ -20,6 +20,10 @@ const carSchema = new mongoose.Schema({
     acceleration: {
         type: Number,
         required: true
+    },
+    subBar: {
+        type: String,
+        required: true
     }
 });
 
