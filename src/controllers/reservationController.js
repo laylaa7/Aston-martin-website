@@ -8,7 +8,7 @@ const addReservation = async (req, res) => {
             email: req.body.email,
             telephone: req.body.telephone,
             cityInput: req.body.cityInput,
-           //carModel: req.body.carModel,
+            /* carModel: req.body.carModel, */
             reservationtime: req.body.reservationtime
         });
         await reservation.save();
@@ -30,7 +30,7 @@ const editReservation = async (req, res) => {
                 email: req.body.email,
                 telephone: req.body.telephone,
                 cityInput: req.body.cityInput,
-               // carModel: req.body.carModel,
+                /* carModel: req.body.carModel, */
                 reservationtime: req.body.reservationtime
             },
             { new: true, runValidators: true }

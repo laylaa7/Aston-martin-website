@@ -10,7 +10,7 @@
 </head>
 <header style="height: 10vh; width: 100%; position: fixed; top: 0; display: flex; align-items: center; justify-content: space-evenly; flex-direction: row; z-index: 9; padding: 5px; margin: 0;">
     <div class="logo">
-        <a href="/src/views/adminLandingPage.html"><img src="/assets/imgs/logo.png" alt="logo" width="200" style="padding: 0px; margin: 0px;"></a>
+        <a href="/src/views/adminLandingPage.html"><img src="/assets/img/logo.png" alt="logo" width="200" style="padding: 0px; margin: 0px;"></a>
     </div>
 </header>
 
@@ -41,6 +41,10 @@
                     <label for="city">City</label>
                     <input class="form-control" id="cityInput" type="text" placeholder="Enter city">
                 </div>
+           <!--      <div class="col-10 col-mid-8 mb-3">
+                    <label for="carModel">Car Model</label>
+                    <input class="form-control" id="carModel" type="text" placeholder="Enter car Model">
+                </div> -->
                 <div class="col-10 col-mid-8 mb-3">
                     <label for="reservationtime">Reservation Time</label>
                     <input class="form-control" id="reservationtime" type="text" placeholder="Enter time">
@@ -58,7 +62,7 @@
                             <th>Email</th>
                             <th>Telephone</th>
                             <th>City</th>
-                             <th>Car Model</th>
+                             <!-- <th>Car Model</th> -->
                             <th>Reservation Time</th>
                             <th>Actions</th> 
                         </tr>
@@ -71,7 +75,7 @@
                                 <td><%= reservation.email %></td> 
                                 <td><%= reservation.telephone %></td>
                                 <td><%= reservation.cityInput %></td>
-                                <!-- <td><%= reservation.carModel %></td>  -->
+                               <!--  <td><= reservation.carModelElement %></td> -->
                                 <td><%= reservation.reservationtime %></td>
                                 <td>
                                     <a href="#" class="btn btn-warning btn-sm edit">Edit</a>

@@ -1,5 +1,4 @@
-const path = require('path')
-
+const path = require('path') 
 
 exports.renderAdmin = (req, res) => {
     res.sendFile(path.join(__dirname, '../views/landingPageAdmin.html'))
@@ -15,4 +14,4 @@ exports.renderUser = (req, res) => {
 
 exports.renderUserHistory = (req, res) => {
     res.sendFile(path.join(__dirname, '../views/userHistory.html'))
-}
+} 

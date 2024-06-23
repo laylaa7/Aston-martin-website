@@ -175,7 +175,7 @@ document.getElementById("signup-btn").onclick = function () {
 loginSubmitBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
-  const username = document.getElementById("username").value;
+  /* const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   if (username === "admin@gmail.com" && password === "123") {
     // window.location.href = '/admin/';
@@ -186,7 +186,7 @@ loginSubmitBtn.addEventListener("click", function (event) {
     );
   } else {
     alert("Invalid username.");
-  }
+  } */
   loginBtn.classList.add("hidden");
 });
 

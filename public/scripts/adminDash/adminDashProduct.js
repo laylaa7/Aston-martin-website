@@ -1,4 +1,4 @@
-var selectedRow = null;
+/* var selectedRow = null;
  
 function showAlert(message,className){
     const div=document.createElement("div");
@@ -125,3 +125,4 @@ document.getElementById('submit').onclick = function(event) {
 });
 
 
+ */

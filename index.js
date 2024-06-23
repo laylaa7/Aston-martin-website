@@ -79,7 +79,7 @@ app.get('/userHistory', async (req, res) => {
 
 //load routes
 const modelsRoutes = require('./src/routes/modelsRoutes')
-const adminDashRoutes = require('./src/routes/adminDashRoutes')
+ const adminDashRoutes = require('./src/routes/adminDashRoutes') 
 const userRoutes = require('./src/routes/userRoutes'); 
 app.use('/views', userRoutes);
 
@@ -100,7 +100,7 @@ app.post('/testDrive', testDriveController.addTestDrive)
 
 app.use('/api', carRoutes);
 app.use('/models', modelsRoutes)
-app.use('/admin' , adminDashRoutes)
+ app.use('/admin' , adminDashRoutes) 
 
 app.get("/src/views/popularModelVantage.html", (req,res) => {
     res.sendFile(path.join(__dirname, 'src/views/popularModelVantage.html'))
@@ -131,8 +131,8 @@ app.get("/", (req, res) => {
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
-app.get("/admin", (req, res) => {
-  res.render("/admin", {
+app.get("/adminLandingPage", (req, res) => {
+  res.render("adminLandingPage", {
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
