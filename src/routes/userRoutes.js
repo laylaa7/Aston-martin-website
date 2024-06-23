@@ -17,7 +17,7 @@
  const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 // router.post('/signup', userController.signup);
 // router.post('/verify-otp', userController.verifyOtp);
