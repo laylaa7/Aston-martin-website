@@ -41,10 +41,7 @@ let current = 1;
     var validModels = ['model1', 'model2', 'model3', 'model4', 'model5']; // Add all valid model values here
 
 
-    //if (!validModels.includes(selectedModel)) {
-      //  document.getElementById('carModel').setCustomValidity('Please select a valid car model.');
-        //alert("Please Select a Valid Car Model");
-    //}
+    
 
     
     if (cityFound ) {

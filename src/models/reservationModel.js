@@ -21,10 +21,10 @@ const reservationSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  // carModel: {
-  //   type: String,
-  //   required: true,
-  // },
+  /*  carModel: {
+    type: String,
+   required: true,
+  },  */
   reservationtime: {
     type: String,
     required: true,

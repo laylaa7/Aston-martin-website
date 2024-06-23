@@ -131,8 +131,8 @@ app.get("/", (req, res) => {
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
-app.get("/adminLandingPage", (req, res) => {
-  res.render("adminLandingPage", {
+app.get("/admin", (req, res) => {
+  res.render("/admin", {
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });

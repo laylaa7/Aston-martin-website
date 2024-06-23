@@ -12,7 +12,7 @@ exports.login = async (req, res) => {
     // Check if the user is admin with a hardcoded password
     if (username === 'admin' && password === '123') {
       req.session.user = { username: 'admin', role: 'admin' };
-      return res.status(200).json({ message: "Login successful", redirectUrl: "/adminLandingPage" });
+      return res.status(200).json({ message: "Login successful", redirectUrl: "/admin" });
     }
     // Find the user in the database by username
     const user = await Users.findOne({ username });

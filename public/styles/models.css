@@ -16,7 +16,8 @@ header{
     justify-content:center;
     flex-direction: column;
     transform: scale(1);
-    
+    z-index: 1000000;
+    cursor: pointer;
   }
   
   
@@ -50,7 +51,7 @@ header{
   width :100%;
   height:100%;
   /* background-color: aliceblue; */
-  min-height: 1000px; /*hereee*/
+  min-height: 850px; /*hereee*/
   /* min-width: 1100px; */
   
   

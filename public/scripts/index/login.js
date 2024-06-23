@@ -18,23 +18,23 @@ closeBtns.forEach((btn) => {
   });
 });
 
-const loginForm = document.querySelector("#popup form");
-loginForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  if (username === "admin@gmail.com" && password === "123") {
-    window.location.href = '/admin/';
+// const loginForm = document.querySelector("#popup form");
+// loginForm.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   const username = document.getElementById("username").value;
+//   const password = document.getElementById("password").value;
+//   if (username === "admin@gmail.com" && password === "123") {
+//     window.location.href = '/src/views/adminLandingPage.html';
  
-  } else if (username === "abood@gmail.com") {
-    alert(
-      "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
-    );
-  } else {
-    // Handle other usernames
-    alert("Invalid username.");
-  }
-});
+//   } else if (username === "abood@gmail.com") {
+//     alert(
+//       "Sorry, you can’t access this. Please try contacting AstonMartin@gmail.com"
+//     );
+//   } else {
+//     // Handle other usernames
+//     alert("Invalid username.");
+//   }
+// });
 
 const form = document.getElementById("form");
 const username = document.getElementById("username");
@@ -42,11 +42,11 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  validateInputs();
-});
+//   validateInputs();
+// });
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
@@ -134,6 +134,7 @@ document.getElementById("signup-btn").onclick = function () {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
   const password2Value = password2.value.trim();
+  console.log(username.value + 'im here ')
 
   if (usernameValue === "") {
     setError(username, "Username is required");
@@ -177,7 +178,7 @@ loginSubmitBtn.addEventListener("click", function (event) {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   if (username === "admin@gmail.com" && password === "123") {
-    window.location.href = 'AdminLandingPage.html';
+    // window.location.href = '/admin/';
     popup.style.display = "none";
   } else if (username === "abood@gmail.com") {
     alert(
